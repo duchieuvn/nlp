@@ -1,0 +1,5 @@
+LIST_FILE = "paper_list_46.txt"
+DATA_DIR = "../data/"
+HTML_DIR = "../data/html/"
+ERROR_LOG = "../data/papers_error.log"
+BASE_URL = "https://arxiv.org/html/{id}"

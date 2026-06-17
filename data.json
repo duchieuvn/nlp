@@ -1,0 +1,98 @@
+{
+    "2401.00059": {
+        "1": {
+            "equation": "E = mc^2",
+            "meaning": "Mass-energy equivalence relation.",
+            "symbols": {
+                "E": "energy",
+                "m": "mass",
+                "c": "speed of light"
+            },
+            "relations": {
+                "2": {
+                    "grade": "strong",
+                    "description": "defines the same physical quantity in a reformulated form"
+                }
+            },
+            "audit-trail": {
+                "extract_eq": "Found numbered equation (1) in the source text.",
+                "extract_context": "Nearby sentence identifies the relation as mass-energy equivalence.",
+                "find_symbol": "Detected symbols E, m, and c from the equation.",
+                "extract_symbol_name": "Mapped E to energy, m to mass, and c to the speed of light.",
+                "build_relations": "Linked equation 1 to equation 2 as a strong reformulation.",
+                "validate_entry": "Confirmed required fields equation, meaning, symbols, relations, and audit-trail are present."
+            }
+        },
+        "2": {
+            "equation": "\\nabla^2 \\phi + k^2 \\phi = 0",
+            "meaning": "Helmholtz equation for the scalar field.",
+            "symbols": {
+                "phi": "scalar field",
+                "k": "wave number"
+            },
+            "relations": {
+                "1": {
+                    "grade": "strong",
+                    "description": "reformulates the same physical setting in field form"
+                }
+            },
+            "audit-trail": {
+                "extract_eq": "Found numbered equation (2) in the source text.",
+                "extract_context": "Adjacent text refers to a scalar wave formulation.",
+                "find_symbol": "Detected phi and k as equation-specific symbols.",
+                "extract_symbol_name": "Mapped phi to scalar field and k to wave number.",
+                "build_relations": "Linked equation 2 back to equation 1 as a strong reformulation.",
+                "validate_entry": "Confirmed the entry matches the required schema."
+            }
+        }
+    },
+    "2401.00854": {},
+    "2401.02475": {
+        "1": {
+            "equation": "a + b = c",
+            "meaning": "Simple balance relation.",
+            "symbols": {
+                "a": "first quantity",
+                "b": "second quantity",
+                "c": "resulting quantity"
+            },
+            "relations": {
+                "2": {
+                    "grade": "potential",
+                    "description": "may be related through a later substitution or derivation"
+                }
+            },
+            "audit-trail": {
+                "extract_eq": "Found numbered equation (1) in the source text.",
+                "extract_context": "Local context suggests a simple definition-style relation.",
+                "find_symbol": "Detected a, b, and c in the equation.",
+                "extract_symbol_name": "Assigned short mock meanings to all three symbols.",
+                "build_relations": "Marked a potential relation to equation 2 because the example is illustrative only.",
+                "validate_entry": "Confirmed the example entry is structurally valid."
+            }
+        },
+        "2": {
+            "equation": "c = a + b",
+            "meaning": "Equivalent rearrangement of the balance relation.",
+            "symbols": {
+                "a": "first quantity",
+                "b": "second quantity",
+                "c": "resulting quantity"
+            },
+            "relations": {
+                "1": {
+                    "grade": "strong",
+                    "description": "equivalent rearrangement"
+                }
+            },
+            "audit-trail": {
+                "extract_eq": "Found numbered equation (2) in the source text.",
+                "extract_context": "Nearby text indicates a restatement of the same relation.",
+                "find_symbol": "Detected the same symbol set as equation 1.",
+                "extract_symbol_name": "Reused the mock descriptions for a, b, and c.",
+                "build_relations": "Recorded equation 2 as a strong equivalent of equation 1.",
+                "validate_entry": "Confirmed both relation and audit-trail fields are present."
+            }
+        }
+    }
+}
