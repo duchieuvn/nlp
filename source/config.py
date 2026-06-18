@@ -1,5 +1,5 @@
-LIST_FILE = "paper_list_46.txt"
 DATA_DIR = "../data/"
-HTML_DIR = "../data/html/"
-ERROR_LOG = "../data/papers_error.log"
+LIST_FILE = DATA_DIR + "paper_list_46.txt"
+HTML_DIR = DATA_DIR + "html/"
+ERROR_LOG = DATA_DIR + "papers_error.log"
 BASE_URL = "https://arxiv.org/html/{id}"

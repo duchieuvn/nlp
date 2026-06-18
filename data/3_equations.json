@@ -1,0 +1,4005 @@
+{
+  "2403.03204": {
+    "1": {
+      "equation": "V_{A_{1}A_{2}}=S_{A_{1}A_{2}}(r)V_{\\text{th}}S_{A_{1}A_{2}}(r)^{T}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\chi(\\Lambda)=\\exp\\big{[} -\\kappa(\\tau_{1}^{2}+\\sigma_{1}^{2}+\\tau_{2}^{2}+\\sigma_{2}^{2})\\cosh(2r)/2 +\\kappa(\\tau_{1}\\tau_{2}-\\sigma_{1}\\sigma_{2})\\sinh(2r)\\big{]}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\chi_{F_{1}A_{1}A_{2}F_{2}}(\\Lambda)=\\chi_{A_{1}A_{2}}(\\Lambda)\\chi_{|m_{1}\\rangle}(\\Lambda_{3})\\chi_{|m_{2}\\rangle}(\\Lambda_{4})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\chi_{F_{1}^{\\prime}A_{1}^{\\prime}A_{2}^{\\prime}F_{2}^{\\prime}}(\\Lambda)=\\chi_{F_{1}A_{1}A_{2}F_{2}}(B(T_{1},T_{2})^{-1}\\Lambda)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\widetilde{\\chi}^{\\text{NG}}_{A_{1}^{\\prime}A_{2}^{\\prime}}= \\frac{1}{(2\\pi)^{2}}\\int d^{2}\\Lambda_{3}d^{2}\\Lambda_{4}\\underbrace{\\chi_{F_{1}^{\\prime}A_{1}^{\\prime}A_{2}^{\\prime}F_{2}^{\\prime}}(\\Lambda)}_{\\text{Four mode entangled state}} \\times\\underbrace{\\chi_{|n_{1}\\rangle}(\\Lambda_{3})}_{\\text{Projection on }|n_{1}\\rangle\\langle n_{1}|}\\underbrace{\\chi_{|n_{2}\\rangle}(\\Lambda_{4})}_{\\text{Projection on }|n_{2}\\rangle\\langle n_{2}|}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\widetilde{\\chi}^{\\text{NG}}_{A_{1}^{\\prime}A_{2}^{\\prime}} =\\bm{\\widehat{F}_{1}}\\exp\\left(\\bm{\\Lambda}^{T}M_{1}\\bm{\\Lambda}+\\bm{u}^{T}M_{2}\\bm{\\Lambda}+\\bm{u}^{T}M_{3}\\bm{u}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\bm{\\widehat{F}_{1}}=\\frac{2^{-(m_{1}+m_{2}+n_{1}+n_{2})}}{m_{1}!m_{2}!n_{1}!n_{2}!}\\frac{\\partial^{m_{1}}}{\\partial\\,u_{1}^{m_{1}}}\\frac{\\partial^{m_{1}}}{\\partial\\,v_{1}^{m_{1}}}\\frac{\\partial^{m_{2}}}{\\partial\\,u_{2}^{m_{2}}}\\frac{\\partial^{m_{2}}}{\\partial\\,v_{2}^{m_{2}}} \\times\\frac{\\partial^{n_{1}}}{\\partial\\,u_{1}^{\\prime n_{1}}}\\frac{\\partial^{n_{1}}}{\\partial\\,v_{1}^{\\prime n_{1}}}\\frac{\\partial^{n_{2}}}{\\partial\\,u_{2}^{\\prime n_{2}}}\\frac{\\partial^{n_{2}}}{\\partial\\,v_{2}^{\\prime n_{2}}}\\{\\bullet\\}_{\\begin{subarray}{c}u_{1}=v_{1}=u_{2}=v_{2}=0\\\\ u_{1}^{\\prime}=v_{1}^{\\prime}=u_{2}^{\\prime}=v_{2}^{\\prime}=0\\end{subarray}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2502.10129": {
+    "1": {
+      "equation": "\\tau\\geq{\\cal{O}}\\Big{(}\\frac{\\hbar}{k_{B}T}\\Big{)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\lambda\\geq{\\cal{O}}(\\lambda_{T})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\sigma_{A}\\leavevmode\\nobreak\\ \\sigma_{B}\\geq\\frac{1}{2}\\left|\\big{\\langle}[A,B]\\big{\\rangle}\\right|",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "H_{\\Lambda}=\\sum_{i=1}^{N_{\\Lambda}}\\frac{{\\bf p}_{i}^{2}}{2m}+\\frac{1}{2}\\sum_{i,j}{\\cal{V}}\\left({\\bf r}_{i},{\\bf r}_{j}\\right)\\equiv K+V",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\equiv\\int_{0}^{\\infty}dt\\leavevmode\\nobreak\\ G_{v}(t)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "D_{+}\\equiv\\int_{0}^{t^{v}}dt\\leavevmode\\nobreak\\ G_{v}(t)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "G_{v}(t)\\geq\\max\\left\\{G_{v}(0)-t\\left|\\frac{dG_{v}}{dt}\\right|_{\\max},0\\right\\}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2504.21306": {
+    "1": {
+      "equation": "I_{\\beta}=4\\,(\\,\\braket{\\partial_{\\beta}\\psi|\\partial_{\\beta}\\psi}-|\\braket{\\psi|\\partial_{\\beta}\\psi}|^{2}\\,)\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\chi =\\braket{\\psi_{0}|U^{\\dagger}_{\\beta-\\varepsilon}(t)U_{\\beta+\\varepsilon}(t)|\\psi_{0}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\chi\\approx \\frac{1}{(\\pi\\hbar)^{f}}\\int d^{2f}\\mathbf{z}\\exp\\left[-\\frac{(\\mathbf{z}-\\mathbf{z}_{0})^{2}}{\\hbar}+\\frac{i}{\\hbar}2\\varepsilon\\frac{\\partial S}{\\partial\\beta}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "I_{\\mathrm{sc}}(\\mathbf{z}_{0},t) =\\frac{4}{\\hbar^{2}}\\mathrm{var}\\left(\\frac{\\partial S}{\\partial\\beta}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "U_{\\beta}(T)=\\exp\\left(-ik\\frac{J_{z}^{2}}{2J+1}\\right)\\exp{(-i\\beta J_{y})}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\frac{\\partial S^{(1)}(z_{t},z_{t+1})}{\\partial\\beta}=-\\sqrt{1-z_{t}^{2}}\\sin{\\phi_{t}}=-y_{t}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\frac{\\partial S(t)}{\\partial\\beta}=\\sum_{t^{\\prime}=0}^{t-1}\\frac{\\partial S^{(1)}(z_{t^{\\prime}},z_{t^{\\prime}+1})}{\\partial\\beta}=-\\sum_{t^{\\prime}=0}^{t-1}y_{t^{\\prime}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2401.00059": {
+    "1": {
+      "equation": "\\ddot{u}_{n}=-\\beta(u_{n}-u_{n-1})-\\beta(u_{n}-u_{n+1})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "u_{n}=Ae^{i(\\omega t\\pm qan)}+\\overline{A}e^{-i(\\omega t\\pm qan)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\omega^{2}=-\\beta(1-e^{iq^{L}a^{L}})-\\beta(1-e^{-iq^{L}a^{L}})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\omega=2\\sqrt{\\beta/m}|\\sin(qa/2)|",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\ddot{u}^{R}_{0}=-\\beta(u^{R}_{0}-u^{L}_{0})-\\beta^{R}(u^{R}_{0}-u^{R}_{1})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "u^{R}_{n} =B^{R}e^{i(\\omega t+q^{R}a^{R}n)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\omega^{2}B =-\\beta(B^{R}-1-A^{L})-\\beta^{R}(B^{R}-B^{R}e^{iqa})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2401.11088": {
+    "1": {
+      "equation": "\\begin{pmatrix}\\psi_{1}\\\\ \\psi_{2}\\end{pmatrix}=\\psi_{1}\\begin{pmatrix}1\\\\ 0\\end{pmatrix}+\\psi_{2}\\begin{pmatrix}0\\\\ 1\\end{pmatrix}=\\psi_{1}|0\\rangle+\\psi_{2}|1\\rangle=|\\psi\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\left|\\psi_{1}\\right|^{2}+\\left|\\psi_{2}\\right|^{2}=1",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "|\\psi\\rangle=\\psi_{1}|000\\ldots 00\\rangle+\\psi_{2}|000\\ldots 01\\rangle+\\cdots+\\psi_{N}|111\\ldots 111\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\forall\\psi_{i}\\in\\mathbb{C}\\quad\\&\\quad\\sum_{i=1}^{N}\\left|\\psi_{i}\\right|^{2}=1",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "U\\vec{\\psi}=(R+iJ)(\\vec{a}+i\\vec{b})=(R\\vec{a}-J\\vec{b})+i(J\\vec{a}+R\\vec{b})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\text{fidelity}(m)=\\frac{A}{1+e^{-k\\left(m-x_{0}\\right)}}+\\text{off}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2501.04264": {
+    "1": {
+      "equation": "\\ket{\\psi}=\\sum_{k}a_{k}\\ket{k}\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\ket{\\Phi}=\\sum_{k}a_{k}\\ket{k}\\otimes\\ket{k}\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\ket{\\Phi}=\\hat{E}\\left(\\ket{\\psi}\\otimes\\ket{0}\\right)\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\hat{E}=\\prod_{i}^{N}\\textrm{CNOT}_{i,i+N}\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\hat{N}=\\sum_{kj}b_{kj}\\ket{k}\\ket{j}\\bra{j}\\bra{k}\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\ket{\\phi}=\\hat{P}\\ket{0}=\\frac{\\ket{0}+\\sum_{j\\neq 0}\\epsilon_{j}\\ket{j}}{1+\\sum_{j\\neq 0}\\epsilon^{2}_{j}}\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mathbf{x}_{i+1}(k,j)=\\textrm{ReLU}\\left[\\mathbf{W}_{i}\\mathbf{x}_{i}(k,j)+\\mathbf{c}_{i}\\right]\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2409.18954": {
+    "1": {
+      "equation": "\\begin{bmatrix}\\hat{x}(t)\\\\ \\hat{p}(t)\\end{bmatrix}=\\begin{bmatrix}\\cos{\\omega t}&\\frac{1}{m\\omega}\\sin{\\omega t}\\\\ -m\\omega\\sin{\\omega t}&\\cos{\\omega t}\\end{bmatrix}\\begin{bmatrix}\\hat{x}(0)\\\\ \\hat{p}(0)\\end{bmatrix}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "U_{\\text{G}}=\\tilde{\\alpha}I(x)=\\tilde{\\alpha}\\frac{2P}{\\pi W^{2}}\\exp{\\left(\\frac{-2x^{2}}{W^{2}}\\right)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "U_{\\text{G}}(x)=U_{\\text{G}}(0)\\left(1-2\\frac{x^{2}}{W^{2}}+2\\frac{x^{4}}{W^{4}}-\\frac{4}{3}\\frac{x^{6}}{W^{6}}+\\mathcal{O}\\left(x^{8}\\right)\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\delta_{\\text{x}}(t)\\ll W",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\sigma_{\\text{x}}\\gg\\frac{\\sqrt{\\pi}\\hbar W}{4\\sqrt{2|\\tilde{\\alpha}|Pm}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\hat{x}(T_{1}/4+t_{2})&\\approx\\hat{p}(T_{1}/4)\\frac{1}{m\\omega_{2}}\\sin(\\omega_{2}t_{2})\\\\ &=-\\hat{x}(0)\\frac{\\omega_{1}}{\\omega_{2}}\\sin(\\omega_{2}t_{2})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "M=\\frac{\\omega_{1}}{\\omega_{2}}\\sin(\\omega_{2}t_{2})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2402.19143": {
+    "1": {
+      "equation": "\\text{i}\\frac{d}{dt}|\\psi(t)\\rangle=H_{\\text{s}}(t)|\\psi(t)\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "i\\frac{d}{dt}|\\Psi(t)\\rangle=H_{\\text{tot}}(t)|\\Psi(t)\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "|\\Psi(t)\\rangle =|\\psi(t)\\rangle|-\\rangle+|\\chi(t)\\rangle|+\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "M(t)=e^{-\\text{i}H_{\\text{s}}^{\\dagger}t}M(0)e^{\\text{i}H_{\\text{s}}t}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "H_{\\text{s}}^{\\dagger}\\ket{\\phi_{n}}=\\kappa_{n}\\ket{\\phi_{n}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "M(t)=\\sum_{n=1}^{\\infty}\\alpha_{n}M_{n}(t)\\quad(\\alpha_{n}>1)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "M_{n}(t) =e^{-\\text{i}H_{\\text{s}}^{\\dagger}t}\\ket{\\phi_{n}}\\bra{\\phi_{n}}e^{\\text{i}H_{\\text{s}}t} =e^{-\\text{i}(\\kappa_{n}-\\kappa_{n}^{\\ast})t}\\ket{\\phi_{n}}\\bra{\\phi_{n}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2401.02625": {
+    "1": {
+      "equation": "P_{A}=\\frac{\\left(P_{NI}-P_{D}\\right)\\cdot R}{P_{I}-P_{NI}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\eta_{net}=\\frac{1}{\\mu}\\ln\\frac{1-P_{NI}}{1-P_{I}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2408.00252": {
+    "1": {
+      "equation": "\\hat{H}=\\hat{H}_{\\text{dis}}+\\hat{H}_{\\text{int}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\hat{H}_{\\text{eff}} =w_{\\text{Heis}}\\hat{H}_{\\text{Heis}}+\\sum_{\\mu=x,y,z}\\left(w_{\\text{on-site}}^{\\mu}\\hat{H}_{\\text{on-site}}^{\\mu}+w_{\\text{Ising}}^{\\mu}\\hat{H}_{\\text{Ising}}^{\\mu}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2402.14235": {
+    "1": {
+      "equation": "Z=\\iint\\mathcal{D}\\lambda\\mathcal{D}g\\exp{\\bigg{(}-I_{\\mathrm{E}}+\\int d\\tau\\lambda(\\tau)\\hat{\\mathcal{C}}}\\bigg{)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\hat{\\mathcal{C}}=\\int d^{D-1}x\\sqrt{\\gamma}-V",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "I_{\\mathrm{E}}=-\\frac{1}{16\\pi}\\int_{\\mathcal{M}_{\\mathrm{E}}}d\\tau d^{D-1}x\\sqrt{g}(R-2\\Lambda_{0})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "ds^{2}_{\\mathrm{E}}=h(r)d\\tau^{2}+\\frac{1}{f(r)}dr^{2}+r^{2}d\\Omega_{D-2}^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\frac{d\\sqrt{h}}{dl}\\bigg{|}_{l=0}=2\\pi T=\\frac{2\\pi}{\\beta}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\mathcal{I}_{\\mathrm{E}}=\\frac{1}{16\\pi}\\sum_{p=0}\\int_{\\mathcal{M}_{\\mathrm{E}}}\\frac{\\alpha_{p}}{(D-2p)!}\\mathcal{R}^{(p)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mathcal{R}^{(p)}=\\epsilon_{a_{1}\\cdots a_{D}}R^{a_{1}a_{2}\\cdots a_{2p-1}a_{2p}}\\wedge e^{a_{2p+1}\\cdots a_{D}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2410.05932": {
+    "1": {
+      "equation": "R_{p}=\\sum_{i=1}^{n}x_{i}r_{i}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\sigma_{p}^{2}=\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\text{Cov}(i,j)\\cdot x_{i}x_{j}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\text{Cov}(i,j)\\cdot x_{i}x_{j} R_{p}\\geq R",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\mathbf{H} =\\theta\\cdot\\left(\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\text{Cov}(i,j)\\cdot x_{i}x_{j}\\right) -M\\cdot\\left(\\sum_{i=1}^{n}x_{i}r_{i}-R\\right)^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\mathbf{H}=\\sum_{i=1}^{n}{a_{i}x_{i}}+\\sum_{i=1}^{n}\\sum_{j=1}^{n}{b_{i,j}x_{i}x_{j}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\mathbf{H}=\\sum_{i=1}^{n}{a_{i}x_{i}}+\\sum_{i=1}^{n}\\sum_{j=1}^{n}{b_{i,j}x_{i}x_{j}}+M\\cdot g(x)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mathbf{H}= \\theta\\cdot\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\text{Cov}(i,j)\\left(\\sum_{k=1}^{K}p_{k}2^{k-1}x_{i,k}\\right)\\left(\\sum_{k=1}^{K}p_{k}2^{k-1}x_{j,k}\\right) -M\\cdot\\left[\\left(\\sum_{i=1}^{n}\\left(\\sum_{k=1}^{K}p_{k}2^{k-1}x_{i,k}\\right)\\cdot r_{i}\\right)-R\\right]^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2410.03926": {
+    "2.1": {
+      "equation": "\\Theta(y)=\\begin{cases}1,&\\text{if}\\leavevmode\\nobreak\\ y\\geqslant 0\\\\ 0,&\\text{otherwise},\\end{cases}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3.1": {
+      "equation": "\\mathbb{E}\\left[g(X)\\right]=\\int_{-\\infty}^{\\infty}g(x)f_{X}(x)\\,dx",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3.1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3.2": {
+      "equation": "\\epsilon_{E}(\\widehat{g(X)})=\\mathinner{\\!\\left\\lvert\\mathbb{E}\\left[g(X)\\right]-\\mathbb{E}[\\widehat{g(X)}]_{S}\\right\\rvert}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3.2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3.3": {
+      "equation": "\\mathrm{RMSE}(\\widehat{g(X)})=\\sqrt{\\mathbb{E}\\left[\\left(g(X)-\\mathbb{E}[\\widehat{g(X)}]_{S}\\right)^{2}\\right])}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3.3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3.4": {
+      "equation": "\\ket{p}=\\sum_{x}\\sqrt{f_{X}(x)}\\ket{x}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3.4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3.5": {
+      "equation": "R\\ket{p}\\!\\ket{0}=\\sum_{x}\\sqrt{f_{X}(x)}\\ket{x}\\left(\\sqrt{1-g(x)}\\ket{0}+\\sqrt{g(x)}\\ket{1}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3.5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3.6": {
+      "equation": "\\mathcal{A}\\ket{0}_{n+1}=\\sqrt{1-a}\\ket{\\psi_{0}}_{n}\\ket{0}+\\sqrt{a}\\ket{\\psi_{1}}_{n}\\ket{1}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3.6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2502.09920": {
+    "1": {
+      "equation": "\\Delta\\phi_{R}=\\tan^{-1}\\left(\\frac{P_{B_{R}}X_{A_{R}}-X_{B_{R}}P_{A_{R}}}{X_{B_{R}}X_{A_{R}}+P_{B_{R}}P_{A_{R}}}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\sigma^{2}_{error}=\\sigma^{2}_{det}+\\sigma^{2}_{drift}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\sigma^{2}_{det}=\\frac{\\xi_{ch}+2\\frac{1+\\xi_{det}}{\\eta_{det}T}}{|\\alpha_{R}|^{2}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\xi_{det}=\\frac{((1-\\gamma)+\\xi_{el})\\eta_{det}}{\\gamma}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "C^{2}_{n}(h)&=(0.00594(v_{rms}/27)^{2}\\ (h\\times 10^{-5})^{10}\\ \\exp(-h/1000)\\\\ &+2.7\\times 10^{-16}\\ \\exp(-h/1500)+C^{2}_{n}(0)\\exp(-h/100))",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "v_{rms}=\\left[\\frac{1}{15\\times 10^{3}}\\int_{5\\times 10^{3}}^{20\\times 10^{3}}v^{2}(h)\\ dh\\right]^{1/2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "v(h)=v_{g}+30\\exp\\left[-\\left(\\frac{h-9400}{4800}\\right)^{2}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2412.07329": {
+    "1": {
+      "equation": "ds^{2}=dt^{2}-e^{2t/a}(dr^{2}+r^{2}d\\phi^{2}+dz^{2})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "ds^{2}=(a/\\tau)^{2}(d\\tau^{2}-dr^{2}-r^{2}d\\phi^{2}-dz^{2})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\left\\langle 0\\right|F(x)\\left|0\\right\\rangle\\equiv\\left\\langle F(x)\\right\\rangle=\\left\\langle F(x)\\right\\rangle_{\\mathrm{dS}}+\\left\\langle F(x)\\right\\rangle_{\\mathrm{cs}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "(\\square+m^{2}+\\xi R)\\varphi(x)=0",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\varphi_{\\sigma}(x)=e^{i(\\nu-\\nu^{\\ast})\\frac{\\pi}{4}}\\sqrt{\\frac{q\\lambda}{\\pi}}\\frac{\\ \\eta^{3/2}}{4a}H_{\\nu}^{(1)}(\\gamma\\eta)J_{q|n|}(\\lambda r)e^{in\\phi+ik_{z}z}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\ \\nu=\\left(9/4-12\\xi-m^{2}a^{2}\\right)^{1/2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\langle\\varphi^{2}\\rangle_{\\mathrm{cs}}=\\frac{a^{-2}}{\\sqrt{2}\\pi^{\\frac{7}{2}}}\\int_{0}^{\\infty}dy\\,\\sqrt{y}e^{y-r_{\\eta}^{2}y}K_{\\nu}(y)\\int_{0}^{\\infty}du\\,g_{-}(q,u)K_{iu}(r_{\\eta}^{2}y)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2507.12971": {
+    "1": {
+      "equation": "\\hat{H}_{0} = \\frac{\\hat{p}^{2}}{2m}-mg{\\hat{z}}+\\hbar\\delta(t)|b\\rangle\\langle b| + \\frac{\\hbar\\Omega}{2}e^{i(k_{0}{\\hat{z}}+\\phi)}|b\\rangle\\langle a|+\\frac{\\hbar\\Omega^{*}}{2}e^{-i(k_{0}{\\hat{z}}+\\phi)}|a\\rangle\\langle b|",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "{\\tilde{U}}_{2}(t)=\\exp{\\big{(}i{\\hat{f}}_{+}{\\hat{S}}_{+}\\big{)}}\\exp{\\big{(}i{\\hat{f}}_{3}{\\hat{S}}_{3}\\big{)}}\\exp{\\big{(}i{\\hat{f}}_{-}{\\hat{S}}_{-}\\big{)}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\frac{d{\\hat{f}}_{+}(t)}{dt} = -B_{+}-iB_{3}(t)f_{+}(t)-B_{+}^{*}f_{+}^{2}(t)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "{\\hat{f}}_{3}(t) = \\int_{0}^{t}d{\\tau}\\big{(}-B_{3}(\\tau)+2if_{+}(\\tau)B_{+}^{*}\\big{)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "{\\hat{f}}_{-}(t) = -\\int_{0}^{t}d{\\tau}e^{if_{3}(\\tau)}B_{+}^{*}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "{\\tilde{U}}_{2}(t) = \\big{(}{\\hat{A}}(\\hat{p},t)+i{\\hat{B}}(\\hat{p},t)\\big{)}|a\\rangle\\langle a|+\\big{(}{\\hat{A}}(\\hat{p},t)-i{\\hat{B}}(\\hat{p},t)\\big{)}|b\\rangle\\langle b| -i\\hat{C}({\\hat{p}},t)\\big{(}\\exp(i\\phi)|a\\rangle\\langle b|+\\exp(-i\\phi)|b\\rangle\\langle a|\\big{)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "8": {
+      "equation": "\\hat{U}(t)=\\tilde{U}_{g}\\hat{U}_{3}^{\\rm Doppler}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (8) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2405.00701": {
+    "1": {
+      "equation": "\\equiv\\prod_{i=1}^{d}F_{x_{i}}^{(i)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\ket{F_{x_{1},x_{2},\\ldots,x_{d}}}=\\sum_{l_{1}}^{\\chi_{1}}\\cdots\\sum_{l_{d-1}}^{\\chi_{d}}F_{l_{1},x_{1}}^{(1)}F_{l_{1}l_{2},x_{2}}^{(2)}\\cdots F_{l_{d-1},x_{d}}^{(d)}\\ket{\\vec{x}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "=\\prod_{i=1}^{d}[F_{x_{i}}^{y_{i}}]^{(i)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\epsilon_{\\mathrm{max}}=\\frac{\\|F_{x_{1},x_{2},\\ldots,x_{d}}-\\tilde{F}_{\\mathrm{TT}}\\|_{\\mathrm{max}}}{\\|F_{x_{1},x_{2},\\ldots,x_{d}}\\|_{\\mathrm{max}}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\epsilon_{\\mathrm{SVD}}=\\frac{|\\tilde{F}_{\\mathrm{TT}}-\\tilde{F}^{{}^{\\prime}}_{\\mathrm{TT}}|^{2}_{\\mathrm{F}}}{|\\tilde{F}_{\\mathrm{TT}}|^{2}_{\\mathrm{F}}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "dS_{m}(t)=rS_{m}(t)dt+\\sigma_{m}S_{m}(t)dW_{m}(t)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "10": {
+      "equation": "dW_{m}(t)dW_{n}(t)=\\rho_{mn}dt",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (10) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2410.07847": {
+    "1": {
+      "equation": "\\rho(E)=\\int_{0}^{1}dx\\,\\frac{\\Theta(4\\mathsf{b}(x)^{2}-(E-\\mathsf{a}(x))^{2})}{\\pi\\sqrt{4\\mathsf{b}(x)^{2}-(E-\\mathsf{a}(x))^{2}}}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "H=i^{p/2}\\sum_{1\\leq i_{1}<i_{2}\\cdots i_{p}\\leq N}j_{i_{1}\\cdots i_{p}}\\,\\chi_{i_{1}}\\cdots\\chi_{i_{p}}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "q:=e^{-\\lambda}\\,,~{}~{}~{}~{}~{}\\lambda=\\lim_{p,N\\rightarrow\\infty}\\frac{2p^{2}}{N}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\rho_{q}(E)=\\frac{\\sqrt{1-q}}{\\pi\\sqrt{1-\\frac{1-q}{4}E^{2}}}\\prod_{k=0}^{\\infty}\\left(\\frac{1-q^{2k+2}}{1-q^{2k+1}}\\right)\\left(1-\\frac{(1-q)q^{k}}{\\left(1+q^{k}\\right)^{2}}E^{2}\\right)\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\int_{-E_{m}}^{E_{m}}\\rho_{q}(E)\\,dE=1\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\rho_{q}(E)=\\begin{cases}\\sqrt{4-E^{2}}/(2\\pi)\\,,~{}~{}~{}E\\in[-2,2]\\,,&\\,~{}~{}q\\rightarrow 0^{+}\\,,\\\\ e^{-E^{2}/2}/(\\sqrt{2\\pi})\\,,\\,~{}~{}~{}E\\in(-\\infty,\\infty)\\,,&\\,~{}~{}q\\rightarrow 1^{-}\\,.\\end{cases}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mathsf{a}_{0^{+}}(x)=0\\,,~{}~{}~{}~{}\\mathsf{b}_{0^{+}}(x)=\\sqrt{1-x}\\,\\,,~{}~{}~{}~{}~{}~{}~{}~{}(q=0^{+})\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2412.07479": {
+    "1": {
+      "equation": "|\\psi\\rangle=\\alpha|0\\rangle+\\beta|1\\rangle,\\quad|\\alpha|^{2}+|\\beta|^{2}=1",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "{\\cal P}_{n}=P_{1}\\otimes P_{2}\\otimes\\ldots\\otimes P_{N},\\quad P_{a}\\in\\{\\sigma_{1}^{(a)},\\sigma_{2}^{(a)},\\sigma_{3}^{(a)},I^{(a)}\\}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "M_{q}=\\frac{1}{1-q}\\log_{2}(\\zeta_{q}),\\quad\\zeta_{q}\\equiv\\sum_{P\\in{\\cal P}_{n}}\\frac{\\langle\\psi|P|\\psi\\rangle^{2q}}{2^{n}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\rho^{I}\\sim\\tilde{A}^{I}I_{4}+\\sum_{i}\\left(\\tilde{B}_{i}^{I+}\\sigma_{i}\\otimes I_{2}+\\tilde{B}^{I-}I_{2}\\otimes\\sigma_{i}\\right)+\\sum_{i,j}\\tilde{C}_{ij}\\sigma_{i}\\otimes\\sigma_{j}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "B_{i}^{I\\pm}=\\frac{\\tilde{B}^{I\\pm}}{\\tilde{A}^{I}},\\quad C_{ij}^{I}=\\frac{\\tilde{C}^{I}_{ij}}{\\tilde{A}^{I}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\tilde{M}_{2}(\\rho^{I})=-\\log_{2}\\left(\\frac{1+\\sum_{i}[(B_{i}^{I+})^{4}+(B_{i}^{I-})^{4}]+\\sum_{i,j}(C_{ij}^{I})^{4}}{1+\\sum_{i}[(B_{i}^{I+})^{2}+(B_{i}^{I-})^{2}]+\\sum_{i,j}(C_{ij}^{I})^{2}}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2505.02868": {},
+  "2508.11712": {
+    "1": {
+      "equation": "\\Delta E=g_{F}\\,\\mu_{B}\\,m_{F}\\,|B|",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\mathbf{B}(\\boldsymbol{r})=\\frac{\\mu_{0}I}{4\\pi}\\int_{V}\\frac{(\\boldsymbol{r}-\\boldsymbol{r}^{\\prime})\\times\\hat{\\boldsymbol{x}}}{|\\boldsymbol{r}-\\boldsymbol{r}^{\\prime}|^{3}}\\,dV^{\\prime}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "U(\\boldsymbol{r})=m_{F}\\,g_{F}\\,\\mu_{B}\\,\\lvert\\mathbf{B}(\\boldsymbol{r})\\rvert\\;-\\;mgz",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "U(\\boldsymbol{r})\\approx U(\\boldsymbol{r}_{\\min})\\;+\\;\\tfrac{1}{2}\\,(\\boldsymbol{r}-\\boldsymbol{r}_{\\min})^{T}H\\,(\\boldsymbol{r}-\\boldsymbol{r}_{\\min}),\\quad H_{ij}=\\left.\\frac{\\partial^{2}U}{\\partial x_{i}\\,\\partial x_{j}}\\right|_{\\boldsymbol{r}_{\\min}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "H\\,\\hat{e}_{i}=\\lambda_{i}\\,\\hat{e}_{i},\\quad\\omega_{i}=\\sqrt{\\frac{\\lambda_{i}}{m}},\\quad i=1,2,3",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "R_{\\text{TF},i}=\\biggl{(}\\frac{2\\mu}{m\\,\\omega_{i}^{2}}\\biggr{)}^{\\!1/2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mu\\approx\\frac{\\hbar\\bar{\\omega}}{2}\\,\\left(15\\frac{Na_{s}}{a_{\\text{ho}}}\\right)^{2/5},\\quad\\bar{\\omega}=\\sqrt[3]{\\omega_{1}\\omega_{2}\\omega_{3}},\\quad a_{\\text{ho}}=\\sqrt{\\hbar/m\\bar{\\omega}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2407.16814": {
+    "1": {
+      "equation": "x^{n}-\\lambda=\\prod_{j=1}^{n}(x-\\beta\\xi^{j})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\Phi^{\\prime}\\bigg{(}\\sum_{i=0}^{n-1}a_{i}x^{i}\\bigg{)}\\triangleq\\bigg{(}\\sum_{i=0}^{n-1}a_{i}\\beta^{i},\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi)^{i},\\dots,\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{n-1})^{i}\\bigg{)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\Phi^{\\prime\\prime}(a_{0},a_{1},\\dots,a_{n-1})=\\sum_{i=0}^{n-1}a_{i}x^{i}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "= \\sum_{i=0}^{n-1}a_{k}\\beta^{n}\\beta^{-k}\\xi^{-jk}=\\lambda\\sum_{k=0}^{n-1}a_{k}\\beta^{-k}\\xi^{-jk}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "A_{n-j}= \\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{n-j})^{i}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{-j})^{i}=\\lambda\\sum_{k=0}^{n-1}a_{k}\\beta^{-k}\\xi^{-jk}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "H=\\begin{bmatrix}1&\\beta\\xi&(\\beta\\xi)^{2}&\\dots&(\\beta\\xi)^{n-1}\\\\ 1&\\beta\\xi^{2}&(\\beta\\xi^{2})^{2}&\\dots&(\\beta\\xi^{2})^{(n-1)}\\\\ \\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\ 1&\\beta\\xi^{2t}&(\\beta\\xi^{2t})^{2}&\\dots&(\\beta\\xi^{2t})^{(n-1)}\\\\ \\end{bmatrix},\\vspace{-0.15cm}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "H=\\begin{bmatrix}1&\\beta\\xi&(\\beta\\xi)^{2}&\\dots&(\\beta\\xi)^{n-1}\\\\ 1&\\beta\\xi^{3}&(\\beta\\xi^{3})^{2}&\\dots&(\\beta\\xi^{3})^{(n-1)}\\\\ \\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\ 1&\\beta\\xi^{2t-1}&(\\beta\\xi^{2t-1})^{2}&\\dots&(\\beta\\xi^{2t-1})^{(n-1)}\\\\ \\end{bmatrix}.\\vspace{-0.15cm}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2503.11812": {
+    "1": {
+      "equation": "\\eta_{\\mathrm{sys,on}}=\\frac{\\hbar\\omega}{k_{B}T_{\\mathrm{sys,on}}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\eta_{\\mathrm{amp,i}}(G)\\!=\\!\\!{\\left(\\frac{2}{\\eta_{\\mathrm{sys,on}}}-\\frac{2}{G\\eta_{\\mathrm{sys,off}}}+\\frac{1}{G}\\right)}^{-1}\\!\\!\\Big{/}\\,\\eta_{\\mathrm{ideal}}(G)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "Z_{\\mathrm{stub}}(\\omega)=-jZ_{\\mathrm{stub}}\\cot\\left(\\frac{\\omega}{2\\omega_{\\mathrm{qw}}}\\pi\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "Z_{\\mathrm{stub}}(\\omega) \\approx\\frac{1}{j\\omega\\left(\\pi/2\\omega_{\\mathrm{qw}}Z_{\\mathrm{stub}}\\right)}+j\\omega\\left(\\frac{\\pi Z_{\\mathrm{stub}}}{6\\omega_{\\mathrm{qw}}}\\right) =\\frac{1}{j\\omega C_{\\mathrm{stub}}}+j\\omega L_{\\mathrm{stub}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "C_{\\mathrm{stub}} =\\frac{\\pi}{2\\omega_{\\mathrm{qw}}Z_{\\mathrm{stub}}}=\\frac{l}{\\nu Z_{\\mathrm{stub}}}\\quad\\mathrm{and} L_{\\mathrm{stub}} =\\frac{\\pi Z_{\\mathrm{stub}}}{6\\omega_{\\mathrm{qw}}}=\\frac{Z_{\\mathrm{stub}}l}{3\\nu}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\mathrm{Attn}_{\\mathrm{dielectric}} (\\mathrm{dB})=\\mathrm{dB}\\left(\\left|e^{-\\int_{x=0}^{L}\\gamma(x)dx}\\right|\\right) =-\\int_{x=0}^{L}k(x)\\tan\\delta dx\\propto\\ \\omega\\times\\tan\\delta",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "t=1-\\frac{\\Gamma_{1}}{2\\Gamma_{2}}\\frac{1-\\frac{i\\Delta}{\\Gamma_{2}}}{1+\\left(\\frac{\\Delta}{\\Gamma_{2}}\\right)^{2}+\\frac{\\Omega^{2}}{\\Gamma_{1}\\Gamma_{2}}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2410.17702": {
+    "1": {
+      "equation": "Q=\\frac{\\expectationvalue*{(\\Delta\\hat{n})^{2}}-\\expectationvalue*{\\hat{n}}}{\\expectationvalue*{\\hat{n}}}\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\text{cov}\\left[\\hat{\\mathbf{R}}_{\\text{in}}^{(k)},\\hat{\\mathbf{R}}_{\\text{in}}^{(k)}\\right]=\\bigoplus_{i=1}^{N}\\left(\\begin{array}[]{cc}\\cosh(\\xi_{\\text{in}})+\\cos(\\phi_{k})\\sinh(\\xi_{\\text{in}})&\\sin(\\phi_{k})\\sinh(\\xi_{\\text{in}})\\\\ \\sin(\\phi_{k})\\sinh(\\xi_{\\text{in}})&\\cosh(\\xi_{\\text{in}})-\\cos(\\phi_{k})\\sinh(\\xi_{\\text{in}})\\end{array}\\right)\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\hat{H}_{\\chi^{(2)}}=\\sum_{i,j=1}^{N}\\left(\\alpha_{ij}\\hat{a}_{i}^{\\dagger}\\hat{a}_{j}+\\beta_{ij}\\hat{a}_{i}^{\\dagger}\\hat{a}_{j}^{\\dagger}+\\text{h.c.}\\right),\\quad\\left(i\\geq j\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\mathbf{O}_{\\text{meas}}^{(k)}=\\mathbf{O}_{\\text{ideal}}^{(k)}+\\mathbf{u}\\left(0,s_{\\text{noise}}^{2}\\right)\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\partialderivative{\\rho}{t}=-i[\\hat{H}_{n},\\rho]+\\gamma_{1}\\mathcal{D}[\\hat{a}]\\rho+\\gamma_{m}\\mathcal{D}[\\hat{a}^{m}]\\rho\\ ",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2504.02152": {
+    "1": {
+      "equation": "+U(t)\\sum_{j}\\hat{n}_{j,\\uparrow}\\hat{n}_{j,\\downarrow}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\nu=(N_{\\uparrow}+N_{\\downarrow})/L=1",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "F(t)\\equiv|\\!\\braket{\\psi(t)}{\\psi_{0}}\\!|^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\mathcal{U}(t_{0}+T,t_{0})=\\mathcal{T}\\exp{\\left[-\\mathrm{i}\\int_{t_{0}}^{t_{0}+T}H(t)dt\\right]}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\mathcal{U}=e^{-\\mathrm{i}H_{+}T/4}e^{-\\mathrm{i}H_{-}T/2}e^{-\\mathrm{i}H_{+}T/4}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "H_{\\pm}=H_{\\rm s}\\pm U_{m}\\sum_{j}\\hat{n}_{j,\\uparrow}\\hat{n}_{j,\\downarrow}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\langle F\\rangle_{t}=\\frac{1}{\\tau}\\int_{0}^{\\tau}F(t)dt",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2411.05319": {
+    "1": {
+      "equation": "\\frac{d\\mathbf{P^{n}}}{dt} =\\gamma_{n}\\mathbf{(B}+\\lambda M^{e}\\mathbf{P^{e})\\times P^{n}}+\\bm{\\Omega}\\times\\mathbf{P^{n}}+R_{se}^{en}\\mathbf{P^{e}}-(R_{se}^{ne}+R_{c}^{n})\\mathbf{P^{n}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2504.18342": {
+    "2.1": {
+      "equation": "|\\gamma\\rangle=C_{\\rm{bare}}|\\gamma_{\\rm{bare}}\\rangle+C_{V}|V\\rangle+...+C_{q}|q\\bar{q}\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2.2": {
+      "equation": "n_{\\gamma}^{e}(x)=\\frac{\\alpha}{2\\pi}[\\frac{1+(1-x)^{2}}{x}\\log\\frac{(1-x)(sx-m_{X}^{2})}{m_{e}^{2}x^{2}}]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2.3": {
+      "equation": "\\Delta t\\cdot\\Delta E\\approx 1\\implies\\frac{R}{\\gamma v}\\cdot\\omega\\approx 1\\stackrel{{\\scriptstyle v\\rightarrow c}}{{\\implies}}\\omega_{\\text{max}}\\approx\\frac{\\gamma}{R}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2.4": {
+      "equation": "\\partial_{\\mu}\\partial^{\\mu}A^{\\nu}(x)=j^{\\nu}(x)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2.5": {
+      "equation": "j^{\\nu}(k)=2\\pi\\delta(k\\cdot\\mu)\\rho(\\sqrt{-k^{2}})\\cdot\\mu^{\\nu}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2.6": {
+      "equation": "A^{\\nu}(k)=-\\frac{1}{k^{2}}j^{\\nu}(k)=-2\\pi\\delta(k\\cdot\\mu)\\frac{\\rho(\\sqrt{-k^{2}})}{k^{2}}\\mu^{\\nu}=Zr(k)\\mu^{\\nu}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2.7": {
+      "equation": "r(k)=-2\\pi\\frac{1}{Z}\\delta(k\\cdot\\mu)\\frac{\\rho(\\sqrt{-k^{2}})}{k^{2}}=-2\\pi e\\delta(k\\cdot\\mu)\\frac{F(-k^{2})}{k^{2}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2.7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2508.07652": {
+    "1": {
+      "equation": "M\\left(A,B\\right){\\equiv}D_{\\mathit{KL}}\\left(P_{\\mathit{AB}}{\\parallel}P_{A\\times B}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "D_{\\mathit{KL}}\\left(P{\\parallel}Q\\right){\\geq}{\\sup_{{T:P\\times Q\\rightarrow\\mathbb{R}}}\\left[\\mathbb{E}\\left[T\\right]_{P}-\\log\\left(\\mathbb{E}\\left[e^{T}\\right]_{Q}\\right)\\right]}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "M_{\\boldsymbol{\\theta}}(A,B)=\\sup_{\\boldsymbol{\\theta}\\in\\boldsymbol{\\Theta}}\\left[\\left\\langle f_{\\boldsymbol{\\theta}}\\left(A,B\\right)\\right\\rangle_{P_{\\mathit{AB}}}-\\log\\left\\langle e^{f_{\\boldsymbol{\\theta}}\\left(A,B\\right)}\\right\\rangle_{P_{A\\times B}}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "H(A,B)=H(A)+H(B)-M(A,B)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "s_{0}\\left(A_{0}\\right)=\\frac{H\\left(A_{0}\\right)}{V_{0}}=s_{k}-\\frac{1}{2}\\sum_{j=1}^{k}\\frac{M\\left(A_{j}\\right)}{V_{j}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "H_{\\mathrm{Ising}}=J\\sum_{i=1}^{N}\\sigma_{i}^{z}\\sigma_{i+1}^{z}-B^{x}\\sum_{i=1}^{N}\\sigma_{i}^{x}-B^{z}\\sum_{i=1}^{N}\\sigma_{i}^{z}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "M(A,B)\\leq\\mathrm{S}_{\\rm vN}(\\rho_{A})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2505.01516": {
+    "1": {
+      "equation": "H_{\\textsc{tl},\\Delta x}=\\frac{1}{2}\\sum_{i}\\frac{(\\Phi_{i+1}-\\Phi_{i})^{2}}{\\ell_{0}\\Delta x}+\\frac{q_{i}^{2}}{c_{0}\\Delta x}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\Phi_{i}(t)=\\int_{-\\infty}^{t}\\mathrm{d}t^{\\prime}\\,V_{i}(t^{\\prime}),\\ q_{i}(t)=\\int_{-\\infty}^{t}\\mathrm{d}t^{\\prime}\\,I_{i}(t^{\\prime})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "H_{\\textsc{tl}}=\\frac{1}{2}\\int\\mathrm{d}x\\,\\frac{\\partial_{x}\\Phi(x)^{2}}{\\ell_{0}}+\\frac{q(x)^{2}}{c_{0}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\partial_{t}\\Phi(x)=\\frac{\\delta H_{\\textsc{tl}}}{\\delta q(x)}=\\frac{q(x)}{c_{0}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\hat{\\Phi}(t,x)=\\sqrt{\\hbar Z_{0}}\\int\\frac{\\mathrm{d}k\\,}{\\sqrt{4\\pi|k|}}(e^{\\mathrm{i}(\\omega_{k}t-kx)}\\hat{a}_{k}^{\\dagger}+\\text{H.c.})\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\hat{H}_{\\textsc{tl}}=\\frac{1}{2}\\int\\mathrm{d}k\\,\\hbar\\omega_{k}\\Big{(}\\hat{a}_{k}^{\\dagger}\\hat{a}_{k}+\\hat{a}_{k}\\hat{a}_{k}^{\\dagger}\\Big{)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "v\\approx 1.2\\cdot 10^{8}\\,\\unit{\\per},\\ Z_{0}\\approx 50\\,\\unit{}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2507.21883": {
+    "1": {
+      "equation": "\\alpha=\\frac{\\mathbb{E}_{z\\sim\\mathcal{A}(\\mathcal{C})}[C(z)]}{\\mathbb{E}_{z\\sim\\mathcal{M}([\\mathcal{C}])}[C(z)]}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\alpha_{MC}=\\frac{\\mathbb{E}_{z\\sim\\mathcal{A}(\\mathcal{C})}[C(z)]}{\\mathbb{E}_{z\\sim\\mathcal{M}([\\mathcal{C}])}[C(z)]}=\\frac{\\frac{1}{\\pi}\\sum_{(i,j)\\in E}w_{ij}\\arccos\\Sigma_{ij}}{\\frac{1}{2}\\sum_{(i,j)\\in E}w_{ij}(1-\\Sigma_{ij})} \\geq\\alpha_{GW}=87856",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\alpha_{MC^{\\prime}}=\\frac{\\mathbb{E}_{z\\sim\\mathcal{A}(\\mathcal{C})}[C(z)]}{\\mathbb{E}_{z\\sim\\mathcal{M}([\\mathcal{C}]_{\\mathcal{N}_{DP}})}[C(z)]}\\geq 1-h(\\varepsilon)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\alpha_{QUBO^{\\prime}}=\\frac{\\mathbb{E}_{z\\sim\\mathcal{A}(\\mathcal{C})}[C(z)]}{\\mathbb{E}_{z\\sim\\mathcal{M}([\\mathcal{C}]_{\\mathcal{N}_{DP}})}[C(z)]}=\\frac{2\\sum_{(i,j)\\in E}A_{ij}\\arcsin\\Sigma_{ij}}{\\pi\\sum_{(i,j)\\in E}A_{ij}\\Sigma_{ij}}\\geq 1-\\frac{\\sqrt{2}(2\\pi-4)}{\\pi}\\Delta n(1-p)^{D}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\mathcal{C}=\\mathcal{C}^{(D)}\\circ\\mathcal{C}^{(D-1)}\\circ\\cdots\\circ\\mathcal{C}^{(2)}\\circ\\mathcal{C}^{(1)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\mathcal{C^{\\prime}}=\\mathcal{N}^{(D)}\\circ\\mathcal{C}^{(D)}\\circ\\cdots\\circ\\mathcal{N}^{(2)}\\circ\\mathcal{C}^{(2)}\\circ\\mathcal{N}^{(1)}\\circ\\mathcal{C}^{(1)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mathcal{N}_{DP}^{(d)}(\\rho)=(1-p)\\rho+p{\\operatorname{tr}}(\\rho)\\frac{I}{2^{d}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2506.13597": {
+    "1": {
+      "equation": "C_{n}(\\Delta x)=\\frac{\\Braket{n(x)n(x^{\\prime})}}{\\Braket{n(x)}\\Braket{n(x^{\\prime})}}-1",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "C_{\\phi}(\\Delta x)=\\left\\langle{\\mathrm{Re}}\\left[e^{i\\phi(x)-i\\phi(x+\\Delta x)}\\right]\\right\\rangle\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "C_{\\phi}(\\Delta x) = \\Braket{e^{i\\left[\\phi(x)-\\phi(x^{\\prime})\\right]}}=e^{-\\frac{1}{2}\\Braket{\\delta\\phi^{2}}}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "C_{\\phi}(\\Delta x) = \\frac{\\Braket{{\\psi}_{1}(x){\\psi}_{2}^{\\dagger}(x){\\psi}_{1}^{\\dagger}(x^{\\prime}){\\psi}_{2}(x^{\\prime})}}{\\Braket{\\left.|{\\psi}_{1}(x)|{}^{2}}\\Braket{\\left.|{\\psi}_{2}(x^{\\prime})|{}^{2}}}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "C_{\\phi}(\\Delta x)=|g^{(1)}(x,x^{\\prime})|^{2}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "i\\hbar\\frac{\\partial\\psi}{\\partial t} = \\left[-\\frac{\\hbar^{2}}{2m}\\frac{\\partial^{2}}{\\partial x^{2}}+g\\left|\\psi\\right|^{2}+V(x)\\right]\\psi",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "V(x) = \\frac{U_{0}}{2}\\left[1+{\\rm{erf}}\\left(\\frac{\\left|x\\right|-l/2}{w}\\right)\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2412.00957": {},
+  "2405.11885": {},
+  "2510.17982": {},
+  "2211.14136": {},
+  "2411.04765": {
+    "1": {
+      "equation": "\\hat{H}_{y}=\\sum_{i=1,2}{\\frac{\\hat{p}_{i}^{2}}{2m}}+\\sum_{i=1,2}{\\frac{1}{2}m\\omega_{y}^{2}\\hat{y}_{i}^{2}}-\\frac{q^{2}}{8\\pi\\varepsilon_{0}}\\frac{(\\hat{y}_{1}-\\hat{y}_{2})^{2}}{|\\bar{z}_{1}-\\bar{z}_{2}|^{3}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\hat{H}_{y}=\\sum_{i=1,2}\\hbar\\left(\\omega_{y}-\\frac{\\kappa}{2}\\right)\\hat{a}_{i}^{\\dagger}\\hat{a}_{i}+\\frac{\\hbar\\kappa}{2}\\left(\\hat{a}_{1}\\hat{a}_{2}^{\\dagger}+\\hat{a}_{1}^{\\dagger}\\hat{a}_{2}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\kappa=\\frac{q^{2}}{4\\pi\\varepsilon_{0}m\\omega_{y}d_{0}^{3}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\hat{H}_{\\text{Kerr}}=\\hbar\\chi\\hat{n}_{r}\\hat{n}_{s}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\chi=-\\omega_{s}\\left(\\frac{1}{2}+\\frac{\\omega_{s}^{2}/2}{4\\omega_{r}^{2}-\\omega_{s}^{2}}\\right)\\left(\\frac{\\omega_{z}}{\\omega_{r}}\\right)\\left(\\frac{2\\hbar\\omega_{z}}{\\alpha^{2}mc^{2}}\\right)^{1/3}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\delta\\omega_{r}=\\chi n_{s}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\hat{H}_{z}=\\sum_{i=1,2}\\left(\\frac{\\hat{p}_{z,k}^{2}}{2m}+\\frac{1}{2}m\\omega_{z}^{2}\\hat{z}_{k}^{2}+\\hat{V}_{\\mathrm{Coul},z}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2404.07802": {
+    "7": {
+      "equation": "R_{X}(\\theta)=\\begin{bmatrix}\\cos(\\frac{\\theta}{2})&-i\\sin(\\frac{\\theta}{2})\\\\ -i\\sin(\\frac{\\theta}{2})&\\cos(\\frac{\\theta}{2})\\end{bmatrix}, R_{ZZ}(\\phi)=\\begin{bmatrix}e^{-i\\frac{\\phi}{2}}&0&0&0\\\\ 0&e^{i\\frac{\\phi}{2}}&0&0\\\\ 0&0&e^{i\\frac{\\phi}{2}}&0\\\\ 0&0&0&e^{-i\\frac{\\phi}{2}}\\end{bmatrix}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "8": {
+      "equation": "H(t)=H_{ZZ}+H_{X}=-J\\sum_{\\langle i,j\\rangle}Z_{i}Z_{j}+\\sum_{i}h_{i}(t)X_{i}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (8) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "9": {
+      "equation": "\\mathrm{e}^{-\\mathrm{i}H_{ZZ}\\delta t} =\\prod_{\\langle i,j\\rangle}\\mathrm{e}^{\\mathrm{i}J\\delta tZ_{i}Z_{j}}=\\prod_{\\langle i,j\\rangle}\\mathrm{R}_{Z_{i}Z_{j}}(-2J\\delta t)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (9) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "10": {
+      "equation": "\\mathrm{e}^{-\\mathrm{i}H_{X}\\delta t} =\\prod_{i}\\mathrm{e}^{-\\mathrm{i}h(t)\\delta tX_{i}}=\\prod_{i}\\mathrm{R}_{X_{i}}(2h(t)\\delta t)\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (10) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "11": {
+      "equation": "m_{\\boldsymbol{z}}=\\frac{1}{N}\\sum_{n=1}^{N}z_{n}\\equiv\\frac{1}{N}\\sum_{n=1}^{N}\\left<\\psi_{\\textrm{out}}\\right|Z_{n}\\left|\\psi_{\\textrm{out}}\\right>\\,;",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (11) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "12": {
+      "equation": "m_{\\boldsymbol{z}^{\\mathrm{(noisy)}}}=\\frac{1}{N}\\sum_{n=1}^{N}z_{n}^{\\mathrm{(noisy)}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (12) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "13": {
+      "equation": "\\mathcal{L}=\\frac{1}{K_{\\mathrm{train}}}\\sum_{k=1}^{K_{\\mathrm{train}}}\\left(y_{k}-\\tilde{y}_{k}\\right)^{2}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (13) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2406.14642": {
+    "1": {
+      "equation": "\\hat{\\mathcal{H}}\\left|\\left.\\kern-1.2pt\\Psi\\right>\\right>=0",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\left<\\left<\\Psi\\right|\\right.\\kern-1.2pte^{i\\hat{\\mathcal{H}}\\lambda}\\hat{A}e^{-i\\hat{\\mathcal{H}}\\lambda}\\left|\\left.\\kern-1.2pt\\Psi\\right>\\right>=\\left<\\left<\\Psi\\right|\\right.\\kern-1.2pt\\hat{A}\\left|\\left.\\kern-1.2pt\\Psi\\right>\\right>",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\hat{\\mathcal{H}}=\\hat{H}_{\\mathcal{R}}\\otimes\\hat{1}_{\\mathcal{C}}+\\hat{1}_{\\mathcal{R}}\\otimes\\hat{H}_{\\mathcal{C}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "[\\hat{t},\\hat{H}_{\\mathcal{C}}]=i\\hat{1}_{\\mathcal{C}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\hat{H}_{\\mathcal{C}}{\\left|t\\right>}=i\\frac{\\text{d}}{\\text{d}t}{\\left|t\\right>}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "{\\left<t\\right|}\\hat{\\mathcal{H}}\\left|\\left.\\kern-1.2pt\\Psi\\right>\\right>=0",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\leftrightarrow {\\left<t\\right|}\\hat{H}_{\\mathcal{R}}\\otimes\\hat{1}_{\\mathcal{C}}\\left|\\left.\\kern-1.2pt\\Psi\\right>\\right>=-{\\left<t\\right|}\\hat{1}_{\\mathcal{R}}\\otimes\\hat{H}_{\\mathcal{C}}\\left|\\left.\\kern-1.2pt\\Psi\\right>\\right>",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2505.18840": {},
+  "2408.09930": {},
+  "2408.07132": {
+    "1": {
+      "equation": "\\mathbb{1}\\times\\tau=\\mathbb{1}+\\tau",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "R=\\operatorname{diag}(R^{\\tau\\tau}_{1},R^{\\tau\\tau}_{\\tau})=\\begin{pmatrix}e^{-\\frac{4\\pi i}{5}}&0\\\\ 0&e^{\\frac{3\\pi i}{5}}\\end{pmatrix}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\ket{(\\bullet,(\\bullet,\\bullet)_{i})_{k}}=\\sum_{j}\\left[F_{k}^{\\tau\\tau\\tau}\\right]_{ij}~{}\\ket{((\\bullet,\\bullet)_{j},\\bullet)_{k}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "F=\\begin{pmatrix}F_{\\mathbb{1}\\mathbb{1}}&F_{\\mathbb{1}\\tau}\\\\ F_{\\tau\\mathbb{1}}&F_{\\tau\\tau}\\end{pmatrix}=\\begin{pmatrix}\\phi^{-1}&\\sqrt{\\phi^{-1}}\\\\ \\sqrt{\\phi^{-1}}&\\phi^{-1}\\end{pmatrix}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\operatorname{CNOT}=\\mathbb{1}_{2}\\oplus\\sigma_{x}=\\begin{pmatrix}1&0&0&0\\\\ 0&1&0&0\\\\ 0&0&0&1\\\\ 0&0&1&0\\end{pmatrix}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\|A\\|_{p}\\ =\\ \\tr(|A|^{p})^{1/p}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "d^{U}(A)=\\|A^{\\dagger}A-\\mathbb{1}\\|_{1}=\\tr\\absolutevalue{A^{\\dagger}A-\\mathbb{1}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2411.02913": {
+    "1": {
+      "equation": "\\delta_{i,p}=\\begin{cases}\\ 1,&\\text{if}\\ y_{i}=p\\\\ \\ 0,&\\text{otherwise,}\\end{cases}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "R_{x}(2\\alpha)=e^{-i{\\alpha}\\sigma_{x}}=\\sigma_{0}\\cos\\alpha-i\\sigma_{x}\\sin\\alpha",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "R_{y}(2\\alpha)=e^{-i{\\alpha}\\sigma_{y}}=\\sigma_{0}\\cos\\alpha-i\\sigma_{y}\\sin\\alpha",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "R_{z}(2\\alpha)=e^{-i{\\alpha}\\sigma_{z}}=\\sigma_{0}\\cos\\alpha-i\\sigma_{z}\\sin\\alpha",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\begin{array}[]{ll}\\sigma_{0}=\\left[\\begin{array}[]{lr}1&\\ \\ 0\\\\ 0&\\ \\ 1\\end{array}\\right],&\\sigma_{x}=\\left[\\begin{array}[]{lr}0&\\ \\ 1\\\\ 1&\\ \\ 0\\end{array}\\right],\\\\ \\\\ \\sigma_{y}=\\left[\\begin{array}[]{lr}0&-i\\\\ i&0\\end{array}\\right],&\\sigma_{z}=\\left[\\begin{array}[]{lr}1&0\\\\ 0&-1\\end{array}\\right].\\end{array}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\min_{\\vec{\\theta},b,\\vec{\\xi}}L(\\vec{\\theta},b,\\vec{\\xi})=\\enspace\\frac{1}{2}\\langle\\vec{\\theta}_{s},\\vec{\\theta}_{s}\\rangle+C\\sum_{i=1}^{m}\\xi_{i}^{s}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\!\\!\\!y_{i}[\\langle\\vec{\\theta}_{s},\\vec{x}_{i}\\rangle+b_{s}]\\geqslant 1-\\xi_{i}^{s},y_{i}=\\pm 1,\\xi_{i}^{s}\\geqslant 0,\\forall i=1,\\dots,m",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2410.23152": {
+    "1": {
+      "equation": "p(x_{1},\\dots,x_{n})=p(x_{1})p(x_{2}|x_{1})\\cdots p(x_{n}|x_{1},\\dots,x_{n-1})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "p(x_{k}|x_{1},\\dots,x_{k-1})=p(x_{k}|x_{k-\\ell},\\dots,x_{k-1})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "I(\\mathsf{A}:\\mathsf{C}|\\mathsf{B}):=\\mathbb{E\\/}_{\\mathsf{B}}D_{\\text{KL}}(p_{\\mathsf{A},\\mathsf{C}|\\mathsf{B}}\\parallel p_{\\mathsf{A}|\\mathsf{B}}\\otimes p_{\\mathsf{C}|\\mathsf{B}})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "I(\\mathsf{A}:\\mathsf{C}|\\mathsf{B})\\leq\\alpha({\\mathsf{A},\\mathsf{C}})\\cdot e^{-\\mathrm{dist}(\\mathsf{A},\\mathsf{C})/\\xi}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\text{depth}=\\mathcal{O}\\left(\\log\\log(n)\\right)\\text{ \\ and width}=n^{\\mathcal{O}(\\log^{D_{\\Lambda}-1}(n))}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\ket{a_{i}}_{\\mathsf{L}_{i}\\mathsf{R}_{i}}\\otimes\\ket{a_{i+1}}_{\\mathsf{L}_{i+1}\\mathsf{R}_{i+1}}=\\raisebox{-0.5pt}{\\includegraphics[height=51.6665pt]{es3.png}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "8": {
+      "equation": "\\bra{x}H\\ket{y}\\leq 0\\quad\\text{for}\\quad x\\neq y",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (8) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2411.08214": {
+    "1": {
+      "equation": "q_{x}=\\frac{1}{N}\\sum_{i=1}^{N}\\delta_{X_{i},x}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "q_{xy}=\\frac{1}{N-1}\\sum_{j=1}^{N-1}\\delta_{X_{j},x}\\delta_{X_{j+1},y}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "q_{\\boldsymbol{x}}=\\frac{1}{N-L+1}\\sum_{j=1}^{N-L+1}\\delta_{x_{1},X_{j}}\\delta_{x_{2},X_{j+1}}\\cdots\\delta_{x_{L},X_{j+L-1}}\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\sum_{y}q_{xy}=\\sum_{y}q_{yx}=q_{x}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\Sigma_{xy}:=\\mathbb{E}\\kern-1.29167pt\\left[q_{x}q_{y}\\right]-\\mathbb{E}\\kern-1.29167pt\\left[q_{x}\\right]\\mathbb{E}\\kern-1.29167pt\\left[q_{y}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "p_{y\\leftarrow x}(\\ell)=\\textrm{P}\\kern-1.29167pt\\left(X_{i+\\ell}=y\\middle|X_{i}=x\\right)\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\Psi_{yx}=\\sum_{\\ell=1}^{N-1}\\left(1-\\frac{\\ell}{N}\\right)\\left[p_{y\\leftarrow x}(\\ell)-p_{y}\\right]\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2404.12346": {
+    "1": {
+      "equation": "\\langle f(x)\\rangle=-\\frac{T^{\\prime}(x)}{T(x)}\\ pV",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "F_{q}=-\\frac{\\delta n}{2}\\ m^{*}\\Gamma^{2}d",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "F_{q}^{\\mathrm{(high\\ T)}}\\approx-\\frac{T^{\\prime}}{T}\\frac{\\Gamma^{2}d^{2}}{6}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\partial_{t}\\rho_{S}(t)=-(i/\\hbar)[H_{S},\\rho_{S}(t)]+L[\\rho_{S}(t)]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "L_{k}=\\sum_{\\omega}\\gamma_{k}(\\omega)\\Big{[}A^{(k)}_{\\omega}\\rho_{S}A^{(k)\\dagger}_{\\omega}-\\frac{1}{2}\\left\\{\\rho_{S},A^{(k)\\dagger}_{\\omega}A^{(k)}_{\\omega}\\right\\}\\Big{]}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\partial_{t}P_{k}=\\Gamma(n_{k}+1)P_{e}-\\Gamma n_{k}P_{k}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\Delta\\equiv P_{2}-P_{1}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2501.10641": {
+    "1": {
+      "equation": "i\\frac{d}{dt}|\\psi(t)\\rangle=H(t)|\\psi(t)\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\epsilon\\equiv\\left\\lVert\\left(1-|g_{f}\\rangle\\langle g_{f}|\\right)U(t_{f},t_{i})|g_{i}\\rangle\\right\\rVert",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "i\\frac{d}{ds}|\\psi(s)\\rangle=TH(s)|\\psi(s)\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4a": {
+      "equation": "U|g_{i}\\rangle\\langle g_{i}|U^{\\dagger}-|g_{f}\\rangle\\langle g_{f}| \\,=\\,\\sum_{n=1}^{n_{\\max}(T)}\\frac{B_{n}}{T^{n}}+R",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4a) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4b": {
+      "equation": "U\\equiv U(t_{f},t_{i}) B_{n} T R T T n_{\\max}(T) T 1/T \\epsilon \\,=\\,\\sum_{n=1}^{n_{\\max}(T)}\\frac{b_{n}}{T^{n}}+r",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4b) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "b_{1} =\\sqrt{\\sum_{j\\neq g}\\left|{\\rm e}^{iw_{j,g}T}\\frac{\\langle j(1)|H^{\\prime}(1)|g(1)\\rangle}{\\Delta_{j,g}^{2}(1)}-\\frac{\\langle j(0)|H^{\\prime}(0)|g(0)\\rangle}{\\Delta_{j,g}^{2}(0)}\\right|^{2}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "b_{n} =\\sqrt{\\sum_{j\\neq g}\\left|{\\rm e}^{iw_{j,g}T}\\frac{\\langle j(1)|H^{(n)}(1)|g(1)\\rangle}{\\Delta_{j,g}^{n+1}(1)}-\\frac{\\langle j(0)|H^{(n)}(0)|g(0)\\rangle}{\\Delta_{j,g}^{n+1}(0)}\\right|^{2}}\\;;",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2411.15032": {
+    "1": {
+      "equation": "H = -\\sum_{j=1}^{L}\\left[\\frac{1+\\gamma}{2}\\sigma_{j}^{x}\\sigma_{j+1}^{x}+\\frac{1-\\gamma}{2}\\sigma_{j}^{y}\\sigma_{j+1}^{y}\\right. \\quad\\left.+h(\\sigma_{j}^{z}\\cos{\\alpha}+\\sigma_{j}^{x}\\sin{\\alpha})\\right]\\;",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "z\\mathrel{\\widehat{=}}\\vec{n}=\\left(\\begin{array}[]{c}x\\\\ y\\\\ z\\end{array}\\right)=\\left(\\begin{array}[]{c}2\\sqrt{p(1-p)}\\cos\\phi\\\\ 2\\sqrt{p(1-p)}\\sin\\phi\\\\ 2p-1\\end{array}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "z_{i,r}\\mathrel{\\widehat{=}}\\vec{n}_{i}=\\left(\\begin{array}[]{c}2\\sqrt{p_{i}(1-p_{i})}\\cos\\phi_{i}\\\\ 0\\\\ 2p_{i}-1\\end{array}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "P=\\frac{p_{0}\\sqrt{p_{1}(1-p_{1})}\\cos\\phi_{1}+p_{1}\\sqrt{p_{0}(1-p_{0})}\\cos\\phi_{0}}{p_{0}\\sqrt{p_{0}(1-p_{0})}\\cos\\phi_{0}+p_{1}\\sqrt{p_{1}(1-p_{1})}\\cos\\phi_{1}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\lambda=\\frac{\\mu_{1}}{\\mu_{0}}=\\frac{\\sqrt{p_{0}(1-p_{0})}\\cos\\phi_{0}}{\\sqrt{p_{1}(1-p_{1})}\\cos\\phi_{1}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "P_{\\pm}=p_{0}+\\frac{p-p_{0}}{2}\\frac{(p-p_{0})(1-2p_{0})+2p_{0}(1-p_{0})\\cos^{2}\\phi_{0}\\pm\\sqrt{(p_{0}-p)^{2}+4pp_{0}(1-p_{0})(1-p)\\cos^{2}\\phi_{0}})}{(p-p_{0})^{2}+p_{0}(1-p_{0})\\cos^{2}\\phi_{0}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "l_{1}(p_{1},p) = 2\\sqrt{(p-p_{1})^{2}+p_{1}(p_{1}-1)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2510.21330": {
+    "1": {
+      "equation": "\\mathcal{L}(\\theta)=\\frac{1}{2}\\mathbb{E}_{p(\\mathbf{x})}\\left[\\left\\|s_{\\theta}(\\mathbf{x})-\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x})\\right\\|^{2}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\mathcal{L}(\\theta)=\\mathbb{E}_{p(\\mathbf{x})}[\\text{Tr}(\\nabla_{x}s_{\\theta}(\\mathbf{x}))+\\frac{1}{2}\\|s_{\\theta}(\\mathbf{x})\\|^{2}]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "q_{\\theta}(\\mathbf{x})=p_{\\mathbf{z}}(f_{\\theta}^{-1}(\\mathbf{x}))\\left|\\det\\left(\\frac{\\partial f_{\\theta}^{-1}(\\mathbf{x})}{\\partial\\mathbf{x}}\\right)\\right|",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "p_{\\text{accept}}(\\mathbf{x^{\\prime}}|\\mathbf{x})=\\min\\left(1,\\frac{q(\\mathbf{x}|\\mathbf{x^{\\prime}})p(\\mathbf{x^{\\prime}})}{q(\\mathbf{x^{\\prime}}|\\mathbf{x})p(\\mathbf{x})}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "p_{\\text{accept}}(\\mathbf{x^{\\prime}}|\\mathbf{x})=\\min\\left(1,\\frac{q(\\mathbf{x})p(\\mathbf{x^{\\prime}})}{q(\\mathbf{x^{\\prime}})p(\\mathbf{x})}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "s(\\mathbf{x}) =\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "=\\nabla_{\\mathbf{x}}\\log\\tilde{p}(\\mathbf{x}),\\qquad p(\\mathbf{x})\\propto\\tilde{p}(\\mathbf{x})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2403.11598": {},
+  "2507.00967": {},
+  "2503.09459": {
+    "1": {
+      "equation": "{\\rho_{\\text{LS}}}=\\frac{1}{2}\\Big(\\openone+\\sum^{3\\cdot 2}_{i=1}f_{i}P_{i}\\Big)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "{\\rho_{\\text{B}}}=\\operatorname*{arg\\,min}_{\\begin{subarray}{c}\\operatorname{Tr}(\\varphi)=1\\\\ \\varphi\\succcurlyeq 0\\end{subarray}}||{\\rho_{\\text{LS}}}-\\varphi||^{2}_{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "D=||{\\rho_{\\text{LS}}}-{\\rho_{\\text{B}}}||_{2}=\\operatorname{Tr}\\Big[({\\rho_{\\text{LS}}}-{\\rho_{\\text{B}}})^{2}\\Big]^{1/2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\delta_{\\text{sta}}=\\mathbb{P}\\left[D\\geqslant\\tau\\right]\\leq 8\\exp\\left[-\\frac{{N}\\,\\tau^{2}}{2\\times 5^{n}}\\frac{3}{3+\\sqrt{2}\\tau/\\sqrt{5^{n}}}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\tilde{\\sigma}_{\\mu}=\\sum^{3}_{\\nu=1}\\operatorname{M}_{\\mu\\nu}\\sigma_{\\nu}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\zeta_{1}(\\rho)={\\operatorname{Tr}}{\\rho^{2}}-1\\leq 0",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "= \\max_{\\begin{subarray}{c}\\sum_{i}u^{2}_{i}\\leq\\bar{u}\\end{subarray}}||\\operatorname{M}^{T}\\bold{u}||^{2}=~\\bar{u}\\,\\sigma^{2}_{\\text{max}}(\\operatorname{M}^{T})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2508.20397": {
+    "1": {
+      "equation": "\\Tr(\\rho_{0}\\mathcal{O}_{1}(t_{1}))=tr(\\rho(t_{1})\\mathcal{O}_{1})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\Tr(\\rho_{0}\\mathcal{O}_{0}\\mathcal{O}_{1}(t_{1}))=tr\\left(T_{C_{0}C_{1}}\\mathcal{O}_{0}\\mathcal{O}_{1}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\langle\\mathcal{O}_{0}\\mathcal{O}_{1}(t_{1})\\rangle_{\\rho_{0}}:=\\Tr\\left[\\rho_{0}\\mathcal{O}_{0}\\mathcal{O}_{1}(t_{1})\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "T_{C_{0}C_{1}}:\\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}\\to\\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\langle\\mathcal{O}_{0}\\mathcal{O}_{1}(t_{1})\\rangle{\\rho_{0}}=tr\\left(T_{C_{0}C_{1}}\\mathcal{O}_{0}\\mathcal{O}_{1}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\mathcal{O}_{0}=a_{0,ij}|i\\rangle\\langle j|,\\quad\\mathcal{O}_{1}=a_{1,kl}|k\\rangle\\langle l|",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\phantom{tr(T_{C_{0}C_{1}}\\mathcal{O}_{0}\\mathcal{O}_{1})}=t_{ji,lk},a_{0,ij},a_{1,kl}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2502.17368": {},
+  "2405.02630": {
+    "1": {
+      "equation": "\\min_{\\mathbf{w},b}\\frac{1}{2}||\\mathbf{w}||^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "y_{\\text{j}}(\\mathbf{w}\\cdot\\mathbf{x}_{\\text{j}}+b)\\geq 1,;\\forall\\text{j}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "K(x_{\\text{i}},x_{\\text{j}})=\\text{tr}{\\rho(x_{\\text{i}})\\rho(x_{\\text{j}})}=|\\langle\\psi(x_{\\text{i}})|\\psi(x_{\\text{j}})\\rangle|^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "|\\langle\\psi(x_{\\text{i}})|\\psi(x_{\\text{j}})\\rangle|^{2}=|\\langle 0^{\\otimes N}|U^{\\dagger}(x_{\\text{i}})U(x_{\\text{j}})|0^{\\otimes N}\\rangle|^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2408.08375": {
+    "1": {
+      "equation": "(\\frac{\\partial^{2}}{\\partial t^{2}}-c^{2}\\frac{\\partial^{2}}{\\partial z^{2}})\\bm{E}=\\frac{1}{\\varepsilon_{0}}\\frac{\\partial}{\\partial t}\\bm{J}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\frac{\\partial}{\\partial t}\\bm{J}=\\frac{e^{2}n_{e}}{m_{e}\\gamma}\\bm{E}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "(\\frac{\\partial^{2}}{\\partial t^{2}}-c^{2}\\frac{\\partial^{2}}{\\partial z^{2}})\\bm{\\alpha}=(1+\\delta n-\\frac{\\alpha^{2}}{2})\\bm{\\alpha}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "(\\frac{\\partial^{2}}{\\partial t^{2}}+\\omega_{p}^{2})\\delta n=\\frac{c^{2}}{2}\\nabla^{2}\\alpha^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\alpha =\\sum_{i=1}^{4}\\alpha_{i}e^{i\\bm{k}_{i}\\bm{r}-i\\omega_{i}t}+c.c",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\delta n =\\delta n_{p}e^{i\\bm{k}_{p}\\cdot\\bm{r}-i\\omega_{p}t}+\\delta n_{q}e^{i\\bm{k}_{q}\\cdot\\bm{r}-i\\omega_{p}t}+c.c",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "(\\frac{\\partial}{\\partial t}-\\bm{v}_{3}\\cdot\\nabla)\\alpha_{3} =\\frac{i\\omega_{p}^{2}}{\\omega_{3}}(\\alpha_{1}\\alpha_{2}\\alpha_{4}^{*}-\\alpha_{1}\\delta n_{p}^{*}-\\alpha_{2}\\delta n_{q})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2409.12056": {
+    "1": {
+      "equation": "-\\frac{\\hbar^{2}}{2m}\\nabla^{2}\\Psi+V\\Psi=i\\hbar\\frac{\\partial\\Psi}{\\partial t}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "m\\frac{dr}{dt}=\\hbar\\Im\\left(\\frac{\\nabla\\Psi}{\\Psi}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "V_{0}=\\frac{1}{2}\\omega_{x}^{2}x^{2}+\\frac{1}{2}\\omega_{y}^{2}y^{2}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\Psi=\\sum_{s}k_{s}\\Phi_{m,n}^{(s)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\Psi_{mn}=a\\Psi_{m}(\\bar{x})\\Psi_{n}(\\bar{y})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\Psi_{mn}=a\\Psi_{m_{1}}(\\bar{x})\\Psi_{n_{1}}(\\bar{y})+b\\Psi_{m_{2}}(\\bar{x})\\Psi_{n_{2}}(\\bar{y})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\Psi_{mn}=a\\Psi_{m_{1}}(\\bar{x})\\Psi_{n_{1}}(\\bar{y})+b\\Psi_{m_{2}}(\\bar{x})\\Psi_{n_{2}}(\\bar{y})+c\\Psi_{m_{3}}(\\bar{x})\\Psi_{n_{3}}(\\bar{y})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2505.14793": {
+    "2": {
+      "equation": "e_{p}(U) = \\overline{\\mathcal{E}(U|\\psi\\rangle)}^{|\\phi_{A}\\rangle,|\\phi_{B}\\rangle} = 2\\text{Tr}\\left(U^{\\otimes 2}\\bm{\\Pi}_{AA^{\\prime}}\\bm{\\Pi}_{BB^{\\prime}}U^{\\dagger\\otimes 2}\\Pi^{-}_{BB^{\\prime}}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\bm{\\Pi}_{AA^{\\prime}}=\\dfrac{\\mathbb{I}_{AA^{\\prime}}+S_{AA^{\\prime}}}{d_{A}(d_{A}+1)}\\;\\text{ and }\\;\\bm{\\Pi}_{BB^{\\prime}}=\\dfrac{\\mathbb{I}_{BB^{\\prime}}+S_{BB^{\\prime}}}{d_{B}(d_{B}+1)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "e_{p}(U)=\\frac{1}{E(S)}\\left[E(U)+E(US)-E(S)\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "g_{t}(U)=\\frac{1}{2E(S)}\\left[E(U)-E(US)+E(S)\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "= 1-2^{N}\\text{Tr}\\left[Q\\left(|\\psi\\rangle\\langle\\psi|\\right)^{\\otimes 4}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "Q=\\left(\\dfrac{1}{2^{2N}}\\sum_{i=0}^{2^{2N}-1}P^{\\otimes 4}_{i}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "8": {
+      "equation": "m_{p}(U) = \\overline{\\mathcal{M}(U|\\psi\\rangle)} = 1-2^{N}\\text{Tr}\\left[QU^{\\otimes 4}\\overline{\\left(|\\psi\\rangle\\langle\\psi|\\right)^{\\otimes 4}}U^{\\dagger\\otimes 4}\\right]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (8) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2405.05068": {
+    "1": {
+      "equation": "\\hat{H}=\\sum_{\\begin{subarray}{c}pr\\\\ \\sigma\\end{subarray}}h_{pr}\\,\\hat{a}^{\\dagger}_{p\\sigma}\\hat{a}^{\\phantom{\\dagger}}_{r\\sigma}+\\sum_{\\begin{subarray}{c}prqs\\\\ \\sigma\\tau\\end{subarray}}\\frac{(pr|qs)}{2}\\,\\hat{a}^{\\dagger}_{p\\sigma}\\hat{a}^{\\dagger}_{q\\tau}\\hat{a}^{\\phantom{\\dagger}}_{s\\tau}\\hat{a}^{\\phantom{\\dagger}}_{r\\sigma}\\;",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\widetilde{\\mathcal{X}}=\\left\\{{\\bf{x}}\\;|\\;{\\bf{x}}\\sim\\widetilde{P}_{\\Psi}({\\bf{x}})\\right\\}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\hat{H}_{\\mathcal{S}^{(k)}}=\\hat{P}_{\\mathcal{S}^{(k)}}\\hat{H}\\hat{P}_{\\mathcal{S}^{(k)}}\\textrm{, with }\\hat{P}_{\\mathcal{S}^{(k)}}=\\sum_{{\\bf{x}}\\in{\\mathcal{S}^{(k)}}}|{\\bf{x}}\\rangle\\langle{\\bf{x}}|\\;",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "n_{p\\sigma}=\\frac{1}{K}\\sum_{1\\leq k\\leq K}\\left\\langle\\psi^{(k)}\\right|\\hat{n}_{p\\sigma}\\left|\\psi^{(k)}\\right\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "{|\\Psi\\rangle=\\prod_{\\mu=1}^{L}e^{\\hat{K}_{\\mu}}e^{i\\hat{J}_{\\mu}}e^{-\\hat{K}_{\\mu}}|{\\bf{x}}_{\\mathrm{RHF}}\\rangle}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "E_{\\mathrm{0}}&=\\sum_{a<b}^{N_{nuc}}\\frac{Z_{a}Z_{b}}{\\|{\\bf{R}}_{a}-{\\bf{R}}_{b}\\|}\\\\ h_{pr}&=\\int d{\\bf{r}}\\,\\varphi^{*}_{p}({\\bf{r}})\\,\\left[-\\frac{1}{2}\\,\\frac{\\partial^{2}}{\\partial{\\bf{r}}^{2}}-\\sum_{a=1}^{N_{nuc}}\\frac{Z_{a}}{\\|{\\bf{r}}-{\\bf{R}}_{a}\\|}\\right]\\,\\varphi_{r}({\\bf{r}})\\;,\\\\ (pr|qs)&=\\int d{\\bf{r}}_{1}\\int d{\\bf{r}}_{2}\\,\\frac{\\varphi^{*}_{p}({\\bf{r}}_{1})\\varphi_{r}({\\bf{r}}_{1})\\,\\varphi^{*}_{q}({\\bf{r}}_{2})\\varphi_{s}({\\bf{r}}_{2})}{\\|{\\bf{r}}_{1}-{\\bf{r}}_{2}\\|}\\;",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "|{\\bf{x}}\\rangle=\\prod_{p\\sigma}\\left(\\hat{a}^{\\dagger}_{p\\sigma}\\right)^{x_{p\\sigma}}|\\emptyset\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2410.06409": {},
+  "2507.17940": {
+    "1": {
+      "equation": "S_{xx}(\\omega)=\\gamma^{2}\\frac{k_{B}T_{0}}{\\pi m}\\frac{\\Gamma_{0}}{\\left(\\omega_{0}^{2}-\\omega^{2}\\right)^{2}+\\omega^{2}\\Gamma_{0}^{2}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "S_{xx}^{exp}=\\frac{A}{{(B^{2}\\ -\\omega^{2})}^{2}+\\omega^{2}C^{2}\\ }",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\gamma=\\ \\sqrt{\\frac{A}{C}\\frac{\\pi m}{k_{B}T_{0}}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "r\\ =\\ 0.619\\frac{9\\pi}{\\sqrt{2}}\\frac{\\eta_{air}d^{2}}{\\rho k_{B}T_{0}}\\frac{P_{gas}}{C}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\omega_{\\text{trap}}=\\sqrt{\\left(\\frac{\\alpha}{m}\\right)\\frac{4P}{\\pi\\epsilon_{0}cw_{0}^{4}}}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2509.04635": {
+    "1": {
+      "equation": "\\alpha=\\frac{\\sigma P_{\\text{exc}}I_{\\text{tot}}}{\\hbar\\omega}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\hat{\\mu}=-\\frac{\\mu_{B}}{\\hbar}(g_{L}\\mathbf{L}+g_{S}\\mathbf{S})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\Gamma_{\\rm M1}=\\frac{\\omega_{0}^{3}}{3\\pi\\varepsilon_{0}\\hbar c^{5}\\!}\\frac{|\\langle g\\|\\hat{\\mu}\\|e\\rangle|^{2}}{2J^{\\prime}+1}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\langle L,S,J\\|\\mathbf{L}\\|L^{\\prime},S^{\\prime},J^{\\prime}\\rangle=\\delta_{S,S^{\\prime}}(-1)^{L^{\\prime}+S+J^{\\prime}+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\begin{Bmatrix}L^{\\prime}&J^{\\prime}&S\\\\ J&L&1\\end{Bmatrix}\\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\langle L,S,J\\|\\mathbf{S}\\|L^{\\prime},S^{\\prime},J^{\\prime}\\rangle=\\delta_{L,L^{\\prime}}(-1)^{L+S^{\\prime}+J+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\begin{Bmatrix}S^{\\prime}&J^{\\prime}&L\\\\ J&S&1\\end{Bmatrix}\\langle S\\|\\mathbf{S}\\|S^{\\prime}\\rangle",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\Gamma_{\\mathrm{M1}}=\\frac{\\mu_{B}^{2}\\omega_{0}^{3}}{3\\pi\\varepsilon_{0}\\hbar c^{5}\\!}\\,\\frac{|\\mathcal{M}|^{2}}{2J^{\\prime}+1}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\mathcal{M} =\\delta_{S,S^{\\prime}}\\delta_{L,L^{\\prime}}(-1)^{L^{\\prime}+S+J^{\\prime}+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\sqrt{L(L+1)(2L+1)}\\begin{Bmatrix}L^{\\prime}&J^{\\prime}&S\\\\ J&L&1\\end{Bmatrix} \\quad+2\\,\\delta_{L,L^{\\prime}}\\delta_{S,S^{\\prime}}(-1)^{L+S^{\\prime}+J+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\sqrt{S(S+1)(2S+1)}\\begin{Bmatrix}S^{\\prime}&J^{\\prime}&L\\\\ J&S&1\\end{Bmatrix}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2408.11550": {
+    "1": {
+      "equation": "\\boldsymbol{j}:=(j_{x},j_{y},j_{z},j_{v_{x}},j_{v_{y}},j_{v_{z}})\\in\\mathcal{I}_{6}:=[N]^{\\otimes 6}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "j:=j_{x}+j_{y}N+j_{z}N^{2}+j_{v_{x}}N^{3}+j_{v_{y}}N^{4}+j_{v_{z}}N^{5}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v},t)}{\\partial t}+\\boldsymbol{v}\\cdot\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v},t)}{\\partial\\boldsymbol{x}}+\\frac{q}{m}(\\boldsymbol{E}(\\boldsymbol{x},t)+\\boldsymbol{v}\\times\\boldsymbol{B}(\\boldsymbol{x},t))\\cdot\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v},t)}{\\partial\\boldsymbol{v}}=0",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v})}{\\partial x}=\\frac{1}{2\\Delta x}\\left(f(\\boldsymbol{x}+\\Delta x\\boldsymbol{e},\\boldsymbol{v})-f(\\boldsymbol{x}-\\Delta x\\boldsymbol{e},\\boldsymbol{v})\\right)+O\\left(\\Delta x^{2}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "-\\frac{q}{m}\\frac{(E_{x}(\\boldsymbol{x},t)+(\\boldsymbol{v}\\times\\boldsymbol{B})_{x}(\\boldsymbol{x},t))}{2\\Delta v}\\left(\\begin{array}[]{l}f(\\boldsymbol{x},v_{x}+\\Delta v,v_{y},v_{z},t)\\\\ -f(\\boldsymbol{x},v_{x}-\\Delta v,v_{y},v_{z},t)\\end{array}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "10": {
+      "equation": "-\\frac{q}{m}\\frac{(E_{y}(\\boldsymbol{x},t)+(\\boldsymbol{v}\\times\\boldsymbol{B})_{y}(\\boldsymbol{x},t))}{2\\Delta v}\\left(\\begin{array}[]{l}f(\\boldsymbol{x},v_{x},v_{y}+\\Delta v,v_{z},t)\\\\ -f(\\boldsymbol{x},v_{x},v_{y}-\\Delta v,v_{z},t)\\end{array}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (10) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "13": {
+      "equation": "-\\frac{q}{m}\\frac{(E_{z}(\\boldsymbol{x},t)+(\\boldsymbol{v}\\times\\boldsymbol{B})_{z}(\\boldsymbol{x},t))}{2\\Delta v}\\left(\\begin{array}[]{l}f(\\boldsymbol{x},v_{x},v_{y},v_{z}+\\Delta v,t)\\\\ -f(\\boldsymbol{x},v_{x},v_{y},v_{z}-\\Delta v,t)\\end{array}\\right)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (13) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2507.14563": {},
+  "2410.09976": {
+    "1": {
+      "equation": "\\boldsymbol{x}^{\\text{out}}(t)=\\mathbfcal{G}^{t}[\\boldsymbol{x}^{\\text{in}}]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\mathbfcal{G}^{t}[\\lambda\\boldsymbol{x}+\\lambda^{\\prime}\\boldsymbol{x}^{\\prime}]=\\lambda\\mathbfcal{G}^{t}[\\boldsymbol{x}]+\\lambda^{\\prime}\\mathbfcal{G}^{t}[\\boldsymbol{x}^{\\prime}]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "(\\mathcal{T}^{s}\\circ\\mathcal{G}^{t}_{ij})[x]=(\\mathcal{G}^{t}_{ij}\\circ\\mathcal{T}^{s})[x]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\boldsymbol{x}^{\\text{out}}[\\omega]=\\boldsymbol{G}[\\omega]\\boldsymbol{x}^{\\text{in}}[\\omega]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "[\\hat{q}_{i}(t),\\hat{q}_{j}(t^{\\prime})]&=0\\\\ [\\hat{p}_{i}(t),\\hat{p}_{j}(t^{\\prime})]&=0\\\\ [\\hat{q}_{i}(t),\\hat{p}_{j}(t^{\\prime})]&=\\mathrm{i}\\delta_{ij}\\delta(t-t^{\\prime})",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\boldsymbol{x}^{\\text{out}}(t)=\\mathbfcal{G}^{t}[\\boldsymbol{x}^{\\text{in}}]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "\\boldsymbol{x}^{\\text{out}}=\\mathbfcal{A}[\\boldsymbol{x}^{\\text{in}},0]+\\mathbfcal{A}[0,\\boldsymbol{x}^{\\text{N}}]\\eqqcolon\\mathbfcal{G}[\\boldsymbol{x}^{\\text{in}}]+\\mathbfcal{N}[\\boldsymbol{x}^{\\text{N}}]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2504.03127": {
+    "1": {
+      "equation": "t_{pp}^{--} = \\frac{E_{p}^{-}(0)}{E_{p}^{-}(L)},\\,\\ t_{ss}^{--}=\\frac{E_{s}^{-}(0)}{E_{s}^{-}(L)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "t_{ps}^{--} = \\frac{E_{s}^{-}(0)}{E_{p}^{-}(L)},\\,\\ t_{sp}^{--}=\\frac{E_{p}^{-}(0)}{E_{s}^{-}(L)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "r_{pp}^{-+} = \\frac{E_{p}^{+}(L)}{E_{p}^{-}(L)},\\,\\ r_{ss}^{-+}=\\frac{E_{s}^{+}(L)}{E_{s}^{-}(L)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "r_{ps}^{-+} = \\frac{E_{s}^{+}(L)}{E_{p}^{-}(L)},\\,\\ r_{sp}^{-+}=\\frac{E_{p}^{+}(L)}{E_{s}^{-}(L)}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\left({\\begin{array}[]{*{20}{c}}E_{p}^{+}(L)\\\\ E_{p}^{-}(L)\\\\ E_{s}^{+}(L)\\\\ E_{s}^{-}(L)\\end{array}}\\right)=e^{\\hat{X}}\\left({\\begin{array}[]{*{20}{c}}E_{p}^{+}(0)\\\\ E_{p}^{-}(0)\\\\ E_{s}^{+}(0)\\\\ E_{s}^{-}(0)\\end{array}}\\right)\\\\ \\equiv\\hat{M}\\left({\\begin{array}[]{*{20}{c}}E_{p}^{+}(0)\\\\ E_{p}^{-}(0)\\\\ E_{s}^{+}(0)\\\\ E_{s}^{-}(0)\\end{array}}\\right),\\\\",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "E_{d}(z) = 2\\mathcal{E}_{0}\\cos(k_{d}z+\\phi)",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "H_{I} = -\\hbar[\\delta_{2}|2\\rangle\\langle 2|+\\Delta_{p}|3\\rangle\\langle 3|+\\delta_{3}|4\\rangle\\langle 4|]-\\hbar[\\Omega_{p}|3\\rangle\\langle 1| + \\Omega_{s}|4\\rangle\\langle 1|+\\Omega_{c}(z)|3\\rangle\\langle 2|+\\Omega_{d}(z)|4\\rangle\\langle 2|+h.c.]",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  },
+  "2402.15165": {
+    "1": {
+      "equation": "+\\hbar\\Omega S_{z}+\\sum_{n=1}^{N_{c}}\\frac{2\\hbar g}{\\sqrt{N}}\\left(a_{n}+a_{n}^{{\\dagger}}\\right)S_{x}\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (1) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "2": {
+      "equation": "\\frac{\\partial\\hat{\\rho}}{\\partial t}=-\\frac{i}{\\hbar}\\left[H\\left(t\\right),\\hat{\\rho}\\right]+\\kappa\\sum_{n}\\mathcal{D}\\left[a_{n}\\right]\\hat{\\rho}+\\frac{\\gamma}{N}\\mathcal{D}\\left[S_{-}\\right]\\hat{\\rho}\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (2) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "3": {
+      "equation": "i\\frac{d\\alpha_{n}}{dt}=\\omega_{n}\\alpha_{n}+J\\left(\\alpha_{n-1}+\\alpha_{n+1}\\right)+2gX-i\\kappa\\alpha_{n}\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (3) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "4": {
+      "equation": "\\frac{dX}{dt}=-\\Omega Y\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (4) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "5": {
+      "equation": "\\frac{dY}{dt}=\\Omega X-Z\\sum_{n}2g\\left(\\alpha_{n}+\\alpha_{n}^{\\ast}\\right)\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (5) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "6": {
+      "equation": "\\frac{dZ}{dt}=Y\\sum_{n}2g\\left(\\alpha_{n}+\\alpha_{n}^{\\ast}\\right)\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (6) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    },
+    "7": {
+      "equation": "g_{c}=\\frac{1}{2}\\sqrt{\\frac{\\Omega}{3}\\left(\\omega_{c}+2J+\\frac{\\kappa^{2}}{\\omega_{c}+2J}\\right)}\\text{,}",
+      "meaning": "",
+      "symbols": {},
+      "relations": {},
+      "audit-trail": {
+        "extract_eq": "Found numbered equation (7) in 2_annotations.json.",
+        "extract_latex": "Extracted LaTeX from annotation encoding application/x-tex.",
+        "normalize_latex": "Applied light cleanup for simple LaTeX output."
+      }
+    }
+  }
+}
