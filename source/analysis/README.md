@@ -10,12 +10,17 @@ equation meaning span from the local text window around `[EQUATION]`.
 
 - `analysis_meaning.json`: reviewed equation meanings and source windows.
 
-Each record is expected to contain:
+Each record contains an explicit review state and exact source offsets:
 
 ```json
 {
   "meaning": "Markovian quantum master equation",
-  "window": "our Markovian quantum master equation reads [EQUATION]"
+  "window": "our Markovian quantum master equation reads [EQUATION]",
+  "equation": "\\partial_t \\rho = ...",
+  "has_answer": true,
+  "start": 4,
+  "end": 38,
+  "review_status": "reviewed"
 }
 ```
 
@@ -32,14 +37,14 @@ This writes:
 - `source/analysis/ner_data/test.jsonl`
 - `source/analysis/ner_data/dataset_report.json`
 
-The builder only keeps examples where the reviewed `meaning` can be found as a
-contiguous token span in the source `window`. Unmatched examples are listed in
-`dataset_report.json` for manual review.
+The builder includes reviewed positive and no-answer examples. Unreviewed or
+invalid records are listed in `dataset_report.json` and excluded. Dataset
+splits are grouped by paper.
 
 ## Train
 
 ```bash
-python source/analysis/equation_ner.py train
+python source/analysis/equation_ner.py train --context-mode marker
 ```
 
 By default, this fine-tunes:
@@ -74,11 +79,6 @@ source/analysis/ner_predictions.json
 - `B-EQ_NAME`: first token of an equation-name span.
 - `I-EQ_NAME`: continuation token inside an equation-name span.
 
-## Current Dataset Snapshot
-
-The current `analysis_meaning.json` build produces:
-
-- 82 reviewed records.
-- 77 usable BIO examples.
-- 5 skipped examples that need review or rewritten spans.
-- Split sizes: 61 train, 7 validation, 9 test.
+Use `--base-model witiko/mathberta --context-mode formula` for the math-aware
+experiment. See `notes/mathbert_extraction_plan.md` for the comparison and
+promotion criteria.

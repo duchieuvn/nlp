@@ -7,44 +7,1379 @@
     "I-EQ_NAME"
   ],
   "max_tokens": 256,
-  "total_records": 82,
-  "usable_examples": 77,
-  "skipped_examples": 5,
+  "reviewed_records": 82,
+  "unreviewed_or_invalid_records": 271,
+  "usable_examples": 82,
+  "answerable_examples": 82,
+  "no_answer_examples": 0,
+  "skipped_examples": 0,
   "splits": {
-    "train": 61,
-    "validation": 7,
-    "test": 9
+    "train": 63,
+    "validation": 9,
+    "test": 10
   },
-  "skipped": [
+  "split_papers": {
+    "train": 27,
+    "validation": 3,
+    "test": 4
+  },
+  "rejected": [
+    {
+      "paper_id": "2403.03204",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2403.03204",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.10129",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.00059",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.00059",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.00059",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.11088",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.11088",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.11088",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.11088",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.18954",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.18954",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.18954",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.18954",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.18954",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.18954",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.19143",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.19143",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.19143",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.19143",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.19143",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2401.02625",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.00252",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.00252",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
     {
       "paper_id": "2402.14235",
-      "equation_id": "2",
-      "meaning": "explicit expression C",
-      "reason": "meaning tokens were not found as a contiguous span in window"
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
     },
     {
       "paper_id": "2410.05932",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.05932",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "2.1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "3.1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "3.2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "3.4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.09920",
       "equation_id": "2",
-      "meaning": "x i R",
-      "reason": "meaning tokens were not found as a contiguous span in window"
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
     },
     {
       "paper_id": "2412.07329",
-      "equation_id": "3",
-      "meaning": "corresponding expectation value in the vacuum state |0",
-      "reason": "meaning tokens were not found as a contiguous span in window"
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
     },
     {
-      "paper_id": "2410.23152",
-      "equation_id": "4",
-      "meaning": "n -qubit quantum state in the computational basis",
-      "reason": "meaning tokens were not found as a contiguous span in window"
+      "paper_id": "2412.07329",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
     },
     {
-      "paper_id": "2410.23152",
+      "paper_id": "2412.07329",
       "equation_id": "6",
-      "meaning": "EPR EPR in the previous setup with the state",
-      "reason": "meaning tokens were not found as a contiguous span in window"
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2412.07329",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "8",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "10",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2412.07479",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2412.07479",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2412.07479",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2412.07479",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.17702",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.02152",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.02152",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.02152",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.02152",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.01516",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.01516",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.01516",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "9",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "10",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "11",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "12",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2406.14642",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2406.14642",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2406.14642",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2406.14642",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.07132",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.07132",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.07132",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.07132",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.07132",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.07132",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "8",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.10641",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.10641",
+      "equation_id": "4a",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2501.10641",
+      "equation_id": "4b",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.15032",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.15032",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.15032",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.15032",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.15032",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2411.15032",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.02630",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.02630",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.08375",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.08375",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.08375",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.08375",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.08375",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "8",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.05068",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.05068",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.05068",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2405.05068",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "10",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "13",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "1",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "2",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.15165",
+      "equation_id": "3",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.15165",
+      "equation_id": "4",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.15165",
+      "equation_id": "5",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.15165",
+      "equation_id": "6",
+      "reason": "record has not been reviewed"
+    },
+    {
+      "paper_id": "2402.15165",
+      "equation_id": "7",
+      "reason": "record has not been reviewed"
     }
-  ]
+  ],
+  "skipped": [],
+  "seed": 13
 }

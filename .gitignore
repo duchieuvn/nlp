@@ -2,3 +2,5 @@ papers/
 clean1/
 html/
 __pycache__/
+*.zip
+*.safetensors

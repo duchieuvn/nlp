@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
+import json
 import sys
 import tempfile
 import unittest
@@ -11,125 +11,103 @@ from unittest.mock import patch
 SOURCE_DIR = Path(__file__).resolve().parents[1] / "source"
 sys.path.insert(0, str(SOURCE_DIR))
 
-import step4_b
+import s4b
 
 
-class CharacterTokenizer:
-	model_max_length = 512
+class FakeTensor:
+    def __init__(self, values):
+        self.values = values
 
-	def encode(self, text, add_special_tokens=False):
-		return [ord(character) for character in text]
-
-	def decode(self, token_ids, **kwargs):
-		return "".join(chr(token_id) for token_id in token_ids)
-
-	def num_special_tokens_to_add(self, pair=False):
-		return 3 if pair else 2
+    def __getitem__(self, index):
+        return self.values[index]
 
 
-class FakeQaPipeline:
-	def __init__(self, answer, score=0.9, offset_shift=0):
-		self.tokenizer = CharacterTokenizer()
-		self.answer = answer
-		self.score = score
-		self.offset_shift = offset_shift
-
-	def __call__(self, *, question, context):
-		start = context.index(self.answer) + self.offset_shift
-		return {
-			"answer": self.answer,
-			"score": self.score,
-			"start": start,
-			"end": start + len(self.answer),
-		}
+class FakeTorch:
+    @staticmethod
+    def dot(left, right):
+        return left * right
 
 
-class Step4BTests(unittest.TestCase):
-	def test_model_window_keeps_marker_within_pair_limit(self):
-		tokenizer = CharacterTokenizer()
-		window = f"{'x' * 100} {step4_b.EQUATION_MARKER} {'y' * 100}"
+class MathBertBaselineTests(unittest.TestCase):
+    def test_extracts_literal_equation_name_candidates(self):
+        window = (
+            "The covariance matrix of the thermal state can be written as "
+            "[EQUATION] where x is fixed."
+        )
 
-		result = step4_b.model_input_window(window, tokenizer, 100)
+        candidates = s4b.candidate_phrases(window)
 
-		self.assertIn(step4_b.EQUATION_MARKER, result)
-		pair_length = (
-			len(tokenizer.encode(step4_b.QA_QUESTION))
-			+ len(tokenizer.encode(result))
-			+ tokenizer.num_special_tokens_to_add(pair=True)
-		)
-		self.assertLessEqual(pair_length, 100)
+        texts = {candidate.text for candidate in candidates}
+        self.assertIn("covariance matrix of the thermal state", texts)
+        for candidate in candidates:
+            self.assertEqual(window[candidate.start : candidate.end], candidate.text)
 
-	def test_predicts_and_cleans_exact_source_span(self):
-		window = "We derive the Markovian master equation [EQUATION]."
-		pipeline = FakeQaPipeline("the Markovian master equation")
+    def test_context_keeps_marker_and_nearby_text(self):
+        window = f"{'old ' * 500}important name {s4b.EQUATION_MARKER} after context"
 
-		result = step4_b.predict_meaning(window, pipeline)
+        result = s4b.model_context(window)
 
-		self.assertEqual(result["meaning"], "Markovian master equation")
-		self.assertEqual(result["raw_answer"], "the Markovian master equation")
-		self.assertEqual(result["status"], "accepted")
-		self.assertEqual(
-			result["source_text"][result["start"] : result["end"]],
-			result["raw_answer"],
-		)
+        self.assertIn(s4b.EQUATION_MARKER, result)
+        self.assertIn("important name", result)
+        self.assertIn("after context", result)
 
-	def test_rejects_low_confidence_answer(self):
-		pipeline = FakeQaPipeline("master equation", score=0.49)
+    def test_returns_blank_when_no_natural_language_candidate_exists(self):
+        result = s4b.predict_meaning(
+            "123 [EQUATION] 456", "x=y", None, None, None, "cpu"
+        )
 
-		result = step4_b.predict_meaning(
-			"The master equation reads [EQUATION].",
-			pipeline,
-		)
+        self.assertEqual(result["meaning"], "")
+        self.assertEqual(result["status"], "no_candidate")
 
-		self.assertEqual(result["meaning"], "")
-		self.assertEqual(result["status"], "low_confidence")
+    def test_prediction_returns_exact_source_offsets(self):
+        window = "The master equation is given by [EQUATION]."
+        with patch.object(s4b, "embed_texts", return_value=FakeTensor([1.0] * 50)):
+            result = s4b.predict_meaning(
+                window, "x=y", object(), object(), FakeTorch(), "cpu"
+            )
 
-	def test_rejects_answer_with_invalid_offsets(self):
-		pipeline = FakeQaPipeline("master equation", offset_shift=1)
+        self.assertEqual(window[result["start"] : result["end"]], result["candidate"])
+        self.assertEqual(result["status"], "accepted")
 
-		result = step4_b.predict_meaning(
-			"The master equation reads [EQUATION].",
-			pipeline,
-		)
+    def test_run_uses_fixed_equation_input_and_writes_compatible_output(self):
+        data = {
+            "paper": {
+                "1": {
+                    "equation": "x=y",
+                    "meaning": "",
+                    "surrounding_text": {"window": "master equation [EQUATION]"},
+                    "audit-trail": [],
+                }
+            }
+        }
+        prediction = {
+            "meaning": "master equation",
+            "candidate": "master equation",
+            "confidence": 0.8,
+            "status": "accepted",
+            "start": 0,
+            "end": 15,
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            input_file = Path(directory) / "3_equations.json"
+            output_file = Path(directory) / "4b_mathbert_baseline.json"
+            input_file.write_text(json.dumps(data), encoding="utf-8")
+            with (
+                patch.object(s4b, "INPUT_FILE", input_file),
+                patch.object(s4b, "OUTPUT_FILE", output_file),
+                patch.object(s4b, "load_mathbert", return_value=(None, None, None, "cpu")),
+                patch.object(s4b, "predict_meaning", return_value=prediction),
+            ):
+                counts = s4b.run_baseline()
+            output = json.loads(output_file.read_text(encoding="utf-8"))
 
-		self.assertEqual(result["status"], "invalid_span")
-
-	def test_rejects_cross_reference(self):
-		pipeline = FakeQaPipeline("Eq. 12")
-
-		result = step4_b.predict_meaning(
-			"Using Eq. 12 gives [EQUATION].",
-			pipeline,
-		)
-
-		self.assertEqual(result["status"], "rejected_candidate")
-
-	def test_extract_meanings_clears_stale_meaning_and_appends_audit(self):
-		data = {
-			"paper": {
-				"1": {
-					"meaning": "stale value",
-					"surrounding_text": {"window": ""},
-					"audit-trail": [],
-				}
-			}
-		}
-		with tempfile.TemporaryDirectory() as directory:
-			input_file = Path(directory) / "input.json"
-			output_file = Path(directory) / "output.json"
-			input_file.write_text(json.dumps(data), encoding="utf-8")
-			with patch.object(step4_b, "load_qa_pipeline", return_value=FakeQaPipeline("unused")):
-				counts = step4_b.extract_meanings(input_file, output_file)
-
-			output = json.loads(output_file.read_text(encoding="utf-8"))
-
-		self.assertEqual(counts, (1, 0, 1))
-		entry = output["paper"]["1"]
-		self.assertEqual(entry["meaning"], "")
-		audit = entry["audit-trail"][-1]["meaning_extraction"]
-		self.assertEqual(audit["status"], "missing_context")
-		self.assertEqual(audit["strategy"], "extractive_qa")
+        self.assertEqual(counts, (1, 1))
+        entry = output["paper"]["1"]
+        self.assertEqual(entry["meaning"], "master equation")
+        audit = entry["audit-trail"][-1]["meaning_extraction"]
+        self.assertEqual(audit["model"], s4b.MODEL_NAME)
+        self.assertEqual(audit["strategy"], "mathberta_embedding_baseline")
 
 
 if __name__ == "__main__":
-	unittest.main()
+    unittest.main()
