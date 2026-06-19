@@ -1,99 +1,206 @@
-To populate the **Equations Knowledge Graph** entirely programmatically without prohibited generative prompting, the system must extract the precise high-level identifier (the name) for an equation using text-mining mechanics.
+# Equation Meaning Extraction Plan
 
-Using your provided excerpt as a real-world scientific baseline, here is a step-by-step, code-driven explanation of how the **Equation Meaning Extractor** identifies the name for **Equation (4)** without ever issuing an AI prompt.
+## Goal
 
----
+The script `source/step4_eqn_meaning.py` finds a short name for each equation.
+For example, it may extract names such as:
 
-### Step 1: Delimiting and Isolating the Target Anchor Context
+- `covariance matrix of two uncorrelated thermal modes`
+- `Wigner characteristic function of the TMST state`
+- `four-mode entangled state`
 
-Before extracting a name, the pipeline must mathematically define where to look. When your script processes the paper and hits the target equation block, it establishes a tight sentence window directly preceding and following it.
+The script uses local text processing. It does not send prompts to a generative AI
+model.
 
-- **Target Formula:** The script extracts Equation (4): `\partial_t \rho_S(t) = -(i/\hbar) [H_S, \rho_S(t)] + L[\rho_S(t)]`.
-- **Programmatic Window Assignment:** The script extracts the block of text immediately wrapping this equation. In your example, it captures the text boundary block:
-  > _"...where we consider the eigenstates of $H_S$ to form the appropriate basis onto which the thermal baths act. [...] In terms of the reduced density operator of the system $\rho_S$, our master equation reads [Equation 4] where $L[\rho_S(t)] = \sum L_k$ describes the thermal effects..."_
+## Input and Output
 
----
+The input is:
 
-### Step 2: Triggering Pattern-Targeted Regex Filters
-
-The pipeline first executes rapid, deterministic regular expressions designed to capture common linguistic anchors used by physicists to name formulas in the **Equations Knowledge Graph**.
-
-The system runs a sequence of strict pattern matches against the isolated sentence window:
-
-- **Pattern Template A:** `r"([A-Za-z\s\-]+) (?:reads|is given by|is written as)\s*(?:\n|$$|\\\[|).*?\(4\)"`
-- **Pattern Template B:** `r"known as the ([A-Za-z\s\-]+)"`
-
-**Execution on your text:** When Pattern Template A scans the sentence preceding Equation (4) (_"In terms of the reduced density operator of the system $\rho_S$, our master equation reads"_), it triggers a match on the string chunk immediately leading into the equation:
-
-$$\text{"our master equation reads"}$$
-
-The regex captures the preceding noun phrase fragment: **`"master equation"`**. This fragment is cached as a baseline candidate label for this node in the **Equations Knowledge Graph**.
-
----
-
-### Step 3: Local Dependency Parsing for Structural Verification
-
-To ensure the captured name isn't just random words, the text block is passed locally into a non-generative syntactic dependency parser (like a local `spaCy` transformer model). The parser mathematically maps out the grammatical structure of the sentence leading to the formula.
-
-```
-             ┌───────────► reads (ROOT Verb) ◄──────────┐
-             │                                          │
-    equation (Noun Subject)                    (Equation 4)
-             │
-   master (Noun Adjunct)
-
+```text
+data/3_equations.json
 ```
 
-**How the Code Processes This Tree Structurally:**
+Each equation entry contains a `surrounding_text.window` field. The position of
+the equation in this text is shown by:
 
-1. The parser identifies **"reads"** as the root structural verb (`ROOT`) anchoring the clause introducing the math block.
-2. It tracks the left-hand dependency arc to find the nominal subject (`nsubj`), which resolves to the noun **"equation"**.
-3. It checks for compound modifiers or attributes attached to that noun, catching the modifier **"master"**.
-4. The system combines these dependent tokens programmatically to form the clean compound noun phrase: **`"master equation"`**.
-
----
-
-### Step 4: Token-Level Sequence Labeling (Pretrained Scientific NER)
-
-To determine if "master equation" is simply a generic phrase or an established physical concept, the extracted sentence window is run through a local, pretrained encoder model such as `allenai/scibert_scivocab_uncased` performing token-level classification.
-
-Because this is an encoder-only classification model, it outputs sequence labels (tags) rather than generating text:
-
-```
-In  terms  of  the  reduced  density  operator ... our  [ master   equation ]  reads
-O   O      O   O    O        O        O        ... O    [B-CONCEPT I-CONCEPT] O
-
+```text
+[EQUATION]
 ```
 
-The model assigns a high-probability weight tagging **"master equation"** as a `B-CONCEPT` (Beginning of Concept) and `I-CONCEPT` (Inside of Concept).
+The output is:
 
-- **Merging the Data:** The system cross-references the phrase extracted by the dependency parser in Step 3 with the sequence tag from Step 4. Because both components align perfectly on the phrase "master equation", the system confidently resolves this concept.
-- **Contextual Refinement:** Looking slightly further up in the exact same paragraph, the pipeline matches an open adjective modifier: _"We derive a **Markovian quantum** master equation..."_. The string processing code chains this preceding modifier to the validated noun phrase concept.
+```text
+data/4_equation_meanings.json
+```
 
----
+The output keeps the original equation data. It adds the extracted name to the
+`meaning` field and adds details to `audit-trail`.
 
-### Step 5: Committing to the Equations Knowledge Graph and Logging the Audit Trail
+## Step 1: Load the Language Model
 
-Now that the identity has been programmatically discovered without a single text-generation prompt, the system updates the JSON schema of your **Equations Knowledge Graph** and writes a bulletproof audit entry to comply with the project's academic integrity rules.
+The script loads the local SciSpaCy model:
 
-**Resulting Knowledge Graph Node Payload:**
+```text
+en_core_sci_scibert
+```
+
+This model splits the text into tokens, sentences, and noun phrases. The script
+also tells its tokenizer to keep `[EQUATION]` as one token.
+
+This is not the custom equation NER model used by `step4_b.py`.
+
+## Step 2: Prepare the Context
+
+The complete context can be too long for SciBERT. The script first keeps up to
+40 words before and 40 words after `[EQUATION]`.
+
+It also removes some LaTeX commands and characters that are not useful for
+finding a name.
+
+If the text is still too long, the script tries smaller windows:
+
+```text
+40, 25, 15, or 8 words on each side
+```
+
+## Step 3: Look for an Anchor Phrase
+
+The first and strongest method looks for common phrases before the equation.
+Examples include:
+
+- `can be written as`
+- `is given by`
+- `takes the form`
+- `defined as`
+- `reads`
+- `satisfies`
+- `represented by`
+
+For this text:
+
+```text
+The four-mode entangled state is represented by [EQUATION]
+```
+
+the anchor is `is represented by`. The script checks the noun phrases before
+the anchor and can select:
+
+```text
+four-mode entangled state
+```
+
+An anchor result gets `high` confidence in the audit record.
+
+## Step 4: Expand the Noun Phrase
+
+Sometimes the useful name contains a prepositional phrase. The script can
+expand a noun phrase through these words:
+
+```text
+of, for, with, in, on
+```
+
+For example, it can keep the complete name:
+
+```text
+covariance matrix of two uncorrelated thermal modes
+```
+
+Expansion stops at verbs, punctuation, conjunctions, another anchor phrase, or
+the `[EQUATION]` marker.
+
+## Step 5: Try Fallback Methods
+
+If no anchor produces a reliable name, the script tries two fallback methods.
+
+### Nearby Noun Phrase
+
+It looks for a noun phrase in the same sentence, close to `[EQUATION]`. The
+phrase must contain a scientific head word such as:
+
+```text
+equation, function, matrix, model, operator, relation, state
+```
+
+The phrase must end no more than 12 tokens before the marker.
+
+### Context Verb
+
+If the first fallback fails, the script looks for context verbs such as:
+
+```text
+compute, denote, evaluate, obtain, represent, yield
+```
+
+It then accepts a scientific noun phrase in the same sentence up to 24 tokens
+before the marker.
+
+Both fallback methods use `medium` confidence.
+
+## Step 6: Filter Bad Candidates
+
+Before accepting a name, the script rejects candidates that:
+
+- are empty or longer than 12 words;
+- look like a numbered reference, such as `Eq. (4)`;
+- contain too many symbols;
+- contain only one generic word, such as `equation` or `state`, unless an anchor
+  clearly supports that word.
+
+It also removes punctuation and simple leading words such as `the`, `a`, `our`,
+and `this`.
+
+## Step 7: Rank Candidates
+
+When several noun phrases are available, the script ranks them. It prefers a
+candidate that:
+
+1. contains a scientific head word;
+2. is in the same sentence as `[EQUATION]`;
+3. was expanded with a useful prepositional phrase;
+4. has a useful amount of detail;
+5. is close to the equation or anchor.
+
+## Step 8: Save the Result and Audit Record
+
+When a candidate is found, the script writes it to `meaning`. It also records:
+
+- the extraction method;
+- the candidate;
+- the confidence level;
+- the strategy used;
+- the anchor phrase, when one was used;
+- a short source-text excerpt.
+
+Example:
 
 ```json
 {
-  "node_id": "paper_xyz_eq_04",
-  "meaning": "Markovian quantum master equation",
-  "latex_source": "\\partial_t \\rho_S(t) = -(i/\\hbar) [H_S, \\rho_S(t)] + L[\\rho_S(t)]",
-  "audit_trail": {
-    "meaning_extraction": {
-      "method": "Dependency Parser + SciBERT Sequence Labeling",
-      "anchor_verb_found": "reads",
-      "syntactic_nsubj_phrase": "master equation",
-      "ner_classification": "CONCEPT (Confidence: 0.964)",
-      "adjective_expansion": "Markovian quantum",
-      "source_text_slice": "We derive a Markovian quantum master equation... our master equation reads"
+  "meaning": "four-mode entangled state",
+  "audit-trail": [
+    {
+      "meaning_extraction": {
+        "method": "SciSpaCy/SciBERT dependency/noun-chunk extraction from surrounding_text.window",
+        "candidate": "four-mode entangled state",
+        "confidence": "high",
+        "strategy": "anchor",
+        "trigger": "represented by",
+        "trigger_type": "anchor_pattern"
+      }
     }
-  }
+  ]
 }
 ```
 
-By presenting this programmatic chain of events, you can demonstrate to a reviewer exactly how the node's high-level meaning was derived purely through deterministic structural linguistics and local token evaluation.
+If no reliable candidate is found, `meaning` stays empty. The audit record uses
+`blank` confidence and explains why no name was selected.
+
+## Run the Script
+
+From the project root, run:
+
+```bash
+python source/step4_eqn_meaning.py
+```
+
+The script prints the number of equations visited, filled, and left blank.
