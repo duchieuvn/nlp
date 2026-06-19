@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 from bs4 import BeautifulSoup
-from config import HTML_DIR, DATA_DIR
+from config import HTML_DIR, HTML_MATH_FILE
 
 
 def extract_enumerated_spans(papers_dir: Path, output_file: Path) -> int:
@@ -37,13 +37,10 @@ def extract_enumerated_spans(papers_dir: Path, output_file: Path) -> int:
 	return sum(len(tbody_list) for tbody_list in spans_by_paper.values())
 
 
-def main() -> None:
-	papers_dir = Path(HTML_DIR)
-	output_file = Path(DATA_DIR) / "1_html_math.json"
+def extract_tbody() -> int:
+	count = extract_enumerated_spans(HTML_DIR, HTML_MATH_FILE)
+	print(f"Wrote {count} matching <tbody> blocks to {HTML_MATH_FILE}")
+	return count
 
-	count = extract_enumerated_spans(papers_dir, output_file)
-	print(f"Wrote {count} matching <tbody> blocks to {output_file}")
-
-
-if __name__ == "__main__":
-	main()
+# if __name__ == "__main__":
+# 	extract_tbody()

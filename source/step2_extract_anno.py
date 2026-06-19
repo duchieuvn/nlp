@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 
 from bs4 import BeautifulSoup
+from config import ANNOTATIONS_FILE, HTML_DIR
 
 
 SPAN_SELECTOR = "span.ltx_tag_equation, span.ltx_tag_equationgroup"
@@ -115,14 +116,11 @@ def extract_annotations(papers_dir: Path, output_file: Path) -> int:
 	return sum(len(equations) for equations in annotations_by_paper.values())
 
 
-def main() -> None:
-	project_dir = Path(__file__).resolve().parent.parent
-	papers_dir = project_dir / "data" / "html"
-	output_file = project_dir / "data" / "2_annotations.json"
-
-	count = extract_annotations(papers_dir, output_file)
-	print(f"Wrote {count} numbered annotation groups to {output_file}")
+def extract_anno_main() -> int:
+	count = extract_annotations(HTML_DIR, ANNOTATIONS_FILE)
+	print(f"Wrote {count} numbered annotation groups to {ANNOTATIONS_FILE}")
+	return count
 
 
-if __name__ == "__main__":
-	main()
+# if __name__ == "__main__":
+# 	extract_anno_main()
