@@ -189,7 +189,7 @@ def nearby_sentences(anchor, direction: str) -> list[str]:
 		if candidate is anchor:
 			continue
 		if is_context_boundary(candidate):
-			break
+			continue
 		if candidate.name != "p" or not classes_contain(candidate, "ltx_p"):
 			continue
 		if candidate.find_parent(["table", "figure"]):
@@ -273,7 +273,7 @@ def extract_surrounding_text(
 		"annotation_ids": annotation_ids,
 		"matched_annotation_id": matched_annotation_id,
 		"anchor_id": anchor.get("id"),
-		"window": f"up to {CONTEXT_SENTENCE_LIMIT} full sentences before / up to {CONTEXT_SENTENCE_LIMIT} full sentences after, stopping at neighboring equations",
+		"window": f"up to {CONTEXT_SENTENCE_LIMIT} full sentences before / up to {CONTEXT_SENTENCE_LIMIT} full sentences after, skipping neighboring equations",
 	}
 
 	return context, audit
@@ -378,5 +378,5 @@ def extract_eqn_main(min_equations: int = TARGET_MIN_EQUATIONS) -> int:
 	return equation_count
 
 
-# if __name__ == "__main__":
-# 	extract_eqn_main()
+if __name__ == "__main__":
+	extract_eqn_main()

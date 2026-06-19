@@ -1,0 +1,50 @@
+{
+  "source_file": "/home/duchieuvn/Code/nlp/source/analysis/analysis_meaning.json",
+  "output_dir": "/home/duchieuvn/Code/nlp/source/analysis/ner_data",
+  "label_set": [
+    "O",
+    "B-EQ_NAME",
+    "I-EQ_NAME"
+  ],
+  "max_tokens": 256,
+  "total_records": 82,
+  "usable_examples": 77,
+  "skipped_examples": 5,
+  "splits": {
+    "train": 61,
+    "validation": 7,
+    "test": 9
+  },
+  "skipped": [
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "2",
+      "meaning": "explicit expression C",
+      "reason": "meaning tokens were not found as a contiguous span in window"
+    },
+    {
+      "paper_id": "2410.05932",
+      "equation_id": "2",
+      "meaning": "x i R",
+      "reason": "meaning tokens were not found as a contiguous span in window"
+    },
+    {
+      "paper_id": "2412.07329",
+      "equation_id": "3",
+      "meaning": "corresponding expectation value in the vacuum state |0",
+      "reason": "meaning tokens were not found as a contiguous span in window"
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "4",
+      "meaning": "n -qubit quantum state in the computational basis",
+      "reason": "meaning tokens were not found as a contiguous span in window"
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "6",
+      "meaning": "EPR EPR in the previous setup with the state",
+      "reason": "meaning tokens were not found as a contiguous span in window"
+    }
+  ]
+}

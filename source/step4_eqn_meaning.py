@@ -562,7 +562,7 @@ def extract_meaning_main() -> int:
 	visited_count, filled_count, blank_count = extract_meanings()
 	print(f"Visited equations: {visited_count}")
 	print(f"Meanings filled: {filled_count}")
-	print(f"Meanings left blank: {blank_count}")your script proactively manages
+	print(f"Meanings left blank: {blank_count}")
 	print(f"Wrote equation meanings to {EQUATION_MEANINGS_FILE}")
 	return filled_count
 
