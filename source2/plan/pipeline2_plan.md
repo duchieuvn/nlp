@@ -94,11 +94,21 @@ generate final text.
 
 - Match fixed patterns such as `Equation (N) describes ...` and named-equation
   phrases.
+- Rerank the BM25 top-k candidate chunks or sentences with MathBERT. Encode a
+  deterministic equation representation (LaTeX, important symbols, section
+  title, and immediate context) and each candidate, then use cosine similarity
+  only as an additional ranking feature.
+- Combine normalized MathBERT similarity with the existing explicit equation
+  citation, definition cue, proximity, section match, and BM25 features. Do not
+  let MathBERT similarity override hard rejection rules or act as confidence by
+  itself.
 - Prefer a complete source sentence; only shorten it with a documented
   mechanical rule.
-- Score candidates using explicit equation citations, definition cues,
-  proximity, section match, and retrieval score.
+- Keep MathBERT non-generative: it selects among source chunks but never writes
+  or paraphrases the equation meaning.
 - Return an empty meaning when no candidate reaches the confidence threshold.
+- Log the model version, MathBERT score, component feature scores, candidate
+  rank before and after reranking, and selected source IDs.
 
 **Output:** an extractive meaning plus source evidence and method metadata.
 
