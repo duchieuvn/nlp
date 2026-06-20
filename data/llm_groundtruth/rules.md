@@ -1,0 +1,1 @@
+- meanings must completely exist in the window (only extraction, not generated)
