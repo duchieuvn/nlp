@@ -104,6 +104,17 @@ generate final text.
   itself.
 - Prefer a complete source sentence; only shorten it with a documented
   mechanical rule.
+- After extraction, run the conservative `postprocessing` stage. It may remove
+  a trailing LaTeX-heavy appositive followed by a rephrasing marker such as
+  `in other words:`, but only when the retained source span is a complete
+  descriptive clause. It may also extract the literal claim from a causal
+  reporting construction such as `Since ..., one observes that ...`. Preserve
+  the original source text and audit the removal. Write processed copies under
+  `data/postprocessing/equation_meanings/`; never overwrite extraction output.
+- Reduce meanings to extractive noun phrases of at most 12 natural-language
+  words using ordered subject, object, named-complement, and science-head rules.
+  Exclude symbol-definition and procedural clauses; leave the meaning empty
+  when no reliable phrase remains.
 - Keep MathBERT non-generative: it selects among source chunks but never writes
   or paraphrases the equation meaning.
 - Return an empty meaning when no candidate reaches the confidence threshold.
@@ -158,6 +169,10 @@ produced the answer.
   other relevant equations in the paper.
 - Reject unsupported non-empty values or values without audit evidence.
 - Write one atomic JSON file per paper and print aggregate build statistics.
+- Build the strict combined export at `data/final_data.json`. Each equation has
+  exactly `equation`, `meaning`, `symbols`, and `relations`; `symbols` is a
+  canonical-name-to-definition object, and audit metadata is excluded for now.
+  Preserve the normalized paper order from `data/paper_list_46.txt`.
 
 **Output:** final equation knowledge-graph JSON files and a build report.
 

@@ -1,0 +1,4693 @@
+{
+  "summary": {
+    "rejected_count": 126,
+    "note": "Reported validation cases; meanings are preserved in postprocessed data.",
+    "source_directory": "/home/duchieuvn/Code/nlp/data/postprocessing/equation_meanings"
+  },
+  "rejected_meanings": [
+    {
+      "paper_id": "2401.00059",
+      "equation_id": "2",
+      "equation": "u_{n}=Ae^{i(\\omega t\\pm qan)}+\\overline{A}e^{-i(\\omega t\\pm qan)}",
+      "original_meaning": "We substitute Eq. ( 2 ) into Eq. ( 1 ), and obtain",
+      "source_text": "We substitute Eq. ( 2 ) into Eq. ( 1 ), and obtain",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "We substitute Eq. ( 2 ) into Eq. ( 1 )",
+          "phrase": "We substitute",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and obtain",
+          "phrase": "and obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2401.00059",
+      "equation_id": "6",
+      "equation": "u^{R}_{n} =B^{R}e^{i(\\omega t+q^{R}a^{R}n)}",
+      "original_meaning": "We substitute such superposition into equation ( 5 ) and obtain",
+      "source_text": "We substitute such superposition into equation ( 5 ) and obtain",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "raw": "We substitute such superposition into equation ( 5 ) and obtain",
+          "phrase": "We substitute such superposition into",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "equation",
+          "phrase": "equation",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "into equation",
+          "phrase": "into equation",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "superposition into equation",
+          "phrase": "superposition into equation",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "such superposition into equation",
+          "phrase": "such superposition into equation",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "substitute such superposition into equation",
+          "phrase": "substitute such superposition into equation",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2401.00059",
+      "equation_id": "7",
+      "equation": "\\omega^{2}B =-\\beta(B^{R}-1-A^{L})-\\beta^{R}(B^{R}-B^{R}e^{iqa})",
+      "original_meaning": "To simplify this, we use Eq. ( 3 ) and obtain",
+      "source_text": "To simplify this, we use Eq. ( 3 ) and obtain",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "To simplify this",
+          "phrase": "To simplify this",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we use Eq. ( 3 ) and obtain",
+          "phrase": "we use",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2401.11088",
+      "equation_id": "5",
+      "equation": "U\\vec{\\psi}=(R+iJ)(\\vec{a}+i\\vec{b})=(R\\vec{a}-J\\vec{b})+i(J\\vec{a}+R\\vec{b})",
+      "original_meaning": "We quantize each float in R , J , \\vec{a} , and \\vec{b} separately, then perform the multiplications in equation 5 for each gate application in the circuit (Algorithm 1 ).",
+      "source_text": "We quantize each float in R , J , \\vec{a} , and \\vec{b} separately, then perform the multiplications in equation 5 for each gate application in the circuit (Algorithm 1 ).",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 9,
+      "candidates": [
+        {
+          "raw": "We quantize each float in R",
+          "phrase": "We quantize each float in R",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "J",
+          "phrase": "J",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\vec{a}",
+          "phrase": "\\vec{a}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and \\vec{b} separately",
+          "phrase": "and \\vec{b} separately",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "equation",
+          "phrase": "equation",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "in equation",
+          "phrase": "in equation",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "multiplications in equation",
+          "phrase": "multiplications in equation",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "the multiplications in equation",
+          "phrase": "multiplications in equation",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "perform the multiplications in equation",
+          "phrase": "perform the multiplications in equation",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "1",
+      "equation": "Z=\\iint\\mathcal{D}\\lambda\\mathcal{D}g\\exp{\\bigg{(}-I_{\\mathrm{E}}+\\int d\\tau\\lambda(\\tau)\\hat{\\mathcal{C}}}\\bigg{)}",
+      "original_meaning": "and the action I_{\\mathrm{E}} is the Euclidean Einstein-Hilbert term plus a bare cosmological constant \\Lambda_{0} ,",
+      "source_text": "and the action I_{\\mathrm{E}} is the Euclidean Einstein-Hilbert term plus a bare cosmological constant \\Lambda_{0} ,",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "2",
+      "equation": "\\hat{\\mathcal{C}}=\\int d^{D-1}x\\sqrt{\\gamma}-V",
+      "original_meaning": "and the action I_{\\mathrm{E}} is the Euclidean Einstein-Hilbert term plus a bare cosmological constant \\Lambda_{0} ,",
+      "source_text": "and the action I_{\\mathrm{E}} is the Euclidean Einstein-Hilbert term plus a bare cosmological constant \\Lambda_{0} ,",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2402.14235",
+      "equation_id": "3",
+      "equation": "I_{\\mathrm{E}}=-\\frac{1}{16\\pi}\\int_{\\mathcal{M}_{\\mathrm{E}}}d\\tau d^{D-1}x\\sqrt{g}(R-2\\Lambda_{0})",
+      "original_meaning": "the fixed temperature, or the size of \\partial\\mathcal{M}_{\\mathrm{E}} in the \\tau direction, plus the fixed volume define a canonical ensemble.",
+      "source_text": "Thus the fixed temperature, or the size of \\partial\\mathcal{M}_{\\mathrm{E}} in the \\tau direction, plus the fixed volume define a canonical ensemble.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "the fixed temperature",
+          "phrase": "fixed temperature",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "plus the fixed volume define a canonical ensemble.",
+          "phrase": "plus the fixed volume define a canonical ensemble",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2403.03204",
+      "equation_id": "4",
+      "equation": "\\chi_{F_{1}^{\\prime}A_{1}^{\\prime}A_{2}^{\\prime}F_{2}^{\\prime}}(\\Lambda)=\\chi_{F_{1}A_{1}A_{2}F_{2}}(B(T_{1},T_{2})^{-1}\\Lambda)",
+      "original_meaning": "where B(T_{1},T_{2})=B_{A_{1}F_{1}}(T_{1})\\,{\\oplus}\\,B_{A_{2}F_{2}}(T_{2}) denotes the collective action of the two beam splitters with B_{ij}(T) being the beam splitter operation given in Eq. ( 17 ) of the Appendix A .",
+      "source_text": "where B(T_{1},T_{2})=B_{A_{1}F_{1}}(T_{1})\\,{\\oplus}\\,B_{A_{2}F_{2}}(T_{2}) denotes the collective action of the two beam splitters with B_{ij}(T) being the beam splitter operation given in Eq. ( 17 ) of the Appendix A .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where B(T_{1},T_{2})=B_{A_{1}F_{1}}(T_{1})\\,{\\oplus}\\,B_{A_{2}F_{2}}(T_{2}) denotes the collective action of the two beam splitters with B_{ij}(T) being the beam splitter operation given in Eq. ( 17 ) of the Appendix A .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2403.03204",
+      "equation_id": "5",
+      "equation": "\\widetilde{\\chi}^{\\text{NG}}_{A_{1}^{\\prime}A_{2}^{\\prime}}= \\frac{1}{(2\\pi)^{2}}\\int d^{2}\\Lambda_{3}d^{2}\\Lambda_{4}\\underbrace{\\chi_{F_{1}^{\\prime}A_{1}^{\\prime}A_{2}^{\\prime}F_{2}^{\\prime}}(\\Lambda)}_{\\text{Four mode entangled state}} \\times\\underbrace{\\chi_{|n_{1}\\rangle}(\\Lambda_{3})}_{\\text{Projection on }|n_{1}\\rangle\\langle n_{1}|}\\underbrace{\\chi_{|n_{2}\\rangle}(\\Lambda_{4})}_{\\text{Projection on }|n_{2}\\rangle\\langle n_{2}|}",
+      "original_meaning": "On integrating Eq. ( 5 ), we obtain",
+      "source_text": "On integrating Eq. ( 5 ), we obtain",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "On integrating Eq. ( 5 )",
+          "phrase": "On integrating",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we obtain",
+          "phrase": "we obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "9",
+      "equation": "\\mathrm{e}^{-\\mathrm{i}H_{ZZ}\\delta t} =\\prod_{\\langle i,j\\rangle}\\mathrm{e}^{\\mathrm{i}J\\delta tZ_{i}Z_{j}}=\\prod_{\\langle i,j\\rangle}\\mathrm{R}_{Z_{i}Z_{j}}(-2J\\delta t)",
+      "original_meaning": "where the total evolution time T is discretized into \\frac{T}{\\delta t} Trotter steps, -2J\\delta t=\\phi , and 2h(t)\\delta t=\\theta .",
+      "source_text": "where the total evolution time T is discretized into \\frac{T}{\\delta t} Trotter steps, -2J\\delta t=\\phi , and 2h(t)\\delta t=\\theta .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where the total evolution time T is discretized into \\frac{T}{\\delta t} Trotter steps, -2J\\delta t=\\phi , and 2h(t)\\delta t=\\theta .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "10",
+      "equation": "\\mathrm{e}^{-\\mathrm{i}H_{X}\\delta t} =\\prod_{i}\\mathrm{e}^{-\\mathrm{i}h(t)\\delta tX_{i}}=\\prod_{i}\\mathrm{R}_{X_{i}}(2h(t)\\delta t)\\",
+      "original_meaning": "where the total evolution time T is discretized into \\frac{T}{\\delta t} Trotter steps, -2J\\delta t=\\phi , and 2h(t)\\delta t=\\theta .",
+      "source_text": "where the total evolution time T is discretized into \\frac{T}{\\delta t} Trotter steps, -2J\\delta t=\\phi , and 2h(t)\\delta t=\\theta .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where the total evolution time T is discretized into \\frac{T}{\\delta t} Trotter steps, -2J\\delta t=\\phi , and 2h(t)\\delta t=\\theta .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "12",
+      "equation": "m_{\\boldsymbol{z}^{\\mathrm{(noisy)}}}=\\frac{1}{N}\\sum_{n=1}^{N}z_{n}^{\\mathrm{(noisy)}}",
+      "original_meaning": "Clearly, with our approach we aim to obtain predictions that at least outperform the accuracy of the trivial estimation:",
+      "source_text": "Clearly, with our approach we aim to obtain predictions that at least outperform the accuracy of the trivial estimation:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "predictions that at least outperform the accuracy of the trivial estimation",
+          "phrase": "predictions",
+          "strategy": "derived_object",
+          "score": 80,
+          "accepted": false,
+          "reasons": [
+            "too_short"
+          ]
+        },
+        {
+          "raw": "Clearly",
+          "phrase": "Clearly",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "with our approach we aim to obtain predictions",
+          "phrase": "with our approach we aim to obtain predictions",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "at least outperform the accuracy of the trivial estimation",
+          "phrase": "at least outperform the accuracy of the trivial estimation",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.07802",
+      "equation_id": "13",
+      "equation": "\\mathcal{L}=\\frac{1}{K_{\\mathrm{train}}}\\sum_{k=1}^{K_{\\mathrm{train}}}\\left(y_{k}-\\tilde{y}_{k}\\right)^{2}\\",
+      "original_meaning": "where K_{\\mathrm{train}} is the number of instances included in the training set, y_{k}=m_{\\boldsymbol{z},k} is the target value, and \\tilde{y}_{k} is the corresponding predicted value.",
+      "source_text": "where K_{\\mathrm{train}} is the number of instances included in the training set, y_{k}=m_{\\boldsymbol{z},k} is the target value, and \\tilde{y}_{k} is the corresponding predicted value.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where K_{\\mathrm{train}} is the number of instances included in the training set, y_{k}=m_{\\boldsymbol{z},k} is the target value, and \\tilde{y}_{k} is the corresponding predicted value.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "3",
+      "equation": "F_{q}^{\\mathrm{(high\\ T)}}\\approx-\\frac{T^{\\prime}}{T}\\frac{\\Gamma^{2}d^{2}}{6}",
+      "original_meaning": "which reminds us of Eq.( 1 ) mainly due to the -T^{\\prime}/T term, where T^{\\prime}\\equiv(T_{2}-T_{1})/d , and T\\equiv(T_{1}+T_{2})/2 .",
+      "source_text": "which reminds us of Eq.( 1 ) mainly due to the -T^{\\prime}/T term, where T^{\\prime}\\equiv(T_{2}-T_{1})/d , and T\\equiv(T_{1}+T_{2})/2 .",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "reminds us of Eq.( 1 ) mainly due to the -T^{\\prime}/T term",
+          "phrase": "reminds us",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "T^{\\prime}\\equiv(T_{2}-T_{1})/d",
+          "phrase": "T^{\\prime}\\equiv(T_{2}-T_{1})/d",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and T\\equiv(T_{1}+T_{2})/2 .",
+          "phrase": "and T\\equiv(T_{1}+T_{2})/2",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "4",
+      "equation": "\\partial_{t}\\rho_{S}(t)=-(i/\\hbar)[H_{S},\\rho_{S}(t)]+L[\\rho_{S}(t)]",
+      "original_meaning": "where L[\\rho_{S}(t)]=\\sum_{k=1}^{N}L_{k} describes the thermal effects, where petruccione ; werlang15",
+      "source_text": "where L[\\rho_{S}(t)]=\\sum_{k=1}^{N}L_{k} describes the thermal effects, where petruccione ; werlang15",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where L[\\rho_{S}(t)]=\\sum_{k=1}^{N}L_{k} describes the thermal effects, where petruccione ; werlang15",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "5",
+      "equation": "L_{k}=\\sum_{\\omega}\\gamma_{k}(\\omega)\\Big{[}A^{(k)}_{\\omega}\\rho_{S}A^{(k)\\dagger}_{\\omega}-\\frac{1}{2}\\left\\{\\rho_{S},A^{(k)\\dagger}_{\\omega}A^{(k)}_{\\omega}\\right\\}\\Big{]}",
+      "original_meaning": "where L[\\rho_{S}(t)]=\\sum_{k=1}^{N}L_{k} describes the thermal effects, where petruccione ; werlang15",
+      "source_text": "where L[\\rho_{S}(t)]=\\sum_{k=1}^{N}L_{k} describes the thermal effects, where petruccione ; werlang15",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where L[\\rho_{S}(t)]=\\sum_{k=1}^{N}L_{k} describes the thermal effects, where petruccione ; werlang15",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "6",
+      "equation": "\\partial_{t}P_{k}=\\Gamma(n_{k}+1)P_{e}-\\Gamma n_{k}P_{k}",
+      "original_meaning": "we find from Eq.( 4 ) that the populations P_{n}(t)=\\langle n|\\rho_{S}(t)|n\\rangle obey to the rate equations",
+      "source_text": "In this case, we find from Eq.( 4 ) that the populations P_{n}(t)=\\langle n|\\rho_{S}(t)|n\\rangle obey to the rate equations",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "we find from Eq.( 4 )",
+          "phrase": "we find",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2404.12346",
+      "equation_id": "7",
+      "equation": "\\Delta\\equiv P_{2}-P_{1}",
+      "original_meaning": "along with the average ground-state population P\\equiv(P_{2}+P_{1})/2 .",
+      "source_text": "along with the average ground-state population P\\equiv(P_{2}+P_{1})/2 .",
+      "rejection_reasons": [
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "along with the average ground-state population P\\equiv(P_{2}+P_{1})/2 .",
+          "phrase": "along with the average ground-state population P\\equiv(P_{2}+P_{1})/2",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "1",
+      "equation": "\\equiv\\prod_{i=1}^{d}F_{x_{i}}^{(i)}",
+      "original_meaning": "where F_{x_{i}}^{(i)} denotes each 3-way tensor, l_{i} represents the virtual bond index, and \\chi_{i} is the dimension of the virtual bond.",
+      "source_text": "where F_{x_{i}}^{(i)} denotes each 3-way tensor, l_{i} represents the virtual bond index, and \\chi_{i} is the dimension of the virtual bond.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where F_{x_{i}}^{(i)} denotes each 3-way tensor, l_{i} represents the virtual bond index, and \\chi_{i} is the dimension of the virtual bond.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "4",
+      "equation": "\\epsilon_{\\mathrm{max}}=\\frac{\\|F_{x_{1},x_{2},\\ldots,x_{d}}-\\tilde{F}_{\\mathrm{TT}}\\|_{\\mathrm{max}}}{\\|F_{x_{1},x_{2},\\ldots,x_{d}}\\|_{\\mathrm{max}}}",
+      "original_meaning": "where F_{x_{1},x_{2},\\ldots,x_{d}} is a target tensor 6 6 6 Here, we assume that we can access the arbitrary elements of the target tensor.",
+      "source_text": "where F_{x_{1},x_{2},\\ldots,x_{d}} is a target tensor 6 6 6 Here, we assume that we can access the arbitrary elements of the target tensor.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where F_{x_{1},x_{2},\\ldots,x_{d}} is a target tensor 6 6 6 Here, we assume that we can access the arbitrary elements of the target tensor.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "5",
+      "equation": "\\epsilon_{\\mathrm{SVD}}=\\frac{|\\tilde{F}_{\\mathrm{TT}}-\\tilde{F}^{{}^{\\prime}}_{\\mathrm{TT}}|^{2}_{\\mathrm{F}}}{|\\tilde{F}_{\\mathrm{TT}}|^{2}_{\\mathrm{F}}}",
+      "original_meaning": "where |\\cdots|^{2}_{\\mathrm{F}} indicates the Frobenius norm, \\tilde{F}_{\\mathrm{TT}} is the TT obtained from TCI and \\tilde{F}^{{}^{\\prime}}_{\\mathrm{TT}} is the other TT after SVD.",
+      "source_text": "where |\\cdots|^{2}_{\\mathrm{F}} indicates the Frobenius norm, \\tilde{F}_{\\mathrm{TT}} is the TT obtained from TCI and \\tilde{F}^{{}^{\\prime}}_{\\mathrm{TT}} is the other TT after SVD.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where |\\cdots|^{2}_{\\mathrm{F}} indicates the Frobenius norm, \\tilde{F}_{\\mathrm{TT}} is the TT obtained from TCI and \\tilde{F}^{{}^{\\prime}}_{\\mathrm{TT}} is the other TT after SVD.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "6",
+      "equation": "dS_{m}(t)=rS_{m}(t)dt+\\sigma_{m}S_{m}(t)dW_{m}(t)",
+      "original_meaning": "In this paper, we consider the underlying asset prices \\vec{S}(t)=(S_{1}(t),\\cdots,S_{d}(t)) in the Black-Scholes (BS) model described by the following stochastic differential equation",
+      "source_text": "In this paper, we consider the underlying asset prices \\vec{S}(t)=(S_{1}(t),\\cdots,S_{d}(t)) in the Black-Scholes (BS) model described by the following stochastic differential equation",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "math_dominated",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 14,
+      "candidates": [
+        {
+          "raw": "the underlying asset prices \\vec{S}(t)=(S_{1}(t)",
+          "phrase": "underlying asset prices \\vec{S}(t)=(S_{1}(t",
+          "strategy": "active_context_object",
+          "score": 84,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "In this paper",
+          "phrase": "In this paper",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we consider the underlying asset prices \\vec{S}(t)=(S_{1}(t)",
+          "phrase": "we consider the underlying asset prices \\vec{S}(t)=(S_{1}(t",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\cdots",
+          "phrase": "\\cdots",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head",
+            "math_dominated"
+          ]
+        },
+        {
+          "raw": "model",
+          "phrase": "model",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "BS) model",
+          "phrase": "BS) model",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "Black-Scholes (BS) model",
+          "phrase": "Black-Scholes (BS) model",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "the Black-Scholes (BS) model",
+          "phrase": "Black-Scholes (BS) model",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "in the Black-Scholes (BS) model",
+          "phrase": "in the Black-Scholes (BS) model",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "equation",
+          "phrase": "equation",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "differential equation",
+          "phrase": "differential equation",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "stochastic differential equation",
+          "phrase": "stochastic differential equation",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "following stochastic differential equation",
+          "phrase": "following stochastic differential equation",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "the following stochastic differential equation",
+          "phrase": "following stochastic differential equation",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.00701",
+      "equation_id": "10",
+      "equation": "dW_{m}(t)dW_{n}(t)=\\rho_{mn}dt",
+      "original_meaning": "where r\\in\\mathbb{R} and \\sigma_{1},\\cdots,\\sigma_{d}>0 are constant parameters called the risk-free interest rate and the volatilities, respectively.",
+      "source_text": "where r\\in\\mathbb{R} and \\sigma_{1},\\cdots,\\sigma_{d}>0 are constant parameters called the risk-free interest rate and the volatilities, respectively.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where r\\in\\mathbb{R} and \\sigma_{1},\\cdots,\\sigma_{d}>0 are constant parameters called the risk-free interest rate and the volatilities, respectively.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.02630",
+      "equation_id": "2",
+      "equation": "y_{\\text{j}}(\\mathbf{w}\\cdot\\mathbf{x}_{\\text{j}}+b)\\geq 1,;\\forall\\text{j}",
+      "original_meaning": "where \\mathbf{w} is the normal vector to the hyperplane, b is the bias, \\mathbf{x}_{j} are feature vectors, and y_{j} are the class labels.",
+      "source_text": "where \\mathbf{w} is the normal vector to the hyperplane, b is the bias, \\mathbf{x}_{j} are feature vectors, and y_{j} are the class labels.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\mathbf{w} is the normal vector to the hyperplane, b is the bias, \\mathbf{x}_{j} are feature vectors, and y_{j} are the class labels.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.02630",
+      "equation_id": "4",
+      "equation": "|\\langle\\psi(x_{\\text{i}})|\\psi(x_{\\text{j}})\\rangle|^{2}=|\\langle 0^{\\otimes N}|U^{\\dagger}(x_{\\text{i}})U(x_{\\text{j}})|0^{\\otimes N}\\rangle|^{2}",
+      "original_meaning": "where |\\langle\\psi(x_{\\text{i}})|\\psi(x_{\\text{j}})\\rangle|^{2} is computed using a unitary matrix U , defined as:",
+      "source_text": "where |\\langle\\psi(x_{\\text{i}})|\\psi(x_{\\text{j}})\\rangle|^{2} is computed using a unitary matrix U , defined as:",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where |\\langle\\psi(x_{\\text{i}})|\\psi(x_{\\text{j}})\\rangle|^{2} is computed using a unitary matrix U , defined as:",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2405.05068",
+      "equation_id": "5",
+      "equation": "{|\\Psi\\rangle=\\prod_{\\mu=1}^{L}e^{\\hat{K}_{\\mu}}e^{i\\hat{J}_{\\mu}}e^{-\\hat{K}_{\\mu}}|{\\bf{x}}_{\\mathrm{RHF}}\\rangle}",
+      "original_meaning": "Here \\hat{K}_{\\mu}=\\sum_{pr,\\sigma}K_{pr}^{\\mu}\\,\\hat{a}^{\\dagger}_{p\\sigma}\\hat{a}% ^{\\phantom{\\dagger}}_{r\\sigma} are generic one-body operators, \\hat{J}_{\\mu}=\\sum_{pr,\\sigma\\tau}J_{p\\sigma,r\\tau}^{\\mu}\\,\\hat{n}_{p\\sigma}% \\hat{n}_{r\\tau} are density-density operators restricted to spin-orbitals that are mapped onto adjacent qubits ( ? ), and {\\bf{x}}_{\\mathrm{RHF}} is the bitstring representing the restricted Hartree-Fock (RHF) state in the JW mapping.",
+      "source_text": "Here \\hat{K}_{\\mu}=\\sum_{pr,\\sigma}K_{pr}^{\\mu}\\,\\hat{a}^{\\dagger}_{p\\sigma}\\hat{a}% ^{\\phantom{\\dagger}}_{r\\sigma} are generic one-body operators, \\hat{J}_{\\mu}=\\sum_{pr,\\sigma\\tau}J_{p\\sigma,r\\tau}^{\\mu}\\,\\hat{n}_{p\\sigma}% \\hat{n}_{r\\tau} are density-density operators restricted to spin-orbitals that are mapped onto adjacent qubits ( ? ), and {\\bf{x}}_{\\mathrm{RHF}} is the bitstring representing the restricted Hartree-Fock (RHF) state in the JW mapping.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "Here \\hat{K}_{\\mu}=\\sum_{pr,\\sigma}K_{pr}^{\\mu}\\,\\hat{a}^{\\dagger}_{p\\sigma}\\hat{a}% ^{\\phantom{\\dagger}}_{r\\sigma} are generic one-body operators, \\hat{J}_{\\mu}=\\sum_{pr,\\sigma\\tau}J_{p\\sigma,r\\tau}^{\\mu}\\,\\hat{n}_{p\\sigma}% \\hat{n}_{r\\tau} are density-density operators restricted to spin-orbitals that are mapped onto adjacent qubits ( ? ), and {\\bf{x}}_{\\mathrm{RHF}} is the bitstring representing the restricted Hartree-Fock (RHF) state in the JW mapping.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2406.14642",
+      "equation_id": "3",
+      "equation": "\\hat{\\mathcal{H}}=\\hat{H}_{\\mathcal{R}}\\otimes\\hat{1}_{\\mathcal{C}}+\\hat{1}_{\\mathcal{R}}\\otimes\\hat{H}_{\\mathcal{C}}",
+      "original_meaning": "where \\hat{H}_{\\mathcal{R}} is the free Hamiltonian of the rest of the universe, \\hat{H}_{\\mathcal{C}} is that of the clock, and \\hat{1}_{\\mathcal{C}} and \\hat{1}_{\\mathcal{R}} are the unit observables of the clock and the rest of the universe, respectively.",
+      "source_text": "where \\hat{H}_{\\mathcal{R}} is the free Hamiltonian of the rest of the universe, \\hat{H}_{\\mathcal{C}} is that of the clock, and \\hat{1}_{\\mathcal{C}} and \\hat{1}_{\\mathcal{R}} are the unit observables of the clock and the rest of the universe, respectively.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\hat{H}_{\\mathcal{R}} is the free Hamiltonian of the rest of the universe, \\hat{H}_{\\mathcal{C}} is that of the clock, and \\hat{1}_{\\mathcal{C}} and \\hat{1}_{\\mathcal{R}} are the unit observables of the clock and the rest of the universe, respectively.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "2",
+      "equation": "\\Phi^{\\prime}\\bigg{(}\\sum_{i=0}^{n-1}a_{i}x^{i}\\bigg{)}\\triangleq\\bigg{(}\\sum_{i=0}^{n-1}a_{i}\\beta^{i},\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi)^{i},\\dots,\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{n-1})^{i}\\bigg{)}",
+      "original_meaning": "From equations ( 2 ) and ( 3 ), we can define A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ j=0,1,\\dots,n-1.",
+      "source_text": "From equations ( 2 ) and ( 3 ), we can define A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ j=0,1,\\dots,n-1.",
+      "rejection_reasons": [
+        "contains_equation_reference",
+        "incomplete_or_invalid_edge",
+        "math_dominated",
+        "missing_science_head",
+        "too_long",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevm",
+          "phrase": "A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevm",
+          "strategy": "active_context_object",
+          "score": 81,
+          "accepted": false,
+          "reasons": [
+            "too_long"
+          ]
+        },
+        {
+          "raw": "From equations ( 2 ) and ( 3 )",
+          "phrase": "From equations ( 2 ) and ( 3",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_equation_reference",
+            "incomplete_or_invalid_edge",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\dots",
+          "phrase": "\\dots",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head",
+            "math_dominated"
+          ]
+        },
+        {
+          "raw": "n-1.",
+          "phrase": "n-1",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "3",
+      "equation": "\\Phi^{\\prime\\prime}(a_{0},a_{1},\\dots,a_{n-1})=\\sum_{i=0}^{n-1}a_{i}x^{i}",
+      "original_meaning": "From equations ( 2 ) and ( 3 ), we can define A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ j=0,1,\\dots,n-1.",
+      "source_text": "From equations ( 2 ) and ( 3 ), we can define A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ j=0,1,\\dots,n-1.",
+      "rejection_reasons": [
+        "contains_equation_reference",
+        "incomplete_or_invalid_edge",
+        "math_dominated",
+        "missing_science_head",
+        "too_long",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevm",
+          "phrase": "A_{j}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{j})^{i}\\leavevmode\\nobreak\\ \\leavevmode% \\nobreak\\ \\leavevmode\\nobreak\\ \\text{for }\\leavevmode\\nobreak\\ \\leavevm",
+          "strategy": "active_context_object",
+          "score": 81,
+          "accepted": false,
+          "reasons": [
+            "too_long"
+          ]
+        },
+        {
+          "raw": "From equations ( 2 ) and ( 3 )",
+          "phrase": "From equations ( 2 ) and ( 3",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_equation_reference",
+            "incomplete_or_invalid_edge",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\dots",
+          "phrase": "\\dots",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head",
+            "math_dominated"
+          ]
+        },
+        {
+          "raw": "n-1.",
+          "phrase": "n-1",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "4",
+      "equation": "= \\sum_{i=0}^{n-1}a_{k}\\beta^{n}\\beta^{-k}\\xi^{-jk}=\\lambda\\sum_{k=0}^{n-1}a_{k}\\beta^{-k}\\xi^{-jk}",
+      "original_meaning": "For any j\\in\\{0,1,\\dots,n-1\\} , we have",
+      "source_text": "For any j\\in\\{0,1,\\dots,n-1\\} , we have",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "math_dominated",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "For any j\\in\\{0",
+          "phrase": "any j\\in\\{0",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\dots",
+          "phrase": "\\dots",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head",
+            "math_dominated"
+          ]
+        },
+        {
+          "raw": "n-1\\}",
+          "phrase": "n-1\\}",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we have",
+          "phrase": "we have",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "5",
+      "equation": "A_{n-j}= \\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{n-j})^{i}=\\sum_{i=0}^{n-1}a_{i}(\\beta\\xi^{-j})^{i}=\\lambda\\sum_{k=0}^{n-1}a_{k}\\beta^{-k}\\xi^{-jk}",
+      "original_meaning": "From equations ( 2.1 ) and ( 5 ), we get the required result.",
+      "source_text": "From equations ( 2.1 ) and ( 5 ), we get the required result.",
+      "rejection_reasons": [
+        "contains_equation_reference",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "From equations ( 2.1 ) and ( 5 )",
+          "phrase": "From equations ( 2.1 ) and ( 5",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_equation_reference",
+            "incomplete_or_invalid_edge",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we get the required result.",
+          "phrase": "we get the required result",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2407.16814",
+      "equation_id": "7",
+      "equation": "H=\\begin{bmatrix}1&\\beta\\xi&(\\beta\\xi)^{2}&\\dots&(\\beta\\xi)^{n-1}\\\\ 1&\\beta\\xi^{3}&(\\beta\\xi^{3})^{2}&\\dots&(\\beta\\xi^{3})^{(n-1)}\\\\ \\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\ 1&\\beta\\xi^{2t-1}&(\\beta\\xi^{2t-1})^{2}&\\dots&(\\beta\\xi^{2t-1})^{(n-1)}\\\\ \\end{bmatrix}.\\vspace{-0.15cm}",
+      "original_meaning": "For the constacyclic BCH codes obtained from parity check matrices H and H_{b} in equations ( 7 ) and ( 8 ), respectively, the constacyclic BCH code is over n symbols.",
+      "source_text": "For the constacyclic BCH codes obtained from parity check matrices H and H_{b} in equations ( 7 ) and ( 8 ), respectively, the constacyclic BCH code is over n symbols.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "respectively",
+          "phrase": "respectively",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "the constacyclic BCH code is over n symbols.",
+          "phrase": "constacyclic BCH code is over n symbols",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2408.00252",
+      "equation_id": "2",
+      "equation": "\\hat{H}_{\\text{eff}} =w_{\\text{Heis}}\\hat{H}_{\\text{Heis}}+\\sum_{\\mu=x,y,z}\\left(w_{\\text{on-site}}^{\\mu}\\hat{H}_{\\text{on-site}}^{\\mu}+w_{\\text{Ising}}^{\\mu}\\hat{H}_{\\text{Ising}}^{\\mu}\\right)",
+      "original_meaning": "Here, w_{\\text{Heis}} , w_{\\text{on-site}} , and w_{\\text{Ising}} are relative weights between the different Hamiltonians: the Heisenberg Hamiltonian \\hat{H}_{\\text{Heis}}=\\sum_{ij,\\;i>j}^{N}J_{ij}\\vec{S}^{i} \\bm{\\cdot} \\vec{S}^{j} , the on-site Hamiltonian \\hat{H}_{\\text{on-site}}^{\\mu}=\\sum_{i}^{N}h_{\\mu}^{i}\\hat{S}_{\\mu}^{i} , and the Ising Hamiltonian \\hat{H}_{\\text{Ising}}^{\\mu}=\\sum_{ij,\\;i>j}^{N}J_{ij}\\hat{S}_{\\mu}^{i}\\hat{S}% _{\\mu}^{j} , where \\vec{S}^{i}=(\\hat{S}_{x}^{i},\\hat{S}_{y}^{i},\\hat{S}_{z}^{i}) is a vectorized spin operator, and \\vec{h}^{i}=(h_{x}^{i},h_{y}^{i},h_{z}^{i}) is an effective on-site field for ion i .",
+      "source_text": "Here, w_{\\text{Heis}} , w_{\\text{on-site}} , and w_{\\text{Ising}} are relative weights between the different Hamiltonians: the Heisenberg Hamiltonian \\hat{H}_{\\text{Heis}}=\\sum_{ij,\\;i>j}^{N}J_{ij}\\vec{S}^{i} \\bm{\\cdot} \\vec{S}^{j} , the on-site Hamiltonian \\hat{H}_{\\text{on-site}}^{\\mu}=\\sum_{i}^{N}h_{\\mu}^{i}\\hat{S}_{\\mu}^{i} , and the Ising Hamiltonian \\hat{H}_{\\text{Ising}}^{\\mu}=\\sum_{ij,\\;i>j}^{N}J_{ij}\\hat{S}_{\\mu}^{i}\\hat{S}% _{\\mu}^{j} , where \\vec{S}^{i}=(\\hat{S}_{x}^{i},\\hat{S}_{y}^{i},\\hat{S}_{z}^{i}) is a vectorized spin operator, and \\vec{h}^{i}=(h_{x}^{i},h_{y}^{i},h_{z}^{i}) is an effective on-site field for ion i .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "Here, w_{\\text{Heis}} , w_{\\text{on-site}} , and w_{\\text{Ising}} are relative weights between the different Hamiltonians: the Heisenberg Hamiltonian \\hat{H}_{\\text{Heis}}=\\sum_{ij,\\;i>j}^{N}J_{ij}\\vec{S}^{i} \\bm{\\cdot} \\vec{S}^{j} , the on-site Hamiltonian \\hat{H}_{\\text{on-site}}^{\\mu}=\\sum_{i}^{N}h_{\\mu}^{i}\\hat{S}_{\\mu}^{i} , and the Ising Hamiltonian \\hat{H}_{\\text{Ising}}^{\\mu}=\\sum_{ij,\\;i>j}^{N}J_{ij}\\hat{S}_{\\mu}^{i}\\hat{S}% _{\\mu}^{j} , where \\vec{S}^{i}=(\\hat{S}_{x}^{i},\\hat{S}_{y}^{i},\\hat{S}_{z}^{i}) is a vectorized spin operator, and \\vec{h}^{i}=(h_{x}^{i},h_{y}^{i},h_{z}^{i}) is an effective on-site field for ion i .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "1",
+      "equation": "\\boldsymbol{j}:=(j_{x},j_{y},j_{z},j_{v_{x}},j_{v_{y}},j_{v_{z}})\\in\\mathcal{I}_{6}:=[N]^{\\otimes 6}",
+      "original_meaning": "where, j_{x},j_{y}, and j_{z} represent the index of the grid points in the three-dimensional physical space, and j_{v_{x}},j_{v_{y}}, and j_{v_{z}} represent the indices of the grid points in the three-dimensional velocity space, with each indices taking value from 0 to N-1 .",
+      "source_text": "where, j_{x},j_{y}, and j_{z} represent the index of the grid points in the three-dimensional physical space, and j_{v_{x}},j_{v_{y}}, and j_{v_{z}} represent the indices of the grid points in the three-dimensional velocity space, with each indices taking value from 0 to N-1 .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where, j_{x},j_{y}, and j_{z} represent the index of the grid points in the three-dimensional physical space, and j_{v_{x}},j_{v_{y}}, and j_{v_{z}} represent the indices of the grid points in the three-dimensional velocity space, with each indices taking value from 0 to N-1 .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "3",
+      "equation": "\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v},t)}{\\partial t}+\\boldsymbol{v}\\cdot\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v},t)}{\\partial\\boldsymbol{x}}+\\frac{q}{m}(\\boldsymbol{E}(\\boldsymbol{x},t)+\\boldsymbol{v}\\times\\boldsymbol{B}(\\boldsymbol{x},t))\\cdot\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v},t)}{\\partial\\boldsymbol{v}}=0",
+      "original_meaning": "Here, \\boldsymbol{E} , \\boldsymbol{B} and \\boldsymbol{v} are three-dimensional vectors, representing the electric field, magnetic field, and velocity in phase space, respectively.",
+      "source_text": "Here, \\boldsymbol{E} , \\boldsymbol{B} and \\boldsymbol{v} are three-dimensional vectors, representing the electric field, magnetic field, and velocity in phase space, respectively.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "Here, \\boldsymbol{E} , \\boldsymbol{B} and \\boldsymbol{v} are three-dimensional vectors, representing the electric field, magnetic field, and velocity in phase space, respectively.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2408.11550",
+      "equation_id": "4",
+      "equation": "\\frac{\\partial f(\\boldsymbol{x},\\boldsymbol{v})}{\\partial x}=\\frac{1}{2\\Delta x}\\left(f(\\boldsymbol{x}+\\Delta x\\boldsymbol{e},\\boldsymbol{v})-f(\\boldsymbol{x}-\\Delta x\\boldsymbol{e},\\boldsymbol{v})\\right)+O\\left(\\Delta x^{2}\\right)",
+      "original_meaning": "Here, \\boldsymbol{E} , \\boldsymbol{B} and \\boldsymbol{v} are three-dimensional vectors, representing the electric field, magnetic field, and velocity in phase space, respectively.",
+      "source_text": "Here, \\boldsymbol{E} , \\boldsymbol{B} and \\boldsymbol{v} are three-dimensional vectors, representing the electric field, magnetic field, and velocity in phase space, respectively.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "Here, \\boldsymbol{E} , \\boldsymbol{B} and \\boldsymbol{v} are three-dimensional vectors, representing the electric field, magnetic field, and velocity in phase space, respectively.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2409.12056",
+      "equation_id": "2",
+      "equation": "m\\frac{dr}{dt}=\\hbar\\Im\\left(\\frac{\\nabla\\Psi}{\\Psi}\\right)",
+      "original_meaning": "when the dimension of the configuration space N_{c} is \\dim(N_{c})\\geq 2 one observes, in general, the coexistence of ordered and chaotic trajectories [ 11 , 12 , 13 ] .",
+      "source_text": "Thus when the dimension of the configuration space N_{c} is \\dim(N_{c})\\geq 2 one observes, in general, the coexistence of ordered and chaotic trajectories [ 11 , 12 , 13 ] .",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "in general",
+          "phrase": "in general",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "the coexistence of ordered and chaotic trajectories [ 11",
+          "phrase": "coexistence of ordered and chaotic trajectories [ 11",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "2.1",
+      "equation": "\\Theta(y)=\\begin{cases}1,&\\text{if}\\leavevmode\\nobreak\\ y\\geqslant 0\\\\ 0,&\\text{otherwise},\\end{cases}",
+      "original_meaning": "where y can be either a variable or an expression like y=x-x_{th} with a constant x_{th} .",
+      "source_text": "where y can be either a variable or an expression like y=x-x_{th} with a constant x_{th} .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where y can be either a variable or an expression like y=x-x_{th} with a constant x_{th} .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "3.3",
+      "equation": "\\mathrm{RMSE}(\\widehat{g(X)})=\\sqrt{\\mathbb{E}\\left[\\left(g(X)-\\mathbb{E}[\\widehat{g(X)}]_{S}\\right)^{2}\\right])}",
+      "original_meaning": "the asymptotic decay of the RMSE as \\mathcal{O}(1/\\sqrt{\\mathcal{S}}) , where \\mathcal{S} is the number of samples",
+      "source_text": "Classically, the central limit theorem can be invoked to obtain the asymptotic decay of the RMSE as \\mathcal{O}(1/\\sqrt{\\mathcal{S}}) , where \\mathcal{S} is the number of samples.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "the asymptotic decay of the RMSE as \\mathcal{O}(1/\\sqrt{\\mathcal{S}}) , where \\mathcal{S} is the number of samples",
+          "phrase": "asymptotic decay of the RMSE as \\mathcal{O}(1/\\sqrt{\\mathcal{S}}",
+          "strategy": "existing_phrase",
+          "score": 94,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "the asymptotic decay of the RMSE as \\mathcal{O}(1/\\sqrt{\\mathcal{S}})",
+          "phrase": "asymptotic decay of the RMSE as \\mathcal{O}(1/\\sqrt{\\mathcal{S}}",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\mathcal{S} is the number of samples",
+          "phrase": "\\mathcal{S} is the number of samples",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.03926",
+      "equation_id": "3.5",
+      "equation": "R\\ket{p}\\!\\ket{0}=\\sum_{x}\\sqrt{f_{X}(x)}\\ket{x}\\left(\\sqrt{1-g(x)}\\ket{0}+\\sqrt{g(x)}\\ket{1}\\right)",
+      "original_meaning": "In Quantinuum’s QMCI engine [ 19 ] , the circuit R is implemented using the Fourier QMCI approach [ 8 ] .",
+      "source_text": "In Quantinuum’s QMCI engine [ 19 ] , the circuit R is implemented using the Fourier QMCI approach [ 8 ] .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "In Quantinuum’s QMCI engine [ 19 ]",
+          "phrase": "In Quantinuum’s QMCI engine",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "the circuit R is implemented using the Fourier QMCI approach [ 8 ] .",
+          "phrase": "circuit R is implemented",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.05932",
+      "equation_id": "1",
+      "equation": "R_{p}=\\sum_{i=1}^{n}x_{i}r_{i}",
+      "original_meaning": "Let R_{p} denote the expected return from the entire portfolio which can be defined as:",
+      "source_text": "Let R_{p} denote the expected return from the entire portfolio which can be defined as:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "Let R_{p} denote the expected return from the entire portfolio which",
+          "phrase": "Let R_{p} denote the expected return from the entire portfolio",
+          "strategy": "subject_before_introduction",
+          "score": 90,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "Let R_{p} denote the expected return from the entire portfolio",
+          "phrase": "Let R_{p} denote the expected return from the entire portfolio",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "can be defined as",
+          "phrase": "can be defined as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.05932",
+      "equation_id": "4",
+      "equation": "\\mathbf{H} =\\theta\\cdot\\left(\\sum_{i=1}^{n}\\sum_{j=1}^{n}\\text{Cov}(i,j)\\cdot x_{i}x_{j}\\right) -M\\cdot\\left(\\sum_{i=1}^{n}x_{i}r_{i}-R\\right)^{2}",
+      "original_meaning": "where \\theta is a scaling parameter for the original objective term (risk), and M is a penalty parameter for the constraint term (return) that penalizes constraint violation relative to the objective function.",
+      "source_text": "where \\theta is a scaling parameter for the original objective term (risk), and M is a penalty parameter for the constraint term (return) that penalizes constraint violation relative to the objective function.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\theta is a scaling parameter for the original objective term (risk), and M is a penalty parameter for the constraint term (return) that penalizes constraint violation relative to the objective function.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.05932",
+      "equation_id": "5",
+      "equation": "\\mathbf{H}=\\sum_{i=1}^{n}{a_{i}x_{i}}+\\sum_{i=1}^{n}\\sum_{j=1}^{n}{b_{i,j}x_{i}x_{j}}",
+      "original_meaning": "In the context of quantum-inspired optimization in the QUBO framework, the optimization problem is mapped into a QUBO model as follows:",
+      "source_text": "In the context of quantum-inspired optimization in the QUBO framework, the optimization problem is mapped into a QUBO model as follows:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 7,
+      "candidates": [
+        {
+          "raw": "In the context of quantum-inspired optimization in the QUBO framework",
+          "phrase": "In the context of quantum-inspired optimization in the QUBO framework",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "the optimization problem is mapped into a QUBO model as follows",
+          "phrase": "optimization problem is mapped into a QUBO model as follows",
+          "strategy": "science_head_segment",
+          "score": 45,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "model",
+          "phrase": "model",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "QUBO model",
+          "phrase": "QUBO model",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "a QUBO model",
+          "phrase": "QUBO model",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "into a QUBO model",
+          "phrase": "into a QUBO model",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "mapped into a QUBO model",
+          "phrase": "mapped into a QUBO model",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.05932",
+      "equation_id": "6",
+      "equation": "\\mathbf{H}=\\sum_{i=1}^{n}{a_{i}x_{i}}+\\sum_{i=1}^{n}\\sum_{j=1}^{n}{b_{i,j}x_{i}x_{j}}+M\\cdot g(x)",
+      "original_meaning": "where g(x) is the exterior penalty function, M is the penalty coefficient, and the index i refers to each decision variable in the system.",
+      "source_text": "where g(x) is the exterior penalty function, M is the penalty coefficient, and the index i refers to each decision variable in the system.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where g(x) is the exterior penalty function, M is the penalty coefficient, and the index i refers to each decision variable in the system.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "3",
+      "equation": "q:=e^{-\\lambda}\\,,~{}~{}~{}~{}~{}\\lambda=\\lim_{p,N\\rightarrow\\infty}\\frac{2p^{2}}{N}\\",
+      "original_meaning": "To proceed further, one defines the following parametrization",
+      "source_text": "To proceed further, one defines the following parametrization",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "To proceed further",
+          "phrase": "To proceed further",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "one defines the following parametrization",
+          "phrase": "one defines the following parametrization",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.07847",
+      "equation_id": "7",
+      "equation": "\\mathsf{a}_{0^{+}}(x)=0\\,,~{}~{}~{}~{}\\mathsf{b}_{0^{+}}(x)=\\sqrt{1-x}\\,\\,,~{}~{}~{}~{}~{}~{}~{}~{}(q=0^{+})\\",
+      "original_meaning": "They are given by",
+      "source_text": "They are given by",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "They",
+          "phrase": "They",
+          "strategy": "subject_before_introduction",
+          "score": 90,
+          "accepted": false,
+          "reasons": [
+            "too_short"
+          ]
+        },
+        {
+          "raw": "They are given by",
+          "phrase": "They are",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "2",
+      "equation": "\\mathbfcal{G}^{t}[\\lambda\\boldsymbol{x}+\\lambda^{\\prime}\\boldsymbol{x}^{\\prime}]=\\lambda\\mathbfcal{G}^{t}[\\boldsymbol{x}]+\\lambda^{\\prime}\\mathbfcal{G}^{t}[\\boldsymbol{x}^{\\prime}]",
+      "original_meaning": "for all square-integrable functions \\boldsymbol{x},\\boldsymbol{x^{\\prime}} and all constants \\lambda,\\lambda^{\\prime} at each instant t .",
+      "source_text": "for all square-integrable functions \\boldsymbol{x},\\boldsymbol{x^{\\prime}} and all constants \\lambda,\\lambda^{\\prime} at each instant t .",
+      "rejection_reasons": [
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "for all square-integrable functions \\boldsymbol{x}",
+          "phrase": "all square-integrable functions \\boldsymbol{x}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\boldsymbol{x^{\\prime}} and all constants \\lambda",
+          "phrase": "\\boldsymbol{x^{\\prime}} and all constants \\lambda",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\lambda^{\\prime} at each instant t .",
+          "phrase": "\\lambda^{\\prime} at each instant t",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "5",
+      "equation": "[\\hat{q}_{i}(t),\\hat{q}_{j}(t^{\\prime})]&=0\\\\ [\\hat{p}_{i}(t),\\hat{p}_{j}(t^{\\prime})]&=0\\\\ [\\hat{q}_{i}(t),\\hat{p}_{j}(t^{\\prime})]&=\\mathrm{i}\\delta_{ij}\\delta(t-t^{\\prime})",
+      "original_meaning": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t),\\hat{p}_{i}(t)\\}_{i=1,\\ldots,n} that satisfy",
+      "source_text": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t),\\hat{p}_{i}(t)\\}_{i=1,\\ldots,n} that satisfy",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "math_dominated",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "raw": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t)",
+          "phrase": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\hat{p}_{i}(t)\\}_{i=1",
+          "phrase": "\\hat{p}_{i}(t)\\}_{i=1",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\ldots",
+          "phrase": "\\ldots",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head",
+            "math_dominated"
+          ]
+        },
+        {
+          "raw": "n}",
+          "phrase": "n}",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "satisfy",
+          "phrase": "satisfy",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "6",
+      "equation": "\\boldsymbol{x}^{\\text{out}}(t)=\\mathbfcal{G}^{t}[\\boldsymbol{x}^{\\text{in}}]",
+      "original_meaning": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t),\\hat{p}_{i}(t)\\}_{i=1,\\ldots,n} that satisfy",
+      "source_text": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t),\\hat{p}_{i}(t)\\}_{i=1,\\ldots,n} that satisfy",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "math_dominated",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "raw": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t)",
+          "phrase": "Quantum noises are pairs of operator-valued stochastic processes \\{\\hat{q}_{i}(t",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\hat{p}_{i}(t)\\}_{i=1",
+          "phrase": "\\hat{p}_{i}(t)\\}_{i=1",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\ldots",
+          "phrase": "\\ldots",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head",
+            "math_dominated"
+          ]
+        },
+        {
+          "raw": "n}",
+          "phrase": "n}",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "satisfy",
+          "phrase": "satisfy",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.09976",
+      "equation_id": "7",
+      "equation": "\\boldsymbol{x}^{\\text{out}}=\\mathbfcal{A}[\\boldsymbol{x}^{\\text{in}},0]+\\mathbfcal{A}[0,\\boldsymbol{x}^{\\text{N}}]\\eqqcolon\\mathbfcal{G}[\\boldsymbol{x}^{\\text{in}}]+\\mathbfcal{N}[\\boldsymbol{x}^{\\text{N}}]",
+      "original_meaning": "where \\mathbfcal{N} maps the inaccessible inputs to the accessible outputs.",
+      "source_text": "where \\mathbfcal{N} maps the inaccessible inputs to the accessible outputs.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\mathbfcal{N} maps the inaccessible inputs to the accessible outputs.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.17702",
+      "equation_id": "1",
+      "equation": "Q=\\frac{\\expectationvalue*{(\\Delta\\hat{n})^{2}}-\\expectationvalue*{\\hat{n}}}{\\expectationvalue*{\\hat{n}}}\\ ",
+      "original_meaning": "We can characterise squeezed states by the quadrature fluctuations \\expectationvalue*{(\\Delta\\hat{X}_{\\theta})^{2}}=\\expectationvalue*{\\hat{X}_{% \\theta}^{2}}-\\expectationvalue*{\\hat{X}_{\\theta}}^{2} where \\hat{X}_{\\theta}=[\\hat{a}\\exp(-i\\theta)+\\hat{a}^{\\dagger}\\exp(i\\theta)]/\\sqrt{2} [ 6 ] .",
+      "source_text": "We can characterise squeezed states by the quadrature fluctuations \\expectationvalue*{(\\Delta\\hat{X}_{\\theta})^{2}}=\\expectationvalue*{\\hat{X}_{% \\theta}^{2}}-\\expectationvalue*{\\hat{X}_{\\theta}}^{2} where \\hat{X}_{\\theta}=[\\hat{a}\\exp(-i\\theta)+\\hat{a}^{\\dagger}\\exp(i\\theta)]/\\sqrt{2} [ 6 ] .",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "3",
+      "equation": "I(\\mathsf{A}:\\mathsf{C}|\\mathsf{B}):=\\mathbb{E\\/}_{\\mathsf{B}}D_{\\text{KL}}(p_{\\mathsf{A},\\mathsf{C}|\\mathsf{B}}\\parallel p_{\\mathsf{A}|\\mathsf{B}}\\otimes p_{\\mathsf{C}|\\mathsf{B}})",
+      "original_meaning": "where the expectation is over x_{\\mathsf{B}}\\sim p_{\\mathsf{B}}(x_{\\mathsf{B}}) and the Kullback–Leibler (KL) divergence between two distributions q and q^{\\prime} is given by D_{\\text{KL}}(q\\parallel q^{\\prime})=\\mathbb{E\\/}_{{x}\\sim q}\\log\\left({q({x})% /q^{\\prime}({x})}\\right) in their support.",
+      "source_text": "where the expectation is over x_{\\mathsf{B}}\\sim p_{\\mathsf{B}}(x_{\\mathsf{B}}) and the Kullback–Leibler (KL) divergence between two distributions q and q^{\\prime} is given by D_{\\text{KL}}(q\\parallel q^{\\prime})=\\mathbb{E\\/}_{{x}\\sim q}\\log\\left({q({x})% /q^{\\prime}({x})}\\right) in their support.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where the expectation is over x_{\\mathsf{B}}\\sim p_{\\mathsf{B}}(x_{\\mathsf{B}}) and the Kullback–Leibler (KL) divergence between two distributions q and q^{\\prime} is given by D_{\\text{KL}}(q\\parallel q^{\\prime})=\\mathbb{E\\/}_{{x}\\sim q}\\log\\left({q({x})% /q^{\\prime}({x})}\\right) in their support.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "5",
+      "equation": "\\text{depth}=\\mathcal{O}\\left(\\log\\log(n)\\right)\\text{ \\ and width}=n^{\\mathcal{O}(\\log^{D_{\\Lambda}-1}(n))}",
+      "original_meaning": "This can also be achieved using a recurrent neural network with D_{\\Lambda} -dimensional geometry, a memory size of \\mathcal{O}(\\log^{D_{\\Lambda}}(n)) , and feedforward cells with width and depth given by ( 5 ).",
+      "source_text": "This can also be achieved using a recurrent neural network with D_{\\Lambda} -dimensional geometry, a memory size of \\mathcal{O}(\\log^{D_{\\Lambda}}(n)) , and feedforward cells with width and depth given by ( 5 ).",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "a memory size of \\mathcal{O}(\\log^{D_{\\Lambda}}(n))",
+          "phrase": "memory size of \\mathcal{O}(\\log^{D_{\\Lambda}}(n",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and feedforward cells with width and depth given by ( 5 ).",
+          "phrase": "and feedforward cells with width and depth",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2410.23152",
+      "equation_id": "6",
+      "equation": "\\ket{a_{i}}_{\\mathsf{L}_{i}\\mathsf{R}_{i}}\\otimes\\ket{a_{i+1}}_{\\mathsf{L}_{i+1}\\mathsf{R}_{i+1}}=\\raisebox{-0.5pt}{\\includegraphics[height=51.6665pt]{es3.png}}",
+      "original_meaning": "prepared by applying the gates in the backward lightcones on \\ket{0}_{\\mathsf{L}_{i}\\mathsf{R}_{i}}\\otimes\\ket{0}_{\\mathsf{L}_{i+1}\\mathsf{% R}_{i+1}} with \\mathsf{L_{i}} , \\mathsf{R}_{i} , \\mathsf{L}_{i+1} , and \\mathsf{R}_{i+1} being subsystems of D-1 qubits.",
+      "source_text": "prepared by applying the gates in the backward lightcones on \\ket{0}_{\\mathsf{L}_{i}\\mathsf{R}_{i}}\\otimes\\ket{0}_{\\mathsf{L}_{i+1}\\mathsf{% R}_{i+1}} with \\mathsf{L_{i}} , \\mathsf{R}_{i} , \\mathsf{L}_{i+1} , and \\mathsf{R}_{i+1} being subsystems of D-1 qubits.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "\\mathsf{R}_{i}",
+          "phrase": "\\mathsf{R}_{i}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\mathsf{L}_{i+1}",
+          "phrase": "\\mathsf{L}_{i+1}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and \\mathsf{R}_{i+1} being subsystems of D-1 qubits.",
+          "phrase": "and \\mathsf{R}_{i+1} being subsystems of D-1 qubits",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "1",
+      "equation": "\\delta_{i,p}=\\begin{cases}\\ 1,&\\text{if}\\ y_{i}=p\\\\ \\ 0,&\\text{otherwise,}\\end{cases}",
+      "original_meaning": "where both i and p are indexes.",
+      "source_text": "where both i and p are indexes.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where both i and p are indexes.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "2",
+      "equation": "R_{x}(2\\alpha)=e^{-i{\\alpha}\\sigma_{x}}=\\sigma_{0}\\cos\\alpha-i\\sigma_{x}\\sin\\alpha",
+      "original_meaning": "Finally, three canonical rotations around the axes, corresponding to the Pauli matrices ( \\sigma_{x},\\sigma_{y},\\sigma_{z} ), are denoted as:",
+      "source_text": "Finally, three canonical rotations around the axes, corresponding to the Pauli matrices ( \\sigma_{x},\\sigma_{y},\\sigma_{z} ), are denoted as:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "raw": "Finally",
+          "phrase": "Finally",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "three canonical rotations around the axes",
+          "phrase": "three canonical rotations around the axes",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "corresponding to the Pauli matrices ( \\sigma_{x}",
+          "phrase": "corresponding to the Pauli matrices ( \\sigma_{x}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\sigma_{y}",
+          "phrase": "\\sigma_{y}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\sigma_{z} )",
+          "phrase": "\\sigma_{z}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "are denoted as",
+          "phrase": "are denoted as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "3",
+      "equation": "R_{y}(2\\alpha)=e^{-i{\\alpha}\\sigma_{y}}=\\sigma_{0}\\cos\\alpha-i\\sigma_{y}\\sin\\alpha",
+      "original_meaning": "Finally, three canonical rotations around the axes, corresponding to the Pauli matrices ( \\sigma_{x},\\sigma_{y},\\sigma_{z} ), are denoted as:",
+      "source_text": "Finally, three canonical rotations around the axes, corresponding to the Pauli matrices ( \\sigma_{x},\\sigma_{y},\\sigma_{z} ), are denoted as:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "raw": "Finally",
+          "phrase": "Finally",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "three canonical rotations around the axes",
+          "phrase": "three canonical rotations around the axes",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "corresponding to the Pauli matrices ( \\sigma_{x}",
+          "phrase": "corresponding to the Pauli matrices ( \\sigma_{x}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\sigma_{y}",
+          "phrase": "\\sigma_{y}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\sigma_{z} )",
+          "phrase": "\\sigma_{z}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "are denoted as",
+          "phrase": "are denoted as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "4",
+      "equation": "R_{z}(2\\alpha)=e^{-i{\\alpha}\\sigma_{z}}=\\sigma_{0}\\cos\\alpha-i\\sigma_{z}\\sin\\alpha",
+      "original_meaning": "Finally, three canonical rotations around the axes, corresponding to the Pauli matrices ( \\sigma_{x},\\sigma_{y},\\sigma_{z} ), are denoted as:",
+      "source_text": "Finally, three canonical rotations around the axes, corresponding to the Pauli matrices ( \\sigma_{x},\\sigma_{y},\\sigma_{z} ), are denoted as:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "raw": "Finally",
+          "phrase": "Finally",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "three canonical rotations around the axes",
+          "phrase": "three canonical rotations around the axes",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "corresponding to the Pauli matrices ( \\sigma_{x}",
+          "phrase": "corresponding to the Pauli matrices ( \\sigma_{x}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\sigma_{y}",
+          "phrase": "\\sigma_{y}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\sigma_{z} )",
+          "phrase": "\\sigma_{z}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "are denoted as",
+          "phrase": "are denoted as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.02913",
+      "equation_id": "5",
+      "equation": "\\begin{array}[]{ll}\\sigma_{0}=\\left[\\begin{array}[]{lr}1&\\ \\ 0\\\\ 0&\\ \\ 1\\end{array}\\right],&\\sigma_{x}=\\left[\\begin{array}[]{lr}0&\\ \\ 1\\\\ 1&\\ \\ 0\\end{array}\\right],\\\\ \\\\ \\sigma_{y}=\\left[\\begin{array}[]{lr}0&-i\\\\ i&0\\end{array}\\right],&\\sigma_{z}=\\left[\\begin{array}[]{lr}1&0\\\\ 0&-1\\end{array}\\right].\\end{array}",
+      "original_meaning": "The above summarizes the notations used in this paper.",
+      "source_text": "The above summarizes the notations used in this paper.",
+      "rejection_reasons": [
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "The above summarizes the notations used in this paper.",
+          "phrase": "above summarizes the notations used in this paper",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.04765",
+      "equation_id": "7",
+      "equation": "\\hat{H}_{z}=\\sum_{i=1,2}\\left(\\frac{\\hat{p}_{z,k}^{2}}{2m}+\\frac{1}{2}m\\omega_{z}^{2}\\hat{z}_{k}^{2}+\\hat{V}_{\\mathrm{Coul},z}\\right)",
+      "original_meaning": "where \\hat{p}_{z,i} is the momentum of the i th ion along the z axis, \\hat{z}_{i} is the position coordinate of the i th ion, m is the mass of the ion, \\omega_{z} is the trap frequency in the z direction, and \\hat{V}_{\\mathrm{Coul},z} is the Coulomb energy part of the potential energy in the z direction.",
+      "source_text": "where \\hat{p}_{z,i} is the momentum of the i th ion along the z axis, \\hat{z}_{i} is the position coordinate of the i th ion, m is the mass of the ion, \\omega_{z} is the trap frequency in the z direction, and \\hat{V}_{\\mathrm{Coul},z} is the Coulomb energy part of the potential energy in the z direction.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\hat{p}_{z,i} is the momentum of the i th ion along the z axis, \\hat{z}_{i} is the position coordinate of the i th ion, m is the mass of the ion, \\omega_{z} is the trap frequency in the z direction, and \\hat{V}_{\\mathrm{Coul},z} is the Coulomb energy part of the potential energy in the z direction.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "1",
+      "equation": "q_{x}=\\frac{1}{N}\\sum_{i=1}^{N}\\delta_{X_{i},x}\\",
+      "original_meaning": "The simplest case is ED1, which corresponds to just counting how many times each symbol appears:",
+      "source_text": "The simplest case is ED1, which corresponds to just counting how many times each symbol appears:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "just counting how many times each symbol appears",
+          "phrase": "just counting how many times each symbol appears",
+          "strategy": "named_complement",
+          "score": 86,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb"
+          ]
+        },
+        {
+          "raw": "The simplest case is ED1",
+          "phrase": "simplest case is ED1",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "corresponds to just counting how many times each symbol appears",
+          "phrase": "corresponds to just counting how many times each symbol appears",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "2",
+      "equation": "q_{xy}=\\frac{1}{N-1}\\sum_{j=1}^{N-1}\\delta_{X_{j},x}\\delta_{X_{j+1},y}",
+      "original_meaning": "In a similar fashion one can also define empirical distributions for substrings of arbitrary length.",
+      "source_text": "In a similar fashion one can also define empirical distributions for substrings of arbitrary length.",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "3",
+      "equation": "q_{\\boldsymbol{x}}=\\frac{1}{N-L+1}\\sum_{j=1}^{N-L+1}\\delta_{x_{1},X_{j}}\\delta_{x_{2},X_{j+1}}\\cdots\\delta_{x_{L},X_{j+L-1}}\\",
+      "original_meaning": "Proceeding in a similar fashion, the expression for ED L reads",
+      "source_text": "Proceeding in a similar fashion, the expression for ED L reads",
+      "rejection_reasons": [
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "Proceeding in a similar fashion",
+          "phrase": "Proceeding in a similar fashion",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "the expression for ED L reads",
+          "phrase": "expression for ED L reads",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2411.08214",
+      "equation_id": "4",
+      "equation": "\\sum_{y}q_{xy}=\\sum_{y}q_{yx}=q_{x}",
+      "original_meaning": "Marginalizing the ED L q_{\\boldsymbol{x}} over one if its indices yields ED( L-1 ).",
+      "source_text": "Marginalizing the ED L q_{\\boldsymbol{x}} over one if its indices yields ED( L-1 ).",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "ED( L-1 )",
+          "phrase": "ED( L-1",
+          "strategy": "derived_object",
+          "score": 83,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "Marginalizing the ED L q_{\\boldsymbol{x}} over one",
+          "phrase": "Marginalizing the ED L q_{\\boldsymbol{x}} over one",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "its indices yields ED( L-1 ).",
+          "phrase": "indices yields ED( L-1",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2412.07329",
+      "equation_id": "3",
+      "equation": "\\left\\langle 0\\right|F(x)\\left|0\\right\\rangle\\equiv\\left\\langle F(x)\\right\\rangle=\\left\\langle F(x)\\right\\rangle_{\\mathrm{dS}}+\\left\\langle F(x)\\right\\rangle_{\\mathrm{cs}}",
+      "original_meaning": "Here, \\left\\langle F(x)\\right\\rangle_{\\mathrm{dS}} is the corresponding VEV in dS spacetime when the cosmic string is absent and the contribution \\left\\langle F(x)\\right\\rangle_{\\mathrm{cs}} describes the effects induced by the CS.",
+      "source_text": "Here, \\left\\langle F(x)\\right\\rangle_{\\mathrm{dS}} is the corresponding VEV in dS spacetime when the cosmic string is absent and the contribution \\left\\langle F(x)\\right\\rangle_{\\mathrm{cs}} describes the effects induced by the CS.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "Here, \\left\\langle F(x)\\right\\rangle_{\\mathrm{dS}} is the corresponding VEV in dS spacetime when the cosmic string is absent and the contribution \\left\\langle F(x)\\right\\rangle_{\\mathrm{cs}} describes the effects induced by the CS.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2412.07329",
+      "equation_id": "4",
+      "equation": "(\\square+m^{2}+\\xi R)\\varphi(x)=0",
+      "original_meaning": "In this section, by using the results of [ 13 ] , we describe the properties of the scalar vacuum for the special case D=4 .",
+      "source_text": "In this section, by using the results of [ 13 ] , we describe the properties of the scalar vacuum for the special case D=4 .",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "In this section",
+          "phrase": "In this section",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "by using the results of [ 13 ]",
+          "phrase": "by",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2412.07329",
+      "equation_id": "5",
+      "equation": "\\varphi_{\\sigma}(x)=e^{i(\\nu-\\nu^{\\ast})\\frac{\\pi}{4}}\\sqrt{\\frac{q\\lambda}{\\pi}}\\frac{\\ \\eta^{3/2}}{4a}H_{\\nu}^{(1)}(\\gamma\\eta)J_{q|n|}(\\lambda r)e^{in\\phi+ik_{z}z}",
+      "original_meaning": "They are expressed as",
+      "source_text": "They are expressed as",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "They",
+          "phrase": "They",
+          "strategy": "subject_before_introduction",
+          "score": 90,
+          "accepted": false,
+          "reasons": [
+            "too_short"
+          ]
+        },
+        {
+          "raw": "They are expressed as",
+          "phrase": "They are expressed as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2412.07329",
+      "equation_id": "6",
+      "equation": "\\ \\nu=\\left(9/4-12\\xi-m^{2}a^{2}\\right)^{1/2}",
+      "original_meaning": "where \\eta=|\\tau| , \\gamma=\\sqrt{\\lambda^{2}+k_{z}^{2}} , q=2\\pi/\\phi_{0} , H_{\\nu}^{(1)}(u) and J_{q|n|}(u) are the Hankel and Bessel functions [ 26 ] , and",
+      "source_text": "where \\eta=|\\tau| , \\gamma=\\sqrt{\\lambda^{2}+k_{z}^{2}} , q=2\\pi/\\phi_{0} , H_{\\nu}^{(1)}(u) and J_{q|n|}(u) are the Hankel and Bessel functions [ 26 ] , and",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\eta=|\\tau| , \\gamma=\\sqrt{\\lambda^{2}+k_{z}^{2}} , q=2\\pi/\\phi_{0} , H_{\\nu}^{(1)}(u) and J_{q|n|}(u) are the Hankel and Bessel functions [ 26 ] , and",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "1",
+      "equation": "\\ket{\\psi}=\\sum_{k}a_{k}\\ket{k}\\ ",
+      "original_meaning": "where \\ket{k} represents the occupation of a pair of electrons in the original N -qubit Hilbert space.",
+      "source_text": "where \\ket{k} represents the occupation of a pair of electrons in the original N -qubit Hilbert space.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\ket{k} represents the occupation of a pair of electrons in the original N -qubit Hilbert space.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "2",
+      "equation": "\\ket{\\Phi}=\\sum_{k}a_{k}\\ket{k}\\otimes\\ket{k}\\ ",
+      "original_meaning": "where \\ket{k} represents the occupation of a pair of electrons in the original N -qubit Hilbert space.",
+      "source_text": "where \\ket{k} represents the occupation of a pair of electrons in the original N -qubit Hilbert space.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\ket{k} represents the occupation of a pair of electrons in the original N -qubit Hilbert space.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "3",
+      "equation": "\\ket{\\Phi}=\\hat{E}\\left(\\ket{\\psi}\\otimes\\ket{0}\\right)\\ ",
+      "original_meaning": "The entanglement circuit \\hat{E} creates the necessary correlations between the original qubits and the ancilla qubits. \\hat{E} can be decomposed into N parallel CNOT gates:",
+      "source_text": "The entanglement circuit \\hat{E} creates the necessary correlations between the original qubits and the ancilla qubits. \\hat{E} can be decomposed into N parallel CNOT gates:",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2501.04264",
+      "equation_id": "4",
+      "equation": "\\hat{E}=\\prod_{i}^{N}\\textrm{CNOT}_{i,i+N}\\ ",
+      "original_meaning": "The entanglement circuit \\hat{E} creates the necessary correlations between the original qubits and the ancilla qubits. \\hat{E} can be decomposed into N parallel CNOT gates:",
+      "source_text": "The entanglement circuit \\hat{E} creates the necessary correlations between the original qubits and the ancilla qubits. \\hat{E} can be decomposed into N parallel CNOT gates:",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2501.10641",
+      "equation_id": "2",
+      "equation": "\\epsilon\\equiv\\left\\lVert\\left(1-|g_{f}\\rangle\\langle g_{f}|\\right)U(t_{f},t_{i})|g_{i}\\rangle\\right\\rVert",
+      "original_meaning": "In Eq. ( 2 ), U(t_{f},t_{i}) is the time evolution operator that evolves a quantum state at t_{i} to another state at t_{f} according to the Hamiltonian evolution for H(t) . |g_{i}\\rangle , |g_{f}\\rangle are the ground states of the initial and final Hamiltonians, respectively.",
+      "source_text": "In Eq. ( 2 ), U(t_{f},t_{i}) is the time evolution operator that evolves a quantum state at t_{i} to another state at t_{f} according to the Hamiltonian evolution for H(t) . |g_{i}\\rangle , |g_{f}\\rangle are the ground states of the initial and final Hamiltonians, respectively.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "In Eq. ( 2 ), U(t_{f},t_{i}) is the time evolution operator that evolves a quantum state at t_{i} to another state at t_{f} according to the Hamiltonian evolution for H(t) . |g_{i}\\rangle , |g_{f}\\rangle are the ground states of the initial and final Hamiltonians, respectively.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2501.10641",
+      "equation_id": "3",
+      "equation": "i\\frac{d}{ds}|\\psi(s)\\rangle=TH(s)|\\psi(s)\\rangle",
+      "original_meaning": "By an appropriate rescaling by T , we can re-express the Schrödinger equation Eq. ( 1 ) as follows:",
+      "source_text": "By an appropriate rescaling by T , we can re-express the Schrödinger equation Eq. ( 1 ) as follows:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 7,
+      "candidates": [
+        {
+          "raw": "By an appropriate rescaling by T",
+          "phrase": "By an appropriate rescaling by T",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we can re-express the Schrödinger equation Eq. ( 1 ) as follows",
+          "phrase": "we can re-express the Schrödinger equation",
+          "strategy": "science_head_segment",
+          "score": 48,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "equation",
+          "phrase": "equation",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "dinger equation",
+          "phrase": "dinger equation",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "Schrödinger equation",
+          "phrase": "Schrödinger equation",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "the Schrödinger equation",
+          "phrase": "Schrödinger equation",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "re-express the Schrödinger equation",
+          "phrase": "re-express the Schrödinger equation",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "4",
+      "equation": "\\xi_{det}=\\frac{((1-\\gamma)+\\xi_{el})\\eta_{det}}{\\gamma}",
+      "original_meaning": "where the coherent efficiency is sampled from the PDF \\mathcal{N}(0.8430,0.0025) .",
+      "source_text": "where the coherent efficiency is sampled from the PDF \\mathcal{N}(0.8430,0.0025) .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where the coherent efficiency is sampled from the PDF \\mathcal{N}(0.8430,0.0025) .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "5",
+      "equation": "C^{2}_{n}(h)&=(0.00594(v_{rms}/27)^{2}\\ (h\\times 10^{-5})^{10}\\ \\exp(-h/1000)\\\\ &+2.7\\times 10^{-16}\\ \\exp(-h/1500)+C^{2}_{n}(0)\\exp(-h/100))",
+      "original_meaning": "where the root mean square wind speed is given by,",
+      "source_text": "where the root mean square wind speed is given by,",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where the root mean square wind speed is given by,",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2502.09920",
+      "equation_id": "6",
+      "equation": "v_{rms}=\\left[\\frac{1}{15\\times 10^{3}}\\int_{5\\times 10^{3}}^{20\\times 10^{3}}v^{2}(h)\\ dh\\right]^{1/2}",
+      "original_meaning": "where the root mean square wind speed is given by,",
+      "source_text": "where the root mean square wind speed is given by,",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where the root mean square wind speed is given by,",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2503.09459",
+      "equation_id": "3",
+      "equation": "D=||{\\rho_{\\text{LS}}}-{\\rho_{\\text{B}}}||_{2}=\\operatorname{Tr}\\Big[({\\rho_{\\text{LS}}}-{\\rho_{\\text{B}}})^{2}\\Big]^{1/2}",
+      "original_meaning": "One may end up with very different estimates {\\rho_{\\text{LS}}} and {\\rho_{\\text{B}}} , which results in a non-negligible distance D between the estimates,",
+      "source_text": "One may end up with very different estimates {\\rho_{\\text{LS}}} and {\\rho_{\\text{B}}} , which results in a non-negligible distance D between the estimates,",
+      "rejection_reasons": [
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "results in a non-negligible distance D between the estimates",
+          "phrase": "results in a non-negligible distance D between the estimates",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "1",
+      "equation": "\\eta_{\\mathrm{sys,on}}=\\frac{\\hbar\\omega}{k_{B}T_{\\mathrm{sys,on}}}",
+      "original_meaning": "and the deduced phase-preserving intrinsic amplifier quantum efficiency (see Appendix D for further details)",
+      "source_text": "and the deduced phase-preserving intrinsic amplifier quantum efficiency (see Appendix D for further details)",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "2",
+      "equation": "\\eta_{\\mathrm{amp,i}}(G)\\!=\\!\\!{\\left(\\frac{2}{\\eta_{\\mathrm{sys,on}}}-\\frac{2}{G\\eta_{\\mathrm{sys,off}}}+\\frac{1}{G}\\right)}^{-1}\\!\\!\\Big{/}\\,\\eta_{\\mathrm{ideal}}(G)",
+      "original_meaning": "In Eq. 2 , G is the amplifier power gain (in linear units), \\eta_{\\mathrm{ideal}}(G)=1/(2-1/G) [ 22 ] is the quantum efficiency of an ideal phase-preserving quantum-limited amplifier at gain G, \\eta_{\\mathrm{sys,off}} refers to the system measurement efficiency when the Floquet TWPA is turned off.",
+      "source_text": "In Eq. 2 , G is the amplifier power gain (in linear units), \\eta_{\\mathrm{ideal}}(G)=1/(2-1/G) [ 22 ] is the quantum efficiency of an ideal phase-preserving quantum-limited amplifier at gain G, \\eta_{\\mathrm{sys,off}} refers to the system measurement efficiency when the Floquet TWPA is turned off.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "In Eq. 2 , G is the amplifier power gain (in linear units), \\eta_{\\mathrm{ideal}}(G)=1/(2-1/G) [ 22 ] is the quantum efficiency of an ideal phase-preserving quantum-limited amplifier at gain G, \\eta_{\\mathrm{sys,off}} refers to the system measurement efficiency when the Floquet TWPA is turned off.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "5",
+      "equation": "C_{\\mathrm{stub}} =\\frac{\\pi}{2\\omega_{\\mathrm{qw}}Z_{\\mathrm{stub}}}=\\frac{l}{\\nu Z_{\\mathrm{stub}}}\\quad\\mathrm{and} L_{\\mathrm{stub}} =\\frac{\\pi Z_{\\mathrm{stub}}}{6\\omega_{\\mathrm{qw}}}=\\frac{Z_{\\mathrm{stub}}l}{3\\nu}",
+      "original_meaning": "The inductance contribution j\\omega L_{\\mathrm{stub}} , a higher-order expansion term, is only significant at large \\omega/\\omega_{qw} values.",
+      "source_text": "The inductance contribution j\\omega L_{\\mathrm{stub}} , a higher-order expansion term, is only significant at large \\omega/\\omega_{qw} values.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "The inductance contribution j\\omega L_{\\mathrm{stub}}",
+          "phrase": "inductance contribution j\\omega L_{\\mathrm{stub}}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "a higher-order expansion term",
+          "phrase": "higher-order expansion term",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "is only significant at large \\omega/\\omega_{qw} values.",
+          "phrase": "is only significant at large \\omega/\\omega_{qw} values",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2503.11812",
+      "equation_id": "7",
+      "equation": "t=1-\\frac{\\Gamma_{1}}{2\\Gamma_{2}}\\frac{1-\\frac{i\\Delta}{\\Gamma_{2}}}{1+\\left(\\frac{\\Delta}{\\Gamma_{2}}\\right)^{2}+\\frac{\\Omega^{2}}{\\Gamma_{1}\\Gamma_{2}}}",
+      "original_meaning": "where \\Gamma_{1} is the decay rate of the qubit into the transmission line, \\Gamma_{2} is the transverse decoherence rate of the qubit, and \\Omega is the drive amplitude in units of Hz [ 23 ] .",
+      "source_text": "where \\Gamma_{1} is the decay rate of the qubit into the transmission line, \\Gamma_{2} is the transverse decoherence rate of the qubit, and \\Omega is the drive amplitude in units of Hz [ 23 ] .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\Gamma_{1} is the decay rate of the qubit into the transmission line, \\Gamma_{2} is the transverse decoherence rate of the qubit, and \\Omega is the drive amplitude in units of Hz [ 23 ] .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.02152",
+      "equation_id": "2",
+      "equation": "\\nu=(N_{\\uparrow}+N_{\\downarrow})/L=1",
+      "original_meaning": "To recognize Floquet scarring states, we first describe QMBS states in the corresponding undriven system [ 17 ] .",
+      "source_text": "To recognize Floquet scarring states, we first describe QMBS states in the corresponding undriven system [ 17 ] .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "To recognize Floquet scarring states",
+          "phrase": "To recognize Floquet scarring states",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we first describe QMBS states in the corresponding undriven system [ 17 ] .",
+          "phrase": "we first describe QMBS states in the corresponding undriven system [ 17 ]",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "1",
+      "equation": "t_{pp}^{--} = \\frac{E_{p}^{-}(0)}{E_{p}^{-}(L)},\\,\\ t_{ss}^{--}=\\frac{E_{s}^{-}(0)}{E_{s}^{-}(L)}",
+      "original_meaning": "The four scattering channels leading to a collection of the outgoing fields \\{E_{p}^{-}(0),E_{s}^{-}(0),E_{p}^{+}(L),E_{s}^{+}(L)\\} are characterized by four always existing complex amplitudes for the direct (or same-color ) transmission",
+      "source_text": "The four scattering channels leading to a collection of the outgoing fields \\{E_{p}^{-}(0),E_{s}^{-}(0),E_{p}^{+}(L),E_{s}^{+}(L)\\} are characterized by four always existing complex amplitudes for the direct (or same-color ) transmission",
+      "rejection_reasons": [
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "E_{s}^{+}(L)\\}",
+          "phrase": "E_{s}^{+}(L)\\}",
+          "strategy": "subject_before_introduction",
+          "score": 93,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "E_{s}^{-}(0)",
+          "phrase": "E_{s}^{-}(0",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "E_{p}^{+}(L)",
+          "phrase": "E_{p}^{+}(L",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "2",
+      "equation": "t_{ps}^{--} = \\frac{E_{s}^{-}(0)}{E_{p}^{-}(L)},\\,\\ t_{sp}^{--}=\\frac{E_{p}^{-}(0)}{E_{s}^{-}(L)}",
+      "original_meaning": "and four usually missing complex amplitudes for the cross (or different-color ) transmission",
+      "source_text": "and four usually missing complex amplitudes for the cross (or different-color ) transmission",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "and four usually missing complex amplitudes for the cross (or different-color ) transmission",
+          "phrase": "and four usually missing complex amplitudes for the cross (or different-color ) transmission",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "3",
+      "equation": "r_{pp}^{-+} = \\frac{E_{p}^{+}(L)}{E_{p}^{-}(L)},\\,\\ r_{ss}^{-+}=\\frac{E_{s}^{+}(L)}{E_{s}^{-}(L)}",
+      "original_meaning": "for the direct (or same-color ) reflection and",
+      "source_text": "for the direct (or same-color ) reflection and",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "for the direct (or same-color ) reflection and",
+          "phrase": "direct (or same-color ) reflection and",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "4",
+      "equation": "r_{ps}^{-+} = \\frac{E_{s}^{+}(L)}{E_{p}^{-}(L)},\\,\\ r_{sp}^{-+}=\\frac{E_{p}^{+}(L)}{E_{s}^{-}(L)}",
+      "original_meaning": "for the cross (or different-color ) reflection resulted from the interplay of nonlinear frequency conversion and Bragg reflection.",
+      "source_text": "for the cross (or different-color ) reflection resulted from the interplay of nonlinear frequency conversion and Bragg reflection.",
+      "rejection_reasons": [
+        "no_candidates_generated"
+      ],
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "5",
+      "equation": "\\left({\\begin{array}[]{*{20}{c}}E_{p}^{+}(L)\\\\ E_{p}^{-}(L)\\\\ E_{s}^{+}(L)\\\\ E_{s}^{-}(L)\\end{array}}\\right)=e^{\\hat{X}}\\left({\\begin{array}[]{*{20}{c}}E_{p}^{+}(0)\\\\ E_{p}^{-}(0)\\\\ E_{s}^{+}(0)\\\\ E_{s}^{-}(0)\\end{array}}\\right)\\\\ \\equiv\\hat{M}\\left({\\begin{array}[]{*{20}{c}}E_{p}^{+}(0)\\\\ E_{p}^{-}(0)\\\\ E_{s}^{+}(0)\\\\ E_{s}^{-}(0)\\end{array}}\\right),\\\\",
+      "original_meaning": "Then, taking z=0 and z=L for two device boundaries, it is straightforward to further obtain",
+      "source_text": "Then, taking z=0 and z=L for two device boundaries, it is straightforward to further obtain",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "taking z=0 and z=L for two device boundaries",
+          "phrase": "taking z=0 and z=L for two device boundaries",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "it is straightforward to further obtain",
+          "phrase": "it is straightforward to further obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.03127",
+      "equation_id": "6",
+      "equation": "E_{d}(z) = 2\\mathcal{E}_{0}\\cos(k_{d}z+\\phi)",
+      "original_meaning": "This can be realized by using a coupling and a dressing fields whose electric fields in the SW pattern are given by",
+      "source_text": "This can be realized by using a coupling and a dressing fields whose electric fields in the SW pattern are given by",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "This can be realized by using a coupling and a dressing fields whose electric fields in the SW pattern",
+          "phrase": "can be realized by",
+          "strategy": "subject_before_introduction",
+          "score": 93,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "This can be realized by using a coupling and a dressing fields",
+          "phrase": "can be realized by",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "electric fields in the SW pattern are given by",
+          "phrase": "electric fields in the SW pattern are",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.2",
+      "equation": "n_{\\gamma}^{e}(x)=\\frac{\\alpha}{2\\pi}[\\frac{1+(1-x)^{2}}{x}\\log\\frac{(1-x)(sx-m_{X}^{2})}{m_{e}^{2}x^{2}}]",
+      "original_meaning": "where x is the fraction of electron energy carried by the photon, and m_{X} denotes the mass of the photoproduction product.",
+      "source_text": "where x is the fraction of electron energy carried by the photon, and m_{X} denotes the mass of the photoproduction product.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where x is the fraction of electron energy carried by the photon, and m_{X} denotes the mass of the photoproduction product.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.5",
+      "equation": "j^{\\nu}(k)=2\\pi\\delta(k\\cdot\\mu)\\rho(\\sqrt{-k^{2}})\\cdot\\mu^{\\nu}",
+      "original_meaning": "Fourier transforming Eq. 2.4 to momentum space and substituting into Eq. 2.5 , we obtain:",
+      "source_text": "Fourier transforming Eq. 2.4 to momentum space and substituting into Eq. 2.5 , we obtain:",
+      "rejection_reasons": [
+        "contains_equation_reference",
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "Fourier transforming Eq. 2.4 to momentum space and substituting into Eq. 2.5",
+          "phrase": "Fourier transforming Eq. 2.4 to momentum space and substituting into Eq. 2.5",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_equation_reference",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we obtain",
+          "phrase": "we obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.6",
+      "equation": "A^{\\nu}(k)=-\\frac{1}{k^{2}}j^{\\nu}(k)=-2\\pi\\delta(k\\cdot\\mu)\\frac{\\rho(\\sqrt{-k^{2}})}{k^{2}}\\mu^{\\nu}=Zr(k)\\mu^{\\nu}",
+      "original_meaning": "where F(-k^{2})=\\rho(\\sqrt{-k^{2}})/Ze represents the normalized nuclear electromagnetic form factor, Z is the atomic number, and the delta function ensures the validity of the Lorentz gauge condition k_{\\nu}A^{\\nu}=0 and the transverse nature of the photon.",
+      "source_text": "where F(-k^{2})=\\rho(\\sqrt{-k^{2}})/Ze represents the normalized nuclear electromagnetic form factor, Z is the atomic number, and the delta function ensures the validity of the Lorentz gauge condition k_{\\nu}A^{\\nu}=0 and the transverse nature of the photon.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where F(-k^{2})=\\rho(\\sqrt{-k^{2}})/Ze represents the normalized nuclear electromagnetic form factor, Z is the atomic number, and the delta function ensures the validity of the Lorentz gauge condition k_{\\nu}A^{\\nu}=0 and the transverse nature of the photon.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.18342",
+      "equation_id": "2.7",
+      "equation": "r(k)=-2\\pi\\frac{1}{Z}\\delta(k\\cdot\\mu)\\frac{\\rho(\\sqrt{-k^{2}})}{k^{2}}=-2\\pi e\\delta(k\\cdot\\mu)\\frac{F(-k^{2})}{k^{2}}",
+      "original_meaning": "where F(-k^{2})=\\rho(\\sqrt{-k^{2}})/Ze represents the normalized nuclear electromagnetic form factor, Z is the atomic number, and the delta function ensures the validity of the Lorentz gauge condition k_{\\nu}A^{\\nu}=0 and the transverse nature of the photon.",
+      "source_text": "where F(-k^{2})=\\rho(\\sqrt{-k^{2}})/Ze represents the normalized nuclear electromagnetic form factor, Z is the atomic number, and the delta function ensures the validity of the Lorentz gauge condition k_{\\nu}A^{\\nu}=0 and the transverse nature of the photon.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where F(-k^{2})=\\rho(\\sqrt{-k^{2}})/Ze represents the normalized nuclear electromagnetic form factor, Z is the atomic number, and the delta function ensures the validity of the Lorentz gauge condition k_{\\nu}A^{\\nu}=0 and the transverse nature of the photon.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2504.21306",
+      "equation_id": "4",
+      "equation": "I_{\\mathrm{sc}}(\\mathbf{z}_{0},t) =\\frac{4}{\\hbar^{2}}\\mathrm{var}\\left(\\frac{\\partial S}{\\partial\\beta}\\right)",
+      "original_meaning": "Using the abovementioned link to the QFI, we then find it semiclassically expressed as",
+      "source_text": "Using the abovementioned link to the QFI, we then find it semiclassically expressed as",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "Using the abovementioned link to the QFI",
+          "phrase": "Using the abovementioned link to the QFI",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we",
+          "phrase": "we",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "find it semiclassically expressed as",
+          "phrase": "find it semiclassically expressed as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.01516",
+      "equation_id": "2",
+      "equation": "\\Phi_{i}(t)=\\int_{-\\infty}^{t}\\mathrm{d}t^{\\prime}\\,V_{i}(t^{\\prime}),\\ q_{i}(t)=\\int_{-\\infty}^{t}\\mathrm{d}t^{\\prime}\\,I_{i}(t^{\\prime})",
+      "original_meaning": "where V_{i} and I_{i} respectively are the voltage and intensity from the node i to ground.",
+      "source_text": "where V_{i} and I_{i} respectively are the voltage and intensity from the node i to ground.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where V_{i} and I_{i} respectively are the voltage and intensity from the node i to ground.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.01516",
+      "equation_id": "6",
+      "equation": "\\hat{H}_{\\textsc{tl}}=\\frac{1}{2}\\int\\mathrm{d}k\\,\\hbar\\omega_{k}\\Big{(}\\hat{a}_{k}^{\\dagger}\\hat{a}_{k}+\\hat{a}_{k}\\hat{a}_{k}^{\\dagger}\\Big{)}",
+      "original_meaning": "an idea about the physical scales of the system, typical parameters for the transmission line are (see e.g., [ 62 , 63 ] )",
+      "source_text": "To give an idea about the physical scales of the system, typical parameters for the transmission line are (see e.g., [ 62 , 63 ] )",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "an idea about the physical scales of the system",
+          "phrase": "idea about the physical scales of the system",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "typical parameters for the transmission line are (see e.g.",
+          "phrase": "typical parameters for the transmission line are (see e.g",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.01516",
+      "equation_id": "7",
+      "equation": "v\\approx 1.2\\cdot 10^{8}\\,\\unit{\\per},\\ Z_{0}\\approx 50\\,\\unit{}",
+      "original_meaning": "an idea about the physical scales of the system, typical parameters for the transmission line are (see e.g., [ 62 , 63 ] )",
+      "source_text": "To give an idea about the physical scales of the system, typical parameters for the transmission line are (see e.g., [ 62 , 63 ] )",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "an idea about the physical scales of the system",
+          "phrase": "idea about the physical scales of the system",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "typical parameters for the transmission line are (see e.g.",
+          "phrase": "typical parameters for the transmission line are (see e.g",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "2",
+      "equation": "e_{p}(U) = \\overline{\\mathcal{E}(U|\\psi\\rangle)}^{|\\phi_{A}\\rangle,|\\phi_{B}\\rangle} = 2\\text{Tr}\\left(U^{\\otimes 2}\\bm{\\Pi}_{AA^{\\prime}}\\bm{\\Pi}_{BB^{\\prime}}U^{\\dagger\\otimes 2}\\Pi^{-}_{BB^{\\prime}}\\right)",
+      "original_meaning": "where \\Pi_{AA^{\\prime}} and \\Pi_{BB^{\\prime}} denote the second moments of the Haar random states in the Hilbert spaces \\mathcal{H}_{A}\\otimes\\mathcal{H}_{A^{\\prime}} and \\mathcal{H}_{B}\\otimes\\mathcal{H}_{B^{\\prime}} , respectively and are given by [ 91 ]",
+      "source_text": "where \\Pi_{AA^{\\prime}} and \\Pi_{BB^{\\prime}} denote the second moments of the Haar random states in the Hilbert spaces \\mathcal{H}_{A}\\otimes\\mathcal{H}_{A^{\\prime}} and \\mathcal{H}_{B}\\otimes\\mathcal{H}_{B^{\\prime}} , respectively and are given by [ 91 ]",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\Pi_{AA^{\\prime}} and \\Pi_{BB^{\\prime}} denote the second moments of the Haar random states in the Hilbert spaces \\mathcal{H}_{A}\\otimes\\mathcal{H}_{A^{\\prime}} and \\mathcal{H}_{B}\\otimes\\mathcal{H}_{B^{\\prime}} , respectively and are given by [ 91 ]",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "3",
+      "equation": "\\bm{\\Pi}_{AA^{\\prime}}=\\dfrac{\\mathbb{I}_{AA^{\\prime}}+S_{AA^{\\prime}}}{d_{A}(d_{A}+1)}\\;\\text{ and }\\;\\bm{\\Pi}_{BB^{\\prime}}=\\dfrac{\\mathbb{I}_{BB^{\\prime}}+S_{BB^{\\prime}}}{d_{B}(d_{B}+1)}",
+      "original_meaning": "where \\Pi_{AA^{\\prime}} and \\Pi_{BB^{\\prime}} denote the second moments of the Haar random states in the Hilbert spaces \\mathcal{H}_{A}\\otimes\\mathcal{H}_{A^{\\prime}} and \\mathcal{H}_{B}\\otimes\\mathcal{H}_{B^{\\prime}} , respectively and are given by [ 91 ]",
+      "source_text": "where \\Pi_{AA^{\\prime}} and \\Pi_{BB^{\\prime}} denote the second moments of the Haar random states in the Hilbert spaces \\mathcal{H}_{A}\\otimes\\mathcal{H}_{A^{\\prime}} and \\mathcal{H}_{B}\\otimes\\mathcal{H}_{B^{\\prime}} , respectively and are given by [ 91 ]",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\Pi_{AA^{\\prime}} and \\Pi_{BB^{\\prime}} denote the second moments of the Haar random states in the Hilbert spaces \\mathcal{H}_{A}\\otimes\\mathcal{H}_{A^{\\prime}} and \\mathcal{H}_{B}\\otimes\\mathcal{H}_{B^{\\prime}} , respectively and are given by [ 91 ]",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "5",
+      "equation": "g_{t}(U)=\\frac{1}{2E(S)}\\left[E(U)-E(US)+E(S)\\right]",
+      "original_meaning": "Another local unitary invariant, known as gate-typicality ( g_{t} ), has been introduced as a complementary measure to e_{p} and is defined as [ 59 , 60 ]",
+      "source_text": "Another local unitary invariant, known as gate-typicality ( g_{t} ), has been introduced as a complementary measure to e_{p} and is defined as [ 59 , 60 ]",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "has been introduced as a complementary measure to e_{p} and",
+          "phrase": "has been introduced as a complementary measure to e_{p} and",
+          "strategy": "subject_before_introduction",
+          "score": 90,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "gate-typicality ( g_{t} )",
+          "phrase": "gate-typicality ( g_{t}",
+          "strategy": "named_complement",
+          "score": 86,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "Another local unitary invariant",
+          "phrase": "Another local unitary invariant",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "known as gate-typicality ( g_{t} )",
+          "phrase": "known as gate-typicality ( g_{t}",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2505.14793",
+      "equation_id": "8",
+      "equation": "m_{p}(U) = \\overline{\\mathcal{M}(U|\\psi\\rangle)} = 1-2^{N}\\text{Tr}\\left[QU^{\\otimes 4}\\overline{\\left(|\\psi\\rangle\\langle\\psi|\\right)^{\\otimes 4}}U^{\\dagger\\otimes 4}\\right]",
+      "original_meaning": "Using the invariance of \\mathcal{M}(|\\psi\\rangle) , it is apparent from Eq. ( 8 ) that the non-stabilizing power of a unitary remains invariant under the action of random Cliffords on it, i.e., m_{p}(C_{1}UC_{2})=m_{p}(U) .",
+      "source_text": "Using the invariance of \\mathcal{M}(|\\psi\\rangle) , it is apparent from Eq. ( 8 ) that the non-stabilizing power of a unitary remains invariant under the action of random Cliffords on it, i.e., m_{p}(C_{1}UC_{2})=m_{p}(U) .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "Using the invariance of \\mathcal{M}(|\\psi\\rangle)",
+          "phrase": "Using the invariance of \\mathcal{M}(|\\psi\\rangle",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "it is apparent from Eq. ( 8 )",
+          "phrase": "it is apparent",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "i.e.",
+          "phrase": "i.e",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "m_{p}(C_{1}UC_{2})=m_{p}(U) .",
+          "phrase": "m_{p}(C_{1}UC_{2})=m_{p}(U",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "1",
+      "equation": "C_{n}(\\Delta x)=\\frac{\\Braket{n(x)n(x^{\\prime})}}{\\Braket{n(x)}\\Braket{n(x^{\\prime})}}-1",
+      "original_meaning": "where \\Delta x=|x-x^{\\prime}| and \\braket{\\dots} denotes ensemble (around 20 samples) as well as spatial averaging.",
+      "source_text": "where \\Delta x=|x-x^{\\prime}| and \\braket{\\dots} denotes ensemble (around 20 samples) as well as spatial averaging.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\Delta x=|x-x^{\\prime}| and \\braket{\\dots} denotes ensemble (around 20 samples) as well as spatial averaging.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "2",
+      "equation": "C_{\\phi}(\\Delta x)=\\left\\langle{\\mathrm{Re}}\\left[e^{i\\phi(x)-i\\phi(x+\\Delta x)}\\right]\\right\\rangle\\",
+      "original_meaning": "At \\Delta x>\\xi , non-zero C_{\\phi}(\\Delta x) indicates finite-range phase correlations; C_{\\phi}\\approx 0 when the gas becomes phase uncorrelated or filled with random phase jumps.",
+      "source_text": "At \\Delta x>\\xi , non-zero C_{\\phi}(\\Delta x) indicates finite-range phase correlations; C_{\\phi}\\approx 0 when the gas becomes phase uncorrelated or filled with random phase jumps.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "At \\Delta x>\\xi",
+          "phrase": "At \\Delta x>\\xi",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "non-zero C_{\\phi}(\\Delta x) indicates finite-range phase correlations",
+          "phrase": "non-zero C_{\\phi}(\\Delta x) indicates finite-range phase correlations",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2506.13597",
+      "equation_id": "6",
+      "equation": "i\\hbar\\frac{\\partial\\psi}{\\partial t} = \\left[-\\frac{\\hbar^{2}}{2m}\\frac{\\partial^{2}}{\\partial x^{2}}+g\\left|\\psi\\right|^{2}+V(x)\\right]\\psi",
+      "original_meaning": "where \\psi(x,t) represents the 1D mean-field wavefunction and V(x) is the potential well.",
+      "source_text": "where \\psi(x,t) represents the 1D mean-field wavefunction and V(x) is the potential well.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\psi(x,t) represents the 1D mean-field wavefunction and V(x) is the potential well.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "4",
+      "equation": "\\frac{d{\\hat{f}}_{+}(t)}{dt} = -B_{+}-iB_{3}(t)f_{+}(t)-B_{+}^{*}f_{+}^{2}(t)",
+      "original_meaning": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+      "source_text": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "5",
+      "equation": "{\\hat{f}}_{3}(t) = \\int_{0}^{t}d{\\tau}\\big{(}-B_{3}(\\tau)+2if_{+}(\\tau)B_{+}^{*}\\big{)}",
+      "original_meaning": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+      "source_text": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.12971",
+      "equation_id": "6",
+      "equation": "{\\hat{f}}_{-}(t) = -\\int_{0}^{t}d{\\tau}e^{if_{3}(\\tau)}B_{+}^{*}",
+      "original_meaning": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+      "source_text": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where \\hat{S}_{\\pm} are the raising/decreasing operator of SU(2) Lie group theory, and \\hat{f}_{\\pm}(t) and \\hat{f}_{3}(t) depend on the momentum and time, satisfying the following equations:",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "1",
+      "equation": "S_{xx}(\\omega)=\\gamma^{2}\\frac{k_{B}T_{0}}{\\pi m}\\frac{\\Gamma_{0}}{\\left(\\omega_{0}^{2}-\\omega^{2}\\right)^{2}+\\omega^{2}\\Gamma_{0}^{2}}",
+      "original_meaning": "The PSD, S_{xx}(\\omega) , as seen in Figure 2 has units of V 2 /Hz and",
+      "source_text": "The PSD, S_{xx}(\\omega) , as seen in Figure 2 has units of V 2 /Hz and can be written as:",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "The PSD, S_{xx}(\\omega) , as seen in Figure 2 has units of V 2 /Hz and",
+          "phrase": "PSD, S_{xx}(\\omega) , as seen in",
+          "strategy": "existing_phrase",
+          "score": 97,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "The PSD",
+          "phrase": "PSD",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "S_{xx}(\\omega)",
+          "phrase": "S_{xx}(\\omega",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "as seen in Figure 2 has units of V 2 /Hz and",
+          "phrase": "as seen in",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "2",
+      "equation": "S_{xx}^{exp}=\\frac{A}{{(B^{2}\\ -\\omega^{2})}^{2}+\\omega^{2}C^{2}\\ }",
+      "original_meaning": "Equation ( 1 ) can be simplified to the experimental data, S_{xx}^{exp} , as below:",
+      "source_text": "Equation ( 1 ) can be simplified to the experimental data, S_{xx}^{exp} , as below:",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "Equation ( 1 ) can be simplified to the experimental data",
+          "phrase": "",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "Equation",
+          "phrase": "Equation",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "S_{xx}^{exp}",
+          "phrase": "S_{xx}^{exp}",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "as below",
+          "phrase": "as below",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "4",
+      "equation": "r\\ =\\ 0.619\\frac{9\\pi}{\\sqrt{2}}\\frac{\\eta_{air}d^{2}}{\\rho k_{B}T_{0}}\\frac{P_{gas}}{C}",
+      "original_meaning": "The radius is derived from the fit parameter of the Lorentzian curve from the PSD in equation ( 4 ) as in the literature [ 15 ] :",
+      "source_text": "The radius is derived from the fit parameter of the Lorentzian curve from the PSD in equation ( 4 ) as in the literature [ 15 ] :",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge"
+      ],
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "raw": "equation",
+          "phrase": "equation",
+          "strategy": "science_head_window",
+          "score": 51,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "in equation",
+          "phrase": "in equation",
+          "strategy": "science_head_window",
+          "score": 55,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "PSD in equation",
+          "phrase": "PSD in equation",
+          "strategy": "science_head_window",
+          "score": 56,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "the PSD in equation",
+          "phrase": "PSD in equation",
+          "strategy": "science_head_window",
+          "score": 57,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "from the PSD in equation",
+          "phrase": "from the PSD in equation",
+          "strategy": "science_head_window",
+          "score": 58,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.17940",
+      "equation_id": "5",
+      "equation": "\\omega_{\\text{trap}}=\\sqrt{\\left(\\frac{\\alpha}{m}\\right)\\frac{4P}{\\pi\\epsilon_{0}cw_{0}^{4}}}",
+      "original_meaning": "with P the incident trapping laser power, w_{0} the beam waist radius at the focal point, m is the mass of the nanoparticle, \\alpha its static polarizability, \\epsilon_{0} dielectric constant of vacuum, and c is the speed of light.",
+      "source_text": "with P the incident trapping laser power, w_{0} the beam waist radius at the focal point, m is the mass of the nanoparticle, \\alpha its static polarizability, \\epsilon_{0} dielectric constant of vacuum, and c is the speed of light.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "with P the incident trapping laser power, w_{0} the beam waist radius at the focal point, m is the mass of the nanoparticle, \\alpha its static polarizability, \\epsilon_{0} dielectric constant of vacuum, and c is the speed of light.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "2",
+      "equation": "\\alpha_{MC}=\\frac{\\mathbb{E}_{z\\sim\\mathcal{A}(\\mathcal{C})}[C(z)]}{\\mathbb{E}_{z\\sim\\mathcal{M}([\\mathcal{C}])}[C(z)]}=\\frac{\\frac{1}{\\pi}\\sum_{(i,j)\\in E}w_{ij}\\arccos\\Sigma_{ij}}{\\frac{1}{2}\\sum_{(i,j)\\in E}w_{ij}(1-\\Sigma_{ij})} \\geq\\alpha_{GW}=87856",
+      "original_meaning": "Furthermore, if we are able to bound the variance-covariance coefficients such that for all edge (i,j)\\in E , \\left|\\Sigma_{ij}\\right|\\leq\\varepsilon\\leq x^{\\prime}=0.689 , then we strictly improve on this ratio, and obtain that \\alpha_{MC}>1-f(\\varepsilon) where f:x\\mapsto(1-\\frac{2\\arccos x}{\\pi(1-x)})\\leq 1-\\alpha_{GW} is such that f(\\varepsilon)=O(\\varepsilon)\\xrightarrow[\\varepsilon\\to 0]{}0 .",
+      "source_text": "Furthermore, if we are able to bound the variance-covariance coefficients such that for all edge (i,j)\\in E , \\left|\\Sigma_{ij}\\right|\\leq\\varepsilon\\leq x^{\\prime}=0.689 , then we strictly improve on this ratio, and obtain that \\alpha_{MC}>1-f(\\varepsilon) where f:x\\mapsto(1-\\frac{2\\arccos x}{\\pi(1-x)})\\leq 1-\\alpha_{GW} is such that f(\\varepsilon)=O(\\varepsilon)\\xrightarrow[\\varepsilon\\to 0]{}0 .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "too_short",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 12,
+      "candidates": [
+        {
+          "raw": "that \\alpha_{MC}>1-f(\\varepsilon) where f",
+          "phrase": "that \\alpha_{MC}>1-f(\\varepsilon",
+          "strategy": "derived_object",
+          "score": 82,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "Furthermore",
+          "phrase": "Furthermore",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we are able to bound the variance-covariance coefficients such",
+          "phrase": "we are able to bound the variance-covariance coefficients such",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "for all edge (i",
+          "phrase": "all edge (i",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "j)\\in E",
+          "phrase": "j)\\in E",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\left|\\Sigma_{ij}\\right|\\leq\\varepsilon\\leq x^{\\prime}=0.689",
+          "phrase": "\\left|\\Sigma_{ij}\\right|\\leq\\varepsilon\\leq x^{\\prime}=0.689",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we strictly improve on this ratio",
+          "phrase": "we strictly improve on this ratio",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and obtain",
+          "phrase": "and obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "\\alpha_{MC}>1-f(\\varepsilon)",
+          "phrase": "\\alpha_{MC}>1-f(\\varepsilon",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "f",
+          "phrase": "f",
+          "strategy": "science_head_segment",
+          "score": 35,
+          "accepted": false,
+          "reasons": [
+            "too_short",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "x\\mapsto(1-\\frac{2\\arccos x}{\\pi(1-x)})\\leq 1-\\alpha_{GW} is such",
+          "phrase": "x\\mapsto(1-\\frac{2\\arccos x}{\\pi(1-x)})\\l",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "f(\\varepsilon)=O(\\varepsilon)\\xrightarrow[\\varepsilon\\to 0]{}0 .",
+          "phrase": "f(\\varepsilon)=O(\\varepsilon)\\xrightarrow[\\varepsilon\\to 0]{}0",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2507.21883",
+      "equation_id": "4",
+      "equation": "\\alpha_{QUBO^{\\prime}}=\\frac{\\mathbb{E}_{z\\sim\\mathcal{A}(\\mathcal{C})}[C(z)]}{\\mathbb{E}_{z\\sim\\mathcal{M}([\\mathcal{C}]_{\\mathcal{N}_{DP}})}[C(z)]}=\\frac{2\\sum_{(i,j)\\in E}A_{ij}\\arcsin\\Sigma_{ij}}{\\pi\\sum_{(i,j)\\in E}A_{ij}\\Sigma_{ij}}\\geq 1-\\frac{\\sqrt{2}(2\\pi-4)}{\\pi}\\Delta n(1-p)^{D}",
+      "original_meaning": "utilizing our algorithm proves to be advantageous as it consistently generates accurate samples that closely represent the quantum circuit.",
+      "source_text": "Therefore, utilizing our algorithm proves to be advantageous as it consistently generates accurate samples that closely represent the quantum circuit.",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "closely represent the quantum circuit.",
+          "phrase": "closely represent the quantum circuit",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "1",
+      "equation": "M\\left(A,B\\right){\\equiv}D_{\\mathit{KL}}\\left(P_{\\mathit{AB}}{\\parallel}P_{A\\times B}\\right)",
+      "original_meaning": "where P_{\\mathit{AB}} is the total distribution of the states of the system in question, P_{A\\times B} is the product of the marginal distributions P_{A}=\\int_{\\mathcal{B}}dP_{\\mathit{AB}} and P_{B}=\\int_{\\mathcal{A}}dP_{\\mathit{AB}} .",
+      "source_text": "where P_{\\mathit{AB}} is the total distribution of the states of the system in question, P_{A\\times B} is the product of the marginal distributions P_{A}=\\int_{\\mathcal{B}}dP_{\\mathit{AB}} and P_{B}=\\int_{\\mathcal{A}}dP_{\\mathit{AB}} .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where P_{\\mathit{AB}} is the total distribution of the states of the system in question, P_{A\\times B} is the product of the marginal distributions P_{A}=\\int_{\\mathcal{B}}dP_{\\mathit{AB}} and P_{B}=\\int_{\\mathcal{A}}dP_{\\mathit{AB}} .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.07652",
+      "equation_id": "5",
+      "equation": "s_{0}\\left(A_{0}\\right)=\\frac{H\\left(A_{0}\\right)}{V_{0}}=s_{k}-\\frac{1}{2}\\sum_{j=1}^{k}\\frac{M\\left(A_{j}\\right)}{V_{j}}",
+      "original_meaning": "where M(A_{j}) is the classical mutual information between identical subsystems A_{j} with volume V_{j}=2^{-j}V_{0} , s_{k}=H(A_{k})/V_{k} is the specific entropy of the smallest part of the system.",
+      "source_text": "where M(A_{j}) is the classical mutual information between identical subsystems A_{j} with volume V_{j}=2^{-j}V_{0} , s_{k}=H(A_{k})/V_{k} is the specific entropy of the smallest part of the system.",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where M(A_{j}) is the classical mutual information between identical subsystems A_{j} with volume V_{j}=2^{-j}V_{0} , s_{k}=H(A_{k})/V_{k} is the specific entropy of the smallest part of the system.",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "3",
+      "equation": "U(\\boldsymbol{r})=m_{F}\\,g_{F}\\,\\mu_{B}\\,\\lvert\\mathbf{B}(\\boldsymbol{r})\\rvert\\;-\\;mgz",
+      "original_meaning": "where g_{F}=0.5 , \\mu_{B}=$9.27\\text{\\times}{10}^{-24}\\text{\\,}\\mathrm{J}\\text{/}\\mathrm{T}$ , m=$1.44\\text{\\times}{10}^{-25}\\text{\\,}\\mathrm{kg}\\text{/}$ , and z is measured downward from the chip surface, meaning gravitational potential decreases with increasing z .",
+      "source_text": "where g_{F}=0.5 , \\mu_{B}=$9.27\\text{\\times}{10}^{-24}\\text{\\,}\\mathrm{J}\\text{/}\\mathrm{T}$ , m=$1.44\\text{\\times}{10}^{-25}\\text{\\,}\\mathrm{kg}\\text{/}$ , and z is measured downward from the chip surface, meaning gravitational potential decreases with increasing z .",
+      "rejection_reasons": [
+        "symbol_definition_sentence"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "where g_{F}=0.5 , \\mu_{B}=$9.27\\text{\\times}{10}^{-24}\\text{\\,}\\mathrm{J}\\text{/}\\mathrm{T}$ , m=$1.44\\text{\\times}{10}^{-25}\\text{\\,}\\mathrm{kg}\\text{/}$ , and z is measured downward from the chip surface, meaning gravitational potential decreases with increasing z .",
+          "phrase": "",
+          "strategy": "symbol_definition_exclusion",
+          "score": 0,
+          "accepted": false,
+          "reasons": [
+            "symbol_definition_sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.11712",
+      "equation_id": "6",
+      "equation": "R_{\\text{TF},i}=\\biggl{(}\\frac{2\\mu}{m\\,\\omega_{i}^{2}}\\biggr{)}^{\\!1/2}",
+      "original_meaning": "the radius of the condensate along axis i as:",
+      "source_text": "The Thomas–Fermi approximation includes atom–atom interactions in the effective potential and gives the radius of the condensate along axis i as:",
+      "rejection_reasons": [
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "the radius of the condensate along axis i as:",
+          "phrase": "radius of the condensate along axis i as",
+          "strategy": "existing_phrase",
+          "score": 98,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge"
+          ]
+        },
+        {
+          "raw": "the radius of the condensate along axis i as",
+          "phrase": "radius of the condensate along axis i as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "4",
+      "equation": "T_{C_{0}C_{1}}:\\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}\\to\\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}",
+      "original_meaning": "which satisfies 2 2 2 In the following, we use \\Tr to denote the standard trace on a single Hilbert space, while tr denotes the trace on the tensor product Hilbert space \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1} , or more generally on \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}\\otimes\\cdots\\otimes\\mathcal{H}_{N-1} .",
+      "source_text": "which satisfies 2 2 2 In the following, we use \\Tr to denote the standard trace on a single Hilbert space, while tr denotes the trace on the tensor product Hilbert space \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1} , or more generally on \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}\\otimes\\cdots\\otimes\\mathcal{H}_{N-1} .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "satisfies 2 2 2 In the following",
+          "phrase": "satisfies 2 2 2 In the following",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "5",
+      "equation": "\\langle\\mathcal{O}_{0}\\mathcal{O}_{1}(t_{1})\\rangle{\\rho_{0}}=tr\\left(T_{C_{0}C_{1}}\\mathcal{O}_{0}\\mathcal{O}_{1}\\right)",
+      "original_meaning": "which satisfies 2 2 2 In the following, we use \\Tr to denote the standard trace on a single Hilbert space, while tr denotes the trace on the tensor product Hilbert space \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1} , or more generally on \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}\\otimes\\cdots\\otimes\\mathcal{H}_{N-1} .",
+      "source_text": "which satisfies 2 2 2 In the following, we use \\Tr to denote the standard trace on a single Hilbert space, while tr denotes the trace on the tensor product Hilbert space \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1} , or more generally on \\mathcal{H}_{0}\\otimes\\mathcal{H}_{1}\\otimes\\cdots\\otimes\\mathcal{H}_{N-1} .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "satisfies 2 2 2 In the following",
+          "phrase": "satisfies 2 2 2 In the following",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "6",
+      "equation": "\\mathcal{O}_{0}=a_{0,ij}|i\\rangle\\langle j|,\\quad\\mathcal{O}_{1}=a_{1,kl}|k\\rangle\\langle l|",
+      "original_meaning": "The right-hand side of ( 5 ) can be written as",
+      "source_text": "The right-hand side of ( 5 ) can be written as",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "raw": "The right-hand side of ( 5 )",
+          "phrase": "right-hand side of ( 5",
+          "strategy": "subject_before_introduction",
+          "score": 93,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "The right-hand side of ( 5 ) can be written as",
+          "phrase": "right-hand side of ( 5 ) can be written as",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2508.20397",
+      "equation_id": "7",
+      "equation": "\\phantom{tr(T_{C_{0}C_{1}}\\mathcal{O}_{0}\\mathcal{O}_{1})}=t_{ji,lk},a_{0,ij},a_{1,kl}",
+      "original_meaning": "On the other hand, the right-hand side of ( 3 ) is given by",
+      "source_text": "On the other hand, the right-hand side of ( 3 ) is given by",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "the right-hand side of ( 3 )",
+          "phrase": "right-hand side of ( 3",
+          "strategy": "subject_before_introduction",
+          "score": 93,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters"
+          ]
+        },
+        {
+          "raw": "On the other hand",
+          "phrase": "On the other hand",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "the right-hand side of ( 3 ) is given by",
+          "phrase": "right-hand side of ( 3 ) is",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "5",
+      "equation": "\\langle L,S,J\\|\\mathbf{S}\\|L^{\\prime},S^{\\prime},J^{\\prime}\\rangle=\\delta_{L,L^{\\prime}}(-1)^{L+S^{\\prime}+J+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\begin{Bmatrix}S^{\\prime}&J^{\\prime}&L\\\\ J&S&1\\end{Bmatrix}\\langle S\\|\\mathbf{S}\\|S^{\\prime}\\rangle",
+      "original_meaning": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L,L^{\\prime}}\\sqrt{L(L+1)(2L+1)} , and likewise for \\mathbf{S} , we substitute and obtain:",
+      "source_text": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L,L^{\\prime}}\\sqrt{L(L+1)(2L+1)} , and likewise for \\mathbf{S} , we substitute and obtain:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L",
+          "phrase": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "L^{\\prime}}\\sqrt{L(L+1)(2L+1)}",
+          "phrase": "L^{\\prime}}\\sqrt{L(L+1)(2L+1)}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and likewise for \\mathbf{S}",
+          "phrase": "and likewise for \\mathbf{S}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we substitute and obtain",
+          "phrase": "we substitute and obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "6",
+      "equation": "\\Gamma_{\\mathrm{M1}}=\\frac{\\mu_{B}^{2}\\omega_{0}^{3}}{3\\pi\\varepsilon_{0}\\hbar c^{5}\\!}\\,\\frac{|\\mathcal{M}|^{2}}{2J^{\\prime}+1}",
+      "original_meaning": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L,L^{\\prime}}\\sqrt{L(L+1)(2L+1)} , and likewise for \\mathbf{S} , we substitute and obtain:",
+      "source_text": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L,L^{\\prime}}\\sqrt{L(L+1)(2L+1)} , and likewise for \\mathbf{S} , we substitute and obtain:",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "raw": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L",
+          "phrase": "Using \\langle L\\|\\mathbf{L}\\|L^{\\prime}\\rangle=\\delta_{L",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "L^{\\prime}}\\sqrt{L(L+1)(2L+1)}",
+          "phrase": "L^{\\prime}}\\sqrt{L(L+1)(2L+1)}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "and likewise for \\mathbf{S}",
+          "phrase": "and likewise for \\mathbf{S}",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we substitute and obtain",
+          "phrase": "we substitute and obtain",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2509.04635",
+      "equation_id": "7",
+      "equation": "\\mathcal{M} =\\delta_{S,S^{\\prime}}\\delta_{L,L^{\\prime}}(-1)^{L^{\\prime}+S+J^{\\prime}+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\sqrt{L(L+1)(2L+1)}\\begin{Bmatrix}L^{\\prime}&J^{\\prime}&S\\\\ J&L&1\\end{Bmatrix} \\quad+2\\,\\delta_{L,L^{\\prime}}\\delta_{S,S^{\\prime}}(-1)^{L+S^{\\prime}+J+1}\\sqrt{(2J+1)(2J^{\\prime}+1)}\\sqrt{S(S+1)(2S+1)}\\begin{Bmatrix}S^{\\prime}&J^{\\prime}&L\\\\ J&S&1\\end{Bmatrix}",
+      "original_meaning": "For our transition of interest, we have \\ket{g}=\\ket{0,1,1} and \\ket{e}=\\ket{1,1,1} .",
+      "source_text": "For our transition of interest, we have \\ket{g}=\\ket{0,1,1} and \\ket{e}=\\ket{1,1,1} .",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head",
+        "unbalanced_delimiters"
+      ],
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "raw": "For our transition of interest",
+          "phrase": "transition of interest",
+          "strategy": "science_head_segment",
+          "score": 38,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "we have \\ket{g}=\\ket{0",
+          "phrase": "we have \\ket{g}=\\ket{0",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "unbalanced_delimiters",
+            "missing_science_head"
+          ]
+        },
+        {
+          "raw": "1} and \\ket{e}=\\ket{1",
+          "phrase": "1} and \\ket{e}=\\ket{1",
+          "strategy": "science_head_segment",
+          "score": 37,
+          "accepted": false,
+          "reasons": [
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "1",
+      "equation": "\\mathcal{L}(\\theta)=\\frac{1}{2}\\mathbb{E}_{p(\\mathbf{x})}\\left[\\left\\|s_{\\theta}(\\mathbf{x})-\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x})\\right\\|^{2}\\right]",
+      "original_meaning": "In the absence of true score s(\\mathbf{x})=\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x}) , \\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+      "source_text": "In the absence of true score s(\\mathbf{x})=\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x}) , \\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "\\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+          "phrase": "\\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "2510.21330",
+      "equation_id": "2",
+      "equation": "\\mathcal{L}(\\theta)=\\mathbb{E}_{p(\\mathbf{x})}[\\text{Tr}(\\nabla_{x}s_{\\theta}(\\mathbf{x}))+\\frac{1}{2}\\|s_{\\theta}(\\mathbf{x})\\|^{2}]",
+      "original_meaning": "In the absence of true score s(\\mathbf{x})=\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x}) , \\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+      "source_text": "In the absence of true score s(\\mathbf{x})=\\nabla_{\\mathbf{x}}\\log p(\\mathbf{x}) , \\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+      "rejection_reasons": [
+        "contains_finite_or_context_verb",
+        "incomplete_or_invalid_edge",
+        "missing_science_head"
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "raw": "\\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+          "phrase": "\\mathcal{L}(\\theta) can be simplified under certain regularity conditions [ 20 ] as",
+          "strategy": "science_head_segment",
+          "score": 34,
+          "accepted": false,
+          "reasons": [
+            "contains_finite_or_context_verb",
+            "incomplete_or_invalid_edge",
+            "missing_science_head"
+          ]
+        }
+      ]
+    }
+  ]
+}
