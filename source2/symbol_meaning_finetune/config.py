@@ -17,6 +17,9 @@ REPORT_FILE = OUTPUT_DIR / "performance_report.md"
 INFERENCE_CONFIG_FILE = CHECKPOINT_DIR / "inference_config.json"
 
 MODEL_NAME = "witiko/mathberta"
+# Use "auto", "cpu", or "cuda". Auto probes CUDA and falls back to CPU when
+# a driver is visible but no device is allocated to the current process.
+DEVICE = "auto"
 MAX_TOKENS = 256
 BATCH_SIZE = 8
 EPOCHS = 3

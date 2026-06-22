@@ -4,6 +4,7 @@ import random
 
 from .config import (
 	BATCH_SIZE,
+	DEVICE,
 	EPOCHS,
 	LABELS,
 	LEARNING_RATE,
@@ -78,6 +79,34 @@ def _model_inputs(batch: dict, device) -> tuple[dict, object]:
 	return inputs, labels
 
 
+def select_device(torch):
+	if DEVICE == "cpu":
+		return torch.device("cpu")
+	if DEVICE not in {"auto", "cuda"}:
+		raise ValueError(f"Unsupported training device: {DEVICE}")
+	if not torch.cuda.is_available():
+		if DEVICE == "cuda":
+			raise RuntimeError("DEVICE='cuda' but PyTorch cannot access CUDA")
+		print("CUDA is unavailable; training on CPU")
+		return torch.device("cpu")
+	try:
+		probe = torch.empty(1, device="cuda")
+		del probe
+		torch.cuda.synchronize()
+		device = torch.device("cuda")
+		print(f"Training on CUDA: {torch.cuda.get_device_name(device)}")
+		return device
+	except (RuntimeError, torch.AcceleratorError) as exc:
+		if DEVICE == "cuda":
+			raise RuntimeError(
+				"DEVICE='cuda', but the CUDA device is busy or unavailable"
+			) from exc
+		print(
+			"CUDA was detected but is busy or unavailable; falling back to CPU"
+		)
+		return torch.device("cpu")
+
+
 def train_model(splits: dict[str, list[RelationExample]], checkpoint_dir):
 	torch, AutoModelForSequenceClassification, AutoTokenizer = _require_training_stack()
 	from torch.utils.data import DataLoader, WeightedRandomSampler
@@ -106,7 +135,7 @@ def train_model(splits: dict[str, list[RelationExample]], checkpoint_dir):
 	train_loader = DataLoader(train_data, batch_size=BATCH_SIZE, sampler=sampler)
 	validation_loader = DataLoader(validation_data, batch_size=BATCH_SIZE)
 
-	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+	device = select_device(torch)
 	model.to(device)
 	optimizer = torch.optim.AdamW(
 		model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY

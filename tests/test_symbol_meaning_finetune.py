@@ -10,6 +10,7 @@ from source2.symbol_meaning_finetune.evaluation import (
 from source2.symbol_meaning_finetune.model import (
 	EncodedRelationDataset,
 	Prediction,
+	select_device,
 )
 
 
@@ -45,6 +46,34 @@ class FineTuningPipelineTests(unittest.TestCase):
 		batch = next(iter(DataLoader(dataset, batch_size=2)))
 		self.assertEqual(tuple(batch["input_ids"].shape), (2, 3))
 		self.assertTrue(all(isinstance(value, torch.Tensor) for value in batch.values()))
+
+	def test_device_selection_falls_back_to_cpu(self):
+		class Cuda:
+			@staticmethod
+			def is_available():
+				return True
+
+			@staticmethod
+			def synchronize():
+				raise RuntimeError("device busy")
+
+			@staticmethod
+			def get_device_name(device):
+				return "test"
+
+		class Torch:
+			AcceleratorError = RuntimeError
+			cuda = Cuda()
+
+			@staticmethod
+			def empty(*args, **kwargs):
+				return object()
+
+			@staticmethod
+			def device(name):
+				return name
+
+		self.assertEqual(select_device(Torch()), "cpu")
 
 	def test_calibration_enforces_precision_and_margin(self):
 		predictions = [
