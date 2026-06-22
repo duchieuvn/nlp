@@ -1,0 +1,13 @@
+{
+  "relation_threshold": 0.9980401396751404,
+  "relation_margin": 0.1,
+  "labels": [
+    "DEFINES_BASE",
+    "DEFINES_COMPLETE_SYMBOL",
+    "NO_RELATION",
+    "QUALIFIES_SUBSCRIPT",
+    "QUALIFIES_SUPERSCRIPT",
+    "RELATED_NOT_DEFINITION"
+  ],
+  "calibration_scope": "held-out weak labels; not human-reviewed ground truth"
+}

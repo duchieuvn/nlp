@@ -1,0 +1,33 @@
+from pathlib import Path
+
+SOURCE3_DIR = Path(__file__).parent
+PROJECT_DIR = SOURCE3_DIR.parent
+DATA_DIR = PROJECT_DIR / "data"
+
+EQUATIONS_FILE = DATA_DIR / "3_equations.json"
+ANNOTATIONS_FILE = DATA_DIR / "2_annotations.json"
+PAPER_LIST_FILE = DATA_DIR / "paper_list_46.txt"
+HTML_DIR = DATA_DIR / "html"
+
+OUTPUT_DIR = DATA_DIR / "pipeline"
+DOCUMENTS_DIR = OUTPUT_DIR / "documents"
+CHUNKS_DIR = OUTPUT_DIR / "chunks"
+EQUATIONS_DIR = OUTPUT_DIR / "equations"
+EMBEDDINGS_DIR = OUTPUT_DIR / "embeddings"
+
+DOWNLOAD_REPORT = OUTPUT_DIR / "download_report.json"
+EQUATION_ALIGNMENT_REPORT = OUTPUT_DIR / "equation_alignment_report.json"
+BUILD_REPORT = OUTPUT_DIR / "build_report.json"
+
+ARXIV_HTML_URL = "https://arxiv.org/html/{paper_id}"
+DOWNLOAD_MAX_WORKERS = 5
+DOWNLOAD_MAX_RETRIES = 3
+DOWNLOAD_BACKOFF_BASE = 2.0
+DOWNLOAD_TIMEOUT = 35
+
+MATHBERT_MODEL = "witiko/mathberta"
+MAX_TOKENS = 512
+SUMMARY_EQUATION_BUDGET = 256
+SENTENCE_EQUATION_BUDGET = 320
+CONTEXT_WINDOW = 5
+EMBEDDING_DIM = 768
