@@ -6,7 +6,7 @@ DATA_DIR = PROJECT_DIR / "data"
 
 EQUATIONS_FILE = DATA_DIR / "3_equations.json"
 ANNOTATIONS_FILE = DATA_DIR / "2_annotations.json"
-PAPER_LIST_FILE = DATA_DIR / "paper_list_46.txt"
+PAPER_LIST_FILE = PROJECT_DIR / "paper_list_46.txt"
 HTML_DIR = DATA_DIR / "html"
 
 OUTPUT_DIR = DATA_DIR / "pipeline"
@@ -15,9 +15,18 @@ CHUNKS_DIR = OUTPUT_DIR / "chunks"
 EQUATIONS_DIR = OUTPUT_DIR / "equations"
 EMBEDDINGS_DIR = OUTPUT_DIR / "embeddings"
 
+MEANINGS_DIR = OUTPUT_DIR / "meanings"
+SYMBOLS_DIR = OUTPUT_DIR / "symbols"
+SYMBOL_MEANINGS_DIR = OUTPUT_DIR / "symbol_meanings"
+RELATIONS_DIR = OUTPUT_DIR / "relations"
+FINAL_DATA_FILE = DATA_DIR / "final_data.json"
+
 DOWNLOAD_REPORT = OUTPUT_DIR / "download_report.json"
 EQUATION_ALIGNMENT_REPORT = OUTPUT_DIR / "equation_alignment_report.json"
 BUILD_REPORT = OUTPUT_DIR / "build_report.json"
+
+RELATION_SYMBOL_JACCARD_THRESHOLD = 0.3
+RELATION_SEMANTIC_THRESHOLD = 0.7
 
 ARXIV_HTML_URL = "https://arxiv.org/html/{paper_id}"
 DOWNLOAD_MAX_WORKERS = 5

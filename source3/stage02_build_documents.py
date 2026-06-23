@@ -56,24 +56,62 @@ def _clean_text_node(node) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Sentence segmentation (spaCy sentencizer)
+# Sentence segmentation (spaCy sentencizer with stdlib fallback)
 # ---------------------------------------------------------------------------
 
 class _Segmenter:
     def __init__(self) -> None:
-        import spacy
+        self._nlp = None
+        try:
+            import spacy
+        except ModuleNotFoundError:
+            return
         self._nlp = spacy.blank("en")
         self._nlp.add_pipe("sentencizer")
 
     def spans(self, text: str) -> list[tuple[str, int, int]]:
         if not text:
             return []
+        if self._nlp is None:
+            return _regex_sentence_spans(text)
         doc = self._nlp(text)
         return [
             (sent.text, sent.start_char, sent.end_char)
             for sent in doc.sents
             if sent.text.strip()
         ]
+
+
+_SENTENCE_BOUNDARY = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\\[(])")
+_ABBREVIATIONS = {
+    "al.", "cf.", "dr.", "e.g.", "eq.", "eqs.", "fig.", "figs.", "i.e.",
+    "mr.", "mrs.", "ms.", "no.", "prof.", "ref.", "refs.", "sec.", "secs.",
+    "vs.",
+}
+
+
+def _regex_sentence_spans(text: str) -> list[tuple[str, int, int]]:
+    """Small fallback sentencizer used when spaCy is not installed."""
+    spans = []
+    start = 0
+    for match in _SENTENCE_BOUNDARY.finditer(text):
+        end = match.start()
+        candidate = text[start:end].strip()
+        last = candidate.rsplit(" ", 1)[-1].lower()
+        if last in _ABBREVIATIONS:
+            continue
+        stripped_start = start + len(text[start:end]) - len(text[start:end].lstrip())
+        stripped_end = end - (len(text[start:end]) - len(text[start:end].rstrip()))
+        if stripped_start < stripped_end:
+            spans.append((text[stripped_start:stripped_end], stripped_start, stripped_end))
+        start = match.end()
+
+    tail = text[start:]
+    stripped_start = start + len(tail) - len(tail.lstrip())
+    stripped_end = len(text) - (len(tail) - len(tail.rstrip()))
+    if stripped_start < stripped_end:
+        spans.append((text[stripped_start:stripped_end], stripped_start, stripped_end))
+    return spans
 
 
 # ---------------------------------------------------------------------------
@@ -130,6 +168,7 @@ class RawEquationRecord:
     anchor_id: str | None
     visible_labels: list[str]
     latex: str
+    mathml: list[str]
     document_order: int
     section_id: str | None
     before_sentence_ids: list[str] = field(default_factory=list)
@@ -297,6 +336,16 @@ def _table_latex(table) -> str:
     return ""
 
 
+def _table_mathml(table) -> list[str]:
+    """Return serialized MathML nodes for an equation table."""
+    mathml = []
+    for math in table.find_all("math"):
+        markup = str(math).strip()
+        if markup:
+            mathml.append(markup)
+    return mathml
+
+
 def _parse_html(
     paper_id: str,
     html_text: str,
@@ -433,6 +482,7 @@ def _parse_html(
         anchor = table.get("id") or None
         labels = _visible_labels(table)
         latex = _table_latex(table)
+        mathml = _table_mathml(table)
         eq_index += 1
         raw_eq_id = f"raw:{eq_index:04d}"
 
@@ -473,6 +523,7 @@ def _parse_html(
             anchor_id=anchor,
             visible_labels=labels,
             latex=latex,
+            mathml=mathml,
             document_order=doc_order,
             section_id=sec_id,
             before_sentence_ids=before_sent_ids[:context_window],

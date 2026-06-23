@@ -11,16 +11,15 @@ import requests
 from bs4 import BeautifulSoup
 
 from config import (
-    ANNOTATIONS_FILE,
     ARXIV_HTML_URL,
     DOWNLOAD_BACKOFF_BASE,
     DOWNLOAD_MAX_RETRIES,
     DOWNLOAD_MAX_WORKERS,
     DOWNLOAD_REPORT,
     DOWNLOAD_TIMEOUT,
-    EQUATIONS_FILE,
     HTML_DIR,
     OUTPUT_DIR,
+    PAPER_LIST_FILE,
 )
 
 _HEADERS = {
@@ -32,8 +31,8 @@ _HEADERS = {
 
 
 def _paper_ids_with_equations() -> list[str]:
-    equations = json.loads(EQUATIONS_FILE.read_text(encoding="utf-8"))
-    return [pid for pid, entries in equations.items() if entries]
+    lines = PAPER_LIST_FILE.read_text(encoding="utf-8").splitlines()
+    return [line.removeprefix("arXiv:").strip() for line in lines if line.strip()][:100]
 
 
 def _is_valid_html(path: Path) -> bool:

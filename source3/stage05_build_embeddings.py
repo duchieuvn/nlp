@@ -11,6 +11,7 @@ import torch
 from transformers import AutoModel, AutoTokenizer
 
 from config import (
+    CHUNKS_DIR,
     CONTEXT_WINDOW,
     EMBEDDING_DIM,
     EMBEDDINGS_DIR,
@@ -21,6 +22,8 @@ from config import (
     SENTENCE_EQUATION_BUDGET,
     SUMMARY_EQUATION_BUDGET,
 )
+
+_EMBED_BATCH = 32  # max texts per forward pass — keeps GPU memory bounded
 
 # ---------------------------------------------------------------------------
 # Model loading (lazy, module-level singleton)
@@ -215,24 +218,30 @@ def _build_sentence_text(
 
 def _embed_texts(texts: list[str]) -> np.ndarray:
     _load_model()
-    encoding = _tokenizer(
-        texts,
-        return_tensors="pt",
-        padding=True,
-        truncation=True,
-        max_length=MAX_TOKENS,
-    )
-    encoding = {k: v.to(_device) for k, v in encoding.items()}
-    with torch.no_grad():
-        outputs = _model(**encoding)
-    hidden = outputs.last_hidden_state  # (B, L, D)
-    mask = encoding["attention_mask"].unsqueeze(-1).float()
-    summed = (hidden * mask).sum(dim=1)
-    counts = mask.sum(dim=1).clamp(min=1e-9)
-    pooled = (summed / counts).cpu().numpy().astype(np.float32)
-    norms = np.linalg.norm(pooled, axis=1, keepdims=True)
-    norms = np.where(norms < 1e-12, 1.0, norms)
-    return pooled / norms
+    if not texts:
+        return np.zeros((0, EMBEDDING_DIM), dtype=np.float32)
+    batches: list[np.ndarray] = []
+    for i in range(0, len(texts), _EMBED_BATCH):
+        batch = texts[i : i + _EMBED_BATCH]
+        encoding = _tokenizer(
+            batch,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=MAX_TOKENS,
+        )
+        encoding = {k: v.to(_device) for k, v in encoding.items()}
+        with torch.no_grad():
+            outputs = _model(**encoding)
+        hidden = outputs.last_hidden_state  # (B, L, D)
+        mask = encoding["attention_mask"].unsqueeze(-1).float()
+        summed = (hidden * mask).sum(dim=1)
+        counts = mask.sum(dim=1).clamp(min=1e-9)
+        pooled = (summed / counts).cpu().numpy().astype(np.float32)
+        norms = np.linalg.norm(pooled, axis=1, keepdims=True)
+        norms = np.where(norms < 1e-12, 1.0, norms)
+        batches.append(pooled / norms)
+    return np.concatenate(batches, axis=0)
 
 
 # ---------------------------------------------------------------------------
@@ -254,6 +263,7 @@ def _vectors_for_equation(eq: dict) -> list[dict]:
         "vector_id": f"{paper_id}:equation:{equation_id}:equation",
         "equation_id": equation_id,
         "vector_kind": "equation",
+        "chunk_id": None,
         "sentence_id": None,
         "context_position": None,
         "context_distance": 0,
@@ -272,6 +282,7 @@ def _vectors_for_equation(eq: dict) -> list[dict]:
         "vector_id": f"{paper_id}:equation:{equation_id}:summary",
         "equation_id": equation_id,
         "vector_kind": "summary",
+        "chunk_id": None,
         "sentence_id": None,
         "context_position": None,
         "context_distance": 0,
@@ -290,6 +301,7 @@ def _vectors_for_equation(eq: dict) -> list[dict]:
             "vector_id": f"{paper_id}:equation:{equation_id}:before:{dist}",
             "equation_id": equation_id,
             "vector_kind": "before_sentence",
+            "chunk_id": None,
             "sentence_id": sid,
             "context_position": "before",
             "context_distance": dist,
@@ -308,6 +320,7 @@ def _vectors_for_equation(eq: dict) -> list[dict]:
             "vector_id": f"{paper_id}:equation:{equation_id}:after:{dist}",
             "equation_id": equation_id,
             "vector_kind": "after_sentence",
+            "chunk_id": None,
             "sentence_id": sid,
             "context_position": "after",
             "context_distance": dist,
@@ -322,16 +335,64 @@ def _vectors_for_equation(eq: dict) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Family B — full-paper sentence chunk vectors
+# ---------------------------------------------------------------------------
+
+_CHUNK_EMBED_TYPES = frozenset({"sentence", "raw_equation_neighborhood"})
+
+
+def _vectors_for_chunk_file(paper_id: str, chunk_file: Path) -> list[dict]:
+    """Build one sentence_chunk row per sentence / neighborhood chunk (family B)."""
+    if not chunk_file.exists():
+        return []
+    data = json.loads(chunk_file.read_text(encoding="utf-8"))
+    rows: list[dict] = []
+    for chunk in data.get("chunks", []):
+        if chunk["chunk_type"] not in _CHUNK_EMBED_TYPES:
+            continue
+        text = chunk.get("text", "").strip()
+        if not text:
+            continue
+        source_text, ctx_trunc = _truncate_head(text, MAX_TOKENS - 2)
+        sent_id = chunk["source_ids"].get("sentence_id")
+        rows.append({
+            "vector_id": f"{paper_id}:sentence_chunk:{chunk['chunk_id']}",
+            "equation_id": None,
+            "vector_kind": "sentence_chunk",
+            "chunk_id": chunk["chunk_id"],
+            "sentence_id": sent_id,
+            "context_position": None,
+            "context_distance": 0,
+            "source_text": source_text,
+            "input_token_count": _count_tokens(source_text),
+            "equation_truncated": False,
+            "context_truncated": ctx_trunc,
+            "input_sha256": hashlib.sha256(source_text.encode()).hexdigest(),
+        })
+    return rows
+
+
+# ---------------------------------------------------------------------------
 # Paper-level build
 # ---------------------------------------------------------------------------
 
-def _build_paper_space(paper_id: str, equations: list[dict]) -> tuple[np.ndarray, list[dict]]:
+def _build_paper_space(
+    paper_id: str,
+    equations: list[dict],
+    chunk_file: Path | None = None,
+) -> tuple[np.ndarray, list[dict]]:
     all_rows: list[dict] = []
+
+    # Family A: equation-centric vectors
     for eq in sorted(equations, key=lambda e: e["equation_id"]):
         all_rows.extend(_vectors_for_equation(eq))
 
+    # Family B: full-paper sentence chunk vectors
+    if chunk_file is not None:
+        all_rows.extend(_vectors_for_chunk_file(paper_id, chunk_file))
+
     texts = [r["source_text"] for r in all_rows]
-    embeddings = _embed_texts(texts)  # (N, 768)
+    embeddings = _embed_texts(texts)  # (N, 768) — processed in batches of _EMBED_BATCH
 
     for idx, row in enumerate(all_rows):
         row["row"] = idx
@@ -457,16 +518,21 @@ def run() -> dict:
         if not equations:
             continue
 
-        embeddings, rows = _build_paper_space(paper_id, equations)
+        chunk_file = CHUNKS_DIR / f"{paper_id}.json"
+        embeddings, rows = _build_paper_space(paper_id, equations, chunk_file)
         _write_paper_space(paper_id, embeddings, rows, EMBEDDINGS_DIR)
 
         n_trunc = sum(1 for r in rows if r["equation_truncated"] or r["context_truncated"])
+        n_eq_vecs = sum(1 for r in rows if r["vector_kind"] != "sentence_chunk")
+        n_chunk_vecs = sum(1 for r in rows if r["vector_kind"] == "sentence_chunk")
         total_vectors += len(rows)
         total_truncations += n_trunc
 
         paper_results.append({
             "paper_id": paper_id,
             "equation_count": len(equations),
+            "equation_vector_count": n_eq_vecs,
+            "sentence_chunk_vector_count": n_chunk_vecs,
             "vector_count": len(rows),
             "truncation_count": n_trunc,
         })
