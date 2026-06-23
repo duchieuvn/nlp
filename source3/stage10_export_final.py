@@ -27,11 +27,19 @@ def _load_paper_artifact(directory, paper_id: str) -> dict | None:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _latex_symbol_key(symbol: dict) -> str:
+    """Return the LaTeX display key for a symbol, falling back to canonical."""
+    latex_forms = symbol.get("latex_forms") or []
+    if latex_forms:
+        return latex_forms[0]
+    return symbol["canonical"]
+
+
 def _build_symbols_per_equation(
     sym_data: dict | None,
     sym_meaning_data: dict | None,
 ) -> dict[str, dict[str, str]]:
-    """Return { equation_id: { canonical: definition } } for each equation's own symbols."""
+    """Return { equation_id: { latex_symbol: definition } } for each equation's own symbols."""
     if not sym_data:
         return {}
 
@@ -52,7 +60,7 @@ def _build_symbols_per_equation(
         for sym in eq.get("symbols", []):
             canonical = sym["canonical"]
             if canonical in definitions:
-                eq_syms[canonical] = definitions[canonical]
+                eq_syms[_latex_symbol_key(sym)] = definitions[canonical]
         result[equation_id] = eq_syms
     return result
 
@@ -70,7 +78,10 @@ def _validate_paper(paper_id: str, equations: dict, paper_obj: dict, sym_data: d
             canonicals = [s["canonical"] for s in eq.get("symbols", [])]
             if len(canonicals) != len(set(canonicals)):
                 errors.append(f"{paper_id}/{eq['equation_id']}: duplicate symbol canonicals")
-            symbol_keys[eq["equation_id"]] = set(canonicals)
+            latex_keys = [_latex_symbol_key(s) for s in eq.get("symbols", [])]
+            if len(latex_keys) != len(set(latex_keys)):
+                errors.append(f"{paper_id}/{eq['equation_id']}: duplicate symbol LaTeX keys")
+            symbol_keys[eq["equation_id"]] = set(latex_keys)
 
     for eq_id, eq_obj in paper_obj.items():
         if eq_obj == {}:
