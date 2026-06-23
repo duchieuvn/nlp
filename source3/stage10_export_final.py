@@ -239,11 +239,16 @@ def _validate_paper(paper_id: str, equations: dict, paper_obj: dict, sym_data: d
 def run() -> dict:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Paper order from paper list (first 100)
-    lines = PAPER_LIST_FILE.read_text(encoding="utf-8").splitlines()
-    ordered_paper_ids = [
-        line.removeprefix("arXiv:").strip() for line in lines if line.strip()
-    ][:100]
+    # Paper order derived from Stage 4 output (already ordered and capped at target)
+    eq_report_path = OUTPUT_DIR / "equation_alignment_report.json"
+    if eq_report_path.exists():
+        eq_report = json.loads(eq_report_path.read_text(encoding="utf-8"))
+        ordered_paper_ids = [r["paper_id"] for r in eq_report.get("papers", [])]
+    else:
+        lines = PAPER_LIST_FILE.read_text(encoding="utf-8").splitlines()
+        ordered_paper_ids = [
+            line.removeprefix("arXiv:").strip() for line in lines if line.strip()
+        ]
 
     final_data: dict = {}
     validation_errors: list[str] = []

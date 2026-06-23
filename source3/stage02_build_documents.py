@@ -595,11 +595,8 @@ def run() -> dict:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     lines = PAPER_LIST_FILE.read_text(encoding="utf-8").splitlines()
-    paper_ids = [line.removeprefix("arXiv:").strip() for line in lines if line.strip()]
-
-    missing = [pid for pid in paper_ids if not (HTML_DIR / f"{pid}.html").exists()]
-    if missing:
-        raise FileNotFoundError(f"Missing HTML for: {', '.join(missing)}")
+    all_ids = [line.removeprefix("arXiv:").strip() for line in lines if line.strip()]
+    paper_ids = [pid for pid in all_ids if (HTML_DIR / f"{pid}.html").exists()]
 
     segmenter = _Segmenter()
     results = []
