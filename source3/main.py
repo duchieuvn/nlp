@@ -9,6 +9,7 @@ import stage03_build_chunks
 import stage04_extract_equations
 import stage05_build_embeddings
 import stage06_extract_meanings
+import stage06_postprocess_meanings
 import stage07_extract_symbols
 import stage08_extract_symbol_meanings
 import stage09_build_relations
@@ -79,6 +80,19 @@ def main() -> None:
         f"  papers={r6['paper_count']}  found={r6['total_meanings_found']}"
         f"  empty={r6['total_meanings_empty']}"
         f"  ({build['stage06_meanings']['elapsed_seconds']:.1f}s)"
+    )
+
+    print("=== Stage 6b: Postprocess Equation Meanings ===")
+    t0 = time.time()
+    r6b = stage06_postprocess_meanings.run()
+    build["stage06b_postprocess_meanings"] = {
+        **r6b,
+        "elapsed_seconds": round(time.time() - t0, 2),
+    }
+    print(
+        f"  papers={r6b['paper_count']}  equations={r6b['total_equations']}"
+        f"  changed={r6b['total_meanings_changed']}"
+        f"  ({build['stage06b_postprocess_meanings']['elapsed_seconds']:.1f}s)"
     )
 
     print("=== Stage 7: Extract Symbols ===")
