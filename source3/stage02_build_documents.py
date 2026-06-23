@@ -11,7 +11,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from config import DOCUMENTS_DIR, EQUATIONS_FILE, HTML_DIR, OUTPUT_DIR
+from config import DOCUMENTS_DIR, HTML_DIR, OUTPUT_DIR, PAPER_LIST_FILE
 
 SCHEMA_VERSION = "2.0"
 
@@ -594,8 +594,8 @@ def run() -> dict:
     DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    equations = json.loads(EQUATIONS_FILE.read_text(encoding="utf-8"))
-    paper_ids = [pid for pid, entries in equations.items() if entries]
+    lines = PAPER_LIST_FILE.read_text(encoding="utf-8").splitlines()
+    paper_ids = [line.removeprefix("arXiv:").strip() for line in lines if line.strip()]
 
     missing = [pid for pid in paper_ids if not (HTML_DIR / f"{pid}.html").exists()]
     if missing:

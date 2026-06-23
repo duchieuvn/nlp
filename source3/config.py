@@ -4,8 +4,6 @@ SOURCE3_DIR = Path(__file__).parent
 PROJECT_DIR = SOURCE3_DIR.parent
 DATA_DIR = PROJECT_DIR / "data"
 
-EQUATIONS_FILE = DATA_DIR / "3_equations.json"
-ANNOTATIONS_FILE = DATA_DIR / "2_annotations.json"
 PAPER_LIST_FILE = PROJECT_DIR / "paper_list_46.txt"
 HTML_DIR = DATA_DIR / "html"
 

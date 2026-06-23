@@ -5,3 +5,9 @@ __pycache__/
 *.zip
 *.safetensors
 data/
+.codex
+.agents
+.claude
+*.aux
+*.log
+*.out

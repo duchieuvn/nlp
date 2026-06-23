@@ -3,7 +3,7 @@
 import json
 
 from config import (
-    EQUATIONS_FILE,
+    EQUATIONS_DIR,
     FINAL_DATA_FILE,
     MEANINGS_DIR,
     OUTPUT_DIR,
@@ -20,11 +20,38 @@ _VALID_DESCRIPTIONS = {
 }
 
 
+def _plural(count: int, singular: str, plural: str | None = None) -> str:
+    word = singular if count == 1 else (plural or f"{singular}s")
+    return f"{count} {word}"
+
+
 def _load_paper_artifact(directory, paper_id: str) -> dict | None:
     path = directory / f"{paper_id}.json"
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _index_equations(artifact: dict | None) -> dict[str, dict]:
+    if not artifact:
+        return {}
+    return {
+        eq["equation_id"]: eq
+        for eq in artifact.get("equations", [])
+        if isinstance(eq, dict) and eq.get("equation_id")
+    }
+
+
+def _load_paper_equations(paper_id: str) -> dict[str, dict]:
+    """Return { equation_id: {"equation": latex} } from Stage 4 output."""
+    artifact = _load_paper_artifact(EQUATIONS_DIR, paper_id)
+    if not artifact:
+        return {}
+    return {
+        eq["equation_id"]: {"equation": eq.get("latex", "")}
+        for eq in artifact.get("equations", [])
+        if isinstance(eq, dict) and eq.get("equation_id")
+    }
 
 
 def _latex_symbol_key(symbol: dict) -> str:
@@ -65,6 +92,100 @@ def _build_symbols_per_equation(
     return result
 
 
+def _summarize_symbols(symbols: list[dict]) -> str:
+    names = [_latex_symbol_key(sym) for sym in symbols]
+    if not names:
+        return "Detected no symbols in the equation."
+    preview = ", ".join(names[:6])
+    if len(names) > 6:
+        preview += f", and {_plural(len(names) - 6, 'other')}"
+    return f"Detected {preview} in the equation."
+
+
+def _build_audit_trail(
+    eq_id: str,
+    aligned_eq: dict | None,
+    meaning_eq: dict | None,
+    symbol_eq: dict | None,
+    symbol_meaning_eq: dict | None,
+    eq_relations: dict,
+    reviewed_count: int,
+) -> dict[str, str]:
+    label = f"({eq_id})"
+    if aligned_eq:
+        method = aligned_eq.get("match_method", "unknown")
+        if method == "unresolved":
+            extract_eq = (
+                f"Found reviewed equation {label}, but stage04 could not align it "
+                "to a raw HTML equation."
+            )
+        else:
+            extract_eq = f"Found numbered equation {label} in the source text using {method}."
+    else:
+        extract_eq = f"Found reviewed equation {label} in the annotation data."
+
+    before_count = len((aligned_eq or {}).get("before_sentences", []))
+    after_count = len((aligned_eq or {}).get("after_sentences", []))
+    context_count = before_count + after_count
+    if context_count:
+        extract_context = (
+            f"Collected {_plural(before_count, 'preceding sentence')} and "
+            f"{_plural(after_count, 'following sentence')} as local context."
+        )
+    elif aligned_eq and aligned_eq.get("match_method") == "unresolved":
+        extract_context = "No local context was attached because the equation alignment was unresolved."
+    else:
+        extract_context = "No nearby context sentences were available for this equation."
+
+    raw_symbols = (symbol_eq or {}).get("symbols", [])
+    symbol_meanings = (symbol_meaning_eq or {}).get("symbol_meanings", {})
+    relation_values = list(eq_relations.values())
+    nonempty_relations = [r for r in relation_values if r.get("grade") != "none"]
+
+    meaning = (meaning_eq or {}).get("meaning", "")
+    match_source = (meaning_eq or {}).get("match_source", "none")
+    score = (meaning_eq or {}).get("score", 0.0)
+    if meaning:
+        meaning_summary = f"Selected equation meaning from {match_source} evidence with score {score}."
+    else:
+        meaning_summary = "No equation-level meaning was selected from the available evidence."
+
+    if symbol_meanings:
+        extract_symbol_name = (
+            f"Assigned definitions to {_plural(len(symbol_meanings), 'symbol')} "
+            f"after retrieval-based symbol lookup. {meaning_summary}"
+        )
+    elif raw_symbols:
+        extract_symbol_name = (
+            "No symbol definitions were assigned after retrieval-based symbol lookup. "
+            f"{meaning_summary}"
+        )
+    else:
+        extract_symbol_name = f"No symbol definitions were needed because no symbols were detected. {meaning_summary}"
+
+    expected_relations = max(reviewed_count - 1, 0)
+    if expected_relations:
+        build_relations = (
+            f"Built {_plural(len(eq_relations), 'relation')} covering the other "
+            f"{_plural(expected_relations, 'reviewed equation')}; "
+            f"{_plural(len(nonempty_relations), 'non-none relation')} remained after scoring."
+        )
+    else:
+        build_relations = "No relation pairs were needed because this paper has one reviewed equation."
+
+    return {
+        "extract_eq": extract_eq,
+        "extract_context": extract_context,
+        "find_symbol": _summarize_symbols(raw_symbols),
+        "extract_symbol_name": extract_symbol_name,
+        "build_relations": build_relations,
+        "validate_entry": (
+            "Confirmed required fields equation, meaning, symbols, relations, "
+            "and audit-trail are present."
+        ),
+    }
+
+
 def _validate_paper(paper_id: str, equations: dict, paper_obj: dict, sym_data: dict | None) -> list[str]:
     """Return list of validation errors."""
     errors = []
@@ -86,6 +207,8 @@ def _validate_paper(paper_id: str, equations: dict, paper_obj: dict, sym_data: d
     for eq_id, eq_obj in paper_obj.items():
         if eq_obj == {}:
             continue
+        if not isinstance(eq_obj.get("audit-trail"), dict):
+            errors.append(f"{paper_id}/{eq_id}: missing audit-trail")
         # equation field must match reviewed latex
         reviewed_latex = equations.get(eq_id, {}).get("equation", "")
         if eq_obj.get("equation", "") != reviewed_latex:
@@ -122,14 +245,12 @@ def run() -> dict:
         line.removeprefix("arXiv:").strip() for line in lines if line.strip()
     ][:100]
 
-    all_equations = json.loads(EQUATIONS_FILE.read_text(encoding="utf-8"))
-
     final_data: dict = {}
     validation_errors: list[str] = []
     stats = {"papers": 0, "equations": 0, "with_meaning": 0, "with_symbols": 0}
 
     for paper_id in ordered_paper_ids:
-        reviewed = all_equations.get(paper_id, {})
+        reviewed = _load_paper_equations(paper_id)
 
         # Papers with no reviewed equations → empty object
         if not reviewed:
@@ -137,6 +258,7 @@ def run() -> dict:
             continue
 
         # Load artifacts
+        aligned = _load_paper_artifact(EQUATIONS_DIR, paper_id)
         meanings = _load_paper_artifact(MEANINGS_DIR, paper_id)
         symbols = _load_paper_artifact(SYMBOLS_DIR, paper_id)
         sym_meanings = _load_paper_artifact(SYMBOL_MEANINGS_DIR, paper_id)
@@ -152,6 +274,10 @@ def run() -> dict:
             e["equation_id"]: e.get("meaning", "")
             for e in meanings.get("equations", [])
         }
+        aligned_index = _index_equations(aligned)
+        meaning_records = _index_equations(meanings)
+        symbol_records = _index_equations(symbols)
+        symbol_meaning_records = _index_equations(sym_meanings)
 
         # Build per-equation symbol definitions
         symbols_per_eq = _build_symbols_per_equation(symbols, sym_meanings)
@@ -173,6 +299,15 @@ def run() -> dict:
                 "meaning": meaning_index.get(eq_id, ""),
                 "symbols": eq_symbols,
                 "relations": eq_relations,
+                "audit-trail": _build_audit_trail(
+                    eq_id=eq_id,
+                    aligned_eq=aligned_index.get(eq_id),
+                    meaning_eq=meaning_records.get(eq_id),
+                    symbol_eq=symbol_records.get(eq_id),
+                    symbol_meaning_eq=symbol_meaning_records.get(eq_id),
+                    eq_relations=eq_relations,
+                    reviewed_count=len(reviewed),
+                ),
             }
 
             stats["equations"] += 1

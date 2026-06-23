@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\singlespacing
+
+% ------------------------------------------------------------------
+% AI tool declaration
+% This document was drafted with assistance from Claude Sonnet 4.6
+% (Anthropic, 2025) acting as a writing aid. All technical content,
+% decisions, and code were produced by the authors.
+% ------------------------------------------------------------------
+
+\title{\textbf{Source3: A Rule-Based Pipeline for Equation Annotation\\
+in Scientific Papers}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ==================================================================
+\section{Overview}
+% ==================================================================
+
+\subsection{Problem Analysis}
+
+The goal of Source3 is to produce structured annotations for a curated
+set of mathematical equations drawn from 46~arXiv papers in the domain
+of quantum computing and quantum information.
+For each reviewed equation the system must extract three types of
+information:
+\begin{enumerate}
+  \item a \emph{meaning} --- a natural-language sentence that describes
+        what the equation expresses;
+  \item \emph{symbol definitions} --- a mapping from every mathematical
+        symbol in the equation to its natural-language definition; and
+  \item \emph{inter-equation relations} --- a classification of how the
+        equation relates to every other reviewed equation in the same
+        paper (e.g.\ derived from, equivalent, or unrelated).
+\end{enumerate}
+A central constraint is that all output strings must be verbatim spans
+from the source paper; no text may be generated or paraphrased.
+This requirement makes the outputs fully traceable and avoids
+hallucination, but it forces every extraction step to locate the
+correct span within the document rather than synthesising an answer.
+
+Three technical challenges characterise the problem.
+First, \emph{equation alignment}: the human-curated equation list
+identifies each equation by its LaTeX source and, where available, by a
+visible label or a DOM anchor extracted during a prior annotation pass.
+The HTML rendered by arXiv uses a different identifier scheme and may
+contain minor formatting differences, so a multi-strategy matching
+procedure is required to link each reviewed equation to its unique DOM
+node unambiguously.
+Second, \emph{meaning localisation}: the sentence that best describes an
+equation is not always the one immediately preceding it.
+It may occur in a cross-reference later in the paper, in an equation
+caption, or may be signalled by a cue phrase such as ``is defined as''
+or ``Eq.~(N) gives''.
+Naïve proximity heuristics are insufficient; ranking is needed.
+Third, \emph{symbol disambiguation}: the same symbol (e.g.\ $\psi$) may
+appear in many equations with distinct roles across a paper.
+The correct definition must be retrieved for each specific occurrence
+without confusion from other uses.
+
+\subsection{Approach Overview}
+
+Source3 is a fully deterministic, non-generative pipeline consisting of
+ten sequential stages.
+It uses a semantic embedding model (MathBERT~\cite{peng2021mathbert},
+specifically the \texttt{witiko/mathberta} checkpoint) for dense
+retrieval, BM25 for lexical matching, and hand-crafted linguistic
+patterns for high-precision span extraction.
+No large language model is invoked for generation.
+
+The pipeline is divided into four logical phases.
+
+\paragraph{Ingestion phase (Stages 1--4).}
+Raw HTML is downloaded from arXiv and cached locally (Stage~1).
+Each HTML document is then parsed into a hierarchical model comprising
+sections, paragraphs, sentences with stable identifiers, and display
+equation blocks with their associated MathML and original \LaTeX{} source
+(Stage~2).
+The document is subsequently segmented into typed retrieval chunks ---
+individual sentences, paragraphs, raw equation neighbourhoods (up to five
+sentences on each side of an equation), and cross-reference spans
+(Stage~3).
+Finally, every display equation is extracted from the parsed DOM: each
+record captures its LaTeX source, anchor identifier, section, document
+order, and the nearest prose sentences on each side (Stage~4).
+
+\paragraph{Embedding phase (Stage 5).}
+A single MathBERT instance is loaded once per paper.
+Two families of vectors are computed and stored in a per-paper \texttt{.npz}
+file.
+Family~A is equation-centric: for each reviewed equation, up to twelve
+vectors are produced encoding the equation alone, a summary context
+(equation with five surrounding sentences), and individual
+sentence-conditioned views (equation paired with each neighbouring
+sentence).
+Family~B is sentence-centric: every sentence and neighbourhood chunk in
+the document is embedded to support symbol definition retrieval later.
+All vectors are mean-pooled over the final hidden state, L2-normalised,
+and stored as \texttt{float32[768]}.
+
+\paragraph{Extraction phase (Stages 6--9).}
+Equation meanings are retrieved by first collecting candidate sentences
+from three sources in priority order --- cross-references, cue-pattern
+matches, and proximity fallback --- then reranking survivors with a
+weighted score combining cosine similarity to the equation's summary
+vector, BM25, source-type bonus, and proximity (Stage~6).
+A postprocessing pass refines or discards low-quality candidates
+(Stage~6b).
+Symbols are extracted from the MathML tree of each equation, with
+composite identifiers (subscripted, superscripted, decorated) resolved
+before flat leaf collection, and a LaTeX-tokeniser fallback applied when
+MathML is absent (Stage~7).
+Symbol definitions are located in two steps: an embedding pre-filter
+computes cosine similarity between a query formed from the symbol's
+aliases and all sentence-chunk vectors, retaining the top 30 candidates;
+ordered linguistic patterns (``where \textit{sym} is'', ``\textit{sym}
+denotes'', ``let \textit{sym} be'', etc.) are then applied to those
+candidates only (Stage~8).
+Inter-equation relations are scored using explicit citation cues,
+derivation and equivalence cue phrases, Jaccard overlap of canonical
+symbol sets, section proximity, and cosine similarity between summary
+vectors; relations are graded as \textit{strong}, \textit{potential}, or
+\textit{none} (Stage~9).
+
+\paragraph{Export phase (Stage~10).}
+The four intermediate artefacts (equations, meanings, symbol definitions,
+relations) are joined on equation identifier, validated against a
+checklist of schema invariants, and written atomically to
+\texttt{data/final\_data.json} via a temporary file and rename.
+
+\subsection{Pipeline Diagram}
+
+The diagram below shows the data flow through the ten stages.
+
+\begin{verbatim}
+  [arXiv]
+     |
+     v
+ Stage 1: Download HTML
+     |  data/html/<paper_id>.html
+     v
+ Stage 2: Parse Documents
+     |  documents/<paper_id>.json
+     |  (sections, paragraphs, sentences, MathML)
+     v
+ Stage 3: Build Chunks
+     |  chunks/<paper_id>.json
+     |  (sentence | paragraph | neighborhood | cross_reference)
+     v
+ Stage 4: Extract Equations
+     |  equations/<paper_id>.json
+     |  (LaTeX, anchor_id, section, before/after sentences)
+     v
+ Stage 5: Build MathBERT Embeddings
+     |  embeddings/<paper_id>.{npz,json}
+     |  Family A: equation / summary / before_sentence / after_sentence
+     |  Family B: sentence_chunk (whole document)
+     |
+     +------------------+------------------+------------------+
+     |                  |                  |                  |
+     v                  v                  v                  v
+ Stage 6:           Stage 7:           Stage 8:           Stage 9:
+ Equation           Symbol             Symbol             Relations
+ Meanings           Extraction         Definitions        Detection
+ (cosine+BM25       (MathML tree       (embed pre-        (cue phrases,
+  + cue patterns)    traversal)         filter + patterns)  symbol overlap,
+     |                  |                  |                semantic sim.)
+     v                  v                  v                  v
+ meanings/          symbols/           symbol_meanings/   relations/
+ <paper_id>.json    <paper_id>.json    <paper_id>.json    <paper_id>.json
+     |                  |                  |                  |
+     +------------------+------------------+------------------+
+                        |
+                        v
+                   Stage 10: Export
+                        |
+                        v
+               data/final_data.json
+\end{verbatim}
+
+\begin{thebibliography}{9}
+\bibitem{peng2021mathbert}
+S.~Peng, K.~Yuan, L.~Gao, and Z.~Tang,
+``MathBERT: A Pre-trained Model for Mathematical Formula Understanding,''
+\textit{arXiv preprint arXiv:2105.00377}, 2021.
+\end{thebibliography}
+
+\end{document}
