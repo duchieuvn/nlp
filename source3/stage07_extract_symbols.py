@@ -62,6 +62,24 @@ def _clean_modifier(text: str) -> str:
 
 
 def _upsert(symbols: dict[str, dict], base: str, modifiers: list[str], latex_forms: list[str]) -> None:
+    """Insert or merge one canonical symbol entry.
+
+    Parameters
+    ----------
+    symbols
+        Mutable mapping from canonical symbol name to symbol metadata.
+    base
+        Base symbol name after Greek and LaTeX normalization.
+    modifiers
+        Subscript, superscript, or decoration descriptors.
+    latex_forms
+        LaTeX surface forms observed for the symbol.
+
+    Returns
+    -------
+    None
+        The ``symbols`` mapping is updated in place.
+    """
     if not base or base in _OPERATORS or base.isdigit():
         return
     canonical_parts = [base]
@@ -88,6 +106,20 @@ def _node_text(node) -> str:
 
 
 def _symbol_from_mathml_node(node) -> tuple[str, list[str], list[str]] | None:
+    """Extract a symbol tuple from a supported MathML node.
+
+    Parameters
+    ----------
+    node
+        BeautifulSoup node such as ``mi``, ``msub``, ``msup``,
+        ``msubsup``, ``mover``, or ``munder``.
+
+    Returns
+    -------
+    tuple[str, list[str], list[str]] | None
+        Base symbol, modifiers, and LaTeX forms when the node represents
+        a symbol; otherwise ``None``.
+    """
     if node is None or not getattr(node, "name", None):
         return None
     name = node.name.lower()
@@ -151,6 +183,20 @@ def _extract_symbols_from_mathml(mathml_forms: list[str]) -> list[dict]:
 
 
 def _parse_braced_arg(latex: str, pos: int) -> tuple[str, int]:
+    """Read one LaTeX argument starting at a position.
+
+    Parameters
+    ----------
+    latex
+        LaTeX string being scanned.
+    pos
+        Current index, usually at an opening brace or command.
+
+    Returns
+    -------
+    tuple[str, int]
+        Parsed argument text and the next position after the argument.
+    """
     if pos >= len(latex):
         return "", pos
     if latex[pos] != "{":
@@ -191,6 +237,19 @@ def _read_sub_sup(latex: str, pos: int) -> tuple[int, str, str]:
 
 
 def _extract_symbols_from_latex(latex: str) -> list[dict]:
+    """Extract symbols from LaTeX when MathML is unavailable.
+
+    Parameters
+    ----------
+    latex
+        Equation LaTeX string from the selected equation record.
+
+    Returns
+    -------
+    list[dict]
+        Finalized canonical symbol records, including base symbols,
+        modifiers, Unicode Greek forms, and observed LaTeX forms.
+    """
     latex = re.sub(r"\\(?:begin|end)\{[^}]*\}", " ", latex)
     latex = re.sub(r"\\(?:text|mathrm|mathit|operatorname)\{[^}]*\}", " ", latex)
     symbols: dict[str, dict] = {}
@@ -229,6 +288,26 @@ def _extract_symbols_from_latex(latex: str) -> list[dict]:
 
 
 def _add_latex_token(symbols: dict[str, dict], base: str, sub: str, sup: str, form_base: str) -> None:
+    """Add one parsed LaTeX token to the symbol mapping.
+
+    Parameters
+    ----------
+    symbols
+        Mutable canonical symbol mapping.
+    base
+        Base token name without subscript or superscript.
+    sub
+        Parsed subscript text, if present.
+    sup
+        Parsed superscript text, if present.
+    form_base
+        Original LaTeX form for the base token.
+
+    Returns
+    -------
+    None
+        The ``symbols`` mapping is updated in place.
+    """
     if base in _OPERATORS or base in _STRUCTURAL:
         return
     modifiers = []
@@ -258,6 +337,19 @@ def _finalize(symbols: dict[str, dict]) -> list[dict]:
 
 
 def _process_paper(paper_id: str) -> dict:
+    """Extract symbols for every selected equation in one paper.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv identifier whose document and equation artifacts should be
+        processed.
+
+    Returns
+    -------
+    dict
+        Stage 7 payload with symbol lists aligned to equation IDs.
+    """
     eq_data = json.loads((EQUATIONS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
     doc_path = DOCUMENTS_DIR / f"{paper_id}.json"
     raw_by_id = {}
@@ -280,6 +372,18 @@ def _process_paper(paper_id: str) -> dict:
 
 
 def run() -> dict:
+    """Run Stage 7 over all selected-equation files.
+
+    Returns
+    -------
+    dict
+        Summary counts for processed papers and extracted symbols.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no Stage 4 equation files are available.
+    """
     SYMBOLS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

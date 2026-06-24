@@ -163,6 +163,22 @@ def _trim_phrase(raw: str) -> str:
 
 
 def _validation_reasons(phrase: str, require_science_head: bool = False) -> list[str]:
+    """Return rule-based validation failures for a meaning phrase.
+
+    Parameters
+    ----------
+    phrase
+        Candidate extractive phrase to validate.
+    require_science_head
+        Whether the phrase must contain a domain head noun such as
+        ``state``, ``operator``, or ``Hamiltonian``.
+
+    Returns
+    -------
+    list[str]
+        Names of validation rules that failed.  An empty list means the
+        phrase is acceptable for postprocessing.
+    """
     reasons = []
     words = [word.casefold() for word in WORD.findall(phrase)]
     if len(words) < 2 and not any(word in SCIENCE_HEADS for word in words):
@@ -197,6 +213,25 @@ def _candidate_record(
     base_score: int,
     require_science_head: bool = False,
 ) -> dict[str, Any]:
+    """Build a scored cleanup candidate from a raw text fragment.
+
+    Parameters
+    ----------
+    raw
+        Raw fragment extracted by a cleanup template or fallback rule.
+    strategy
+        Name of the rule that produced the fragment.
+    base_score
+        Initial priority score for the strategy.
+    require_science_head
+        Whether validation should require a scientific head noun.
+
+    Returns
+    -------
+    dict[str, Any]
+        Candidate metadata containing the cleaned phrase, score,
+        acceptance flag, and validation reasons.
+    """
     phrase = _trim_phrase(raw)
     reasons = _validation_reasons(phrase, require_science_head=require_science_head)
     words = [word.casefold() for word in WORD.findall(phrase)]
@@ -239,6 +274,19 @@ def _existing_phrase_candidate(text: str) -> list[dict[str, Any]]:
 
 
 def _fallback_candidates(text: str) -> list[dict[str, Any]]:
+    """Generate fallback cleanup candidates from short science phrases.
+
+    Parameters
+    ----------
+    text
+        Source meaning sentence after whitespace normalization.
+
+    Returns
+    -------
+    list[dict[str, Any]]
+        Candidate records produced from short segments and windows ending
+        at known scientific head nouns.
+    """
     candidates = []
     segments = re.split(
         r"[,;:]|\b(?:where|which|whose|that|because|since|if|then)\b",
@@ -270,7 +318,22 @@ def _fallback_candidates(text: str) -> list[dict[str, Any]]:
 
 
 def clean_meaning(text: str, source_strategy: str | None = None) -> MeaningCleanup:
-    """Select a short extractive equation-concept phrase from source text."""
+    """Select a short extractive equation-concept phrase from source text.
+
+    Parameters
+    ----------
+    text
+        Original Stage 6 meaning sentence.
+    source_strategy
+        Optional upstream extraction strategy used to decide whether the
+        existing phrase can be trusted as a candidate.
+
+    Returns
+    -------
+    MeaningCleanup
+        Cleanup result with the selected phrase, strategy, removed text,
+        and all evaluated candidates.
+    """
     cleaned = re.sub(r"\s+", " ", text).strip()
     if not cleaned:
         return MeaningCleanup("", False, "empty_source")
@@ -331,6 +394,20 @@ def clean_meaning(text: str, source_strategy: str | None = None) -> MeaningClean
 
 
 def postprocess_record(record: dict[str, Any]) -> dict[str, Any]:
+    """Postprocess one Stage 6 meaning record.
+
+    Parameters
+    ----------
+    record
+        Equation-meaning record produced by Stage 6.
+
+    Returns
+    -------
+    dict[str, Any]
+        Updated record with a cleaned meaning when reliable, or the
+        original meaning plus a review flag when no reliable phrase is
+        available.
+    """
     updated = dict(record)
     audit = dict(record.get("audit", {}))
     previous = audit.get("postprocessing", {})
@@ -368,6 +445,19 @@ def postprocess_payload(payload: dict[str, Any]) -> tuple[dict[str, Any], int]:
 
 
 def summarize_directory(output_dir: Path) -> dict[str, Any]:
+    """Summarize postprocessed meaning files in a directory.
+
+    Parameters
+    ----------
+    output_dir
+        Directory containing postprocessed per-paper meaning JSON files.
+
+    Returns
+    -------
+    dict[str, Any]
+        Aggregate counts for records, empty outputs, shortened meanings,
+        validation failures, flags, strategies, and phrase lengths.
+    """
     strategies = Counter()
     lengths = []
     record_count = 0
@@ -424,7 +514,18 @@ def _swap_directory(source_dir: Path, target_dir: Path) -> None:
 
 
 def run() -> dict:
-    """Postprocess Stage 6 meanings and replace MEANINGS_DIR atomically."""
+    """Postprocess Stage 6 meanings and replace ``MEANINGS_DIR`` atomically.
+
+    Returns
+    -------
+    dict
+        Summary counts for changed meanings and validation statistics.
+
+    Raises
+    ------
+    FileNotFoundError
+        If the Stage 6 meanings directory or its JSON files are missing.
+    """
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     if not MEANINGS_DIR.exists():
         raise FileNotFoundError(f"Missing meanings directory: {MEANINGS_DIR}")

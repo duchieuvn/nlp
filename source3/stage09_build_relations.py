@@ -68,6 +68,20 @@ def _section_proximity(sec_a: str | None, sec_b: str | None) -> float:
 
 
 def _process_paper(paper_id: str) -> dict:
+    """Build directed relation records for one paper.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv identifier whose equations, chunks, symbols, and optional
+        embeddings should be combined.
+
+    Returns
+    -------
+    dict
+        Stage 9 payload containing graph-ready ordered equation pairs
+        with relation grade and description.
+    """
     eq_data = json.loads((EQUATIONS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
     chunk_data = json.loads((CHUNKS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
 
@@ -204,6 +218,19 @@ def _process_paper(paper_id: str) -> dict:
 
 
 def run() -> dict:
+    """Run Stage 9 over all selected-equation files.
+
+    Returns
+    -------
+    dict
+        Summary counts for processed papers, relation pairs, strong
+        relations, and potential relations.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no Stage 4 equation files are available.
+    """
     RELATIONS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

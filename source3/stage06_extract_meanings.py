@@ -72,6 +72,21 @@ def _tokenize(text: str) -> list[str]:
 
 
 def _bm25_scores(query: str, candidates: list[dict]) -> dict[int, float]:
+    """Compute normalized BM25 scores for candidate meaning spans.
+
+    Parameters
+    ----------
+    query
+        Lexical query built from the equation and its local context.
+    candidates
+        Candidate records containing a ``text`` field.
+
+    Returns
+    -------
+    dict[int, float]
+        Mapping from candidate index to a score normalized into
+        ``[0, 1]`` when any candidate has nonzero overlap.
+    """
     query_terms = _tokenize(query)
     if not query_terms or not candidates:
         return {i: 0.0 for i in range(len(candidates))}
@@ -116,6 +131,20 @@ def _bm25_rank(query: str, chunks: list[dict], top_k: int) -> list[tuple[float, 
 
 
 def _load_embedding_indexes(paper_id: str) -> tuple[np.ndarray | None, dict, dict]:
+    """Load embedding matrix and row indexes needed by Stage 6.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv identifier for the paper being processed.
+
+    Returns
+    -------
+    tuple[np.ndarray | None, dict, dict]
+        Embedding matrix, summary-vector row lookup by equation ID, and
+        sentence/chunk row lookups for candidate vectors.  Empty lookups
+        are returned when the embedding files are missing.
+    """
     meta_path = EMBEDDINGS_DIR / f"{paper_id}.json"
     npz_path = EMBEDDINGS_DIR / f"{paper_id}.npz"
     if not meta_path.exists() or not npz_path.exists():
@@ -159,6 +188,21 @@ def _candidate_vector_row(candidate: dict, row_indexes: dict) -> int | None:
 
 
 def _process_paper(paper_id: str) -> dict:
+    """Select source-backed meaning sentences for one paper.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv identifier whose Stage 3, Stage 4, and Stage 5 artifacts
+        should be combined.
+
+    Returns
+    -------
+    dict
+        Stage 6 payload with one meaning record per selected equation,
+        including the chosen sentence, score, source type, and audit
+        metadata.
+    """
     eq_data = json.loads((EQUATIONS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
     chunk_data = json.loads((CHUNKS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
     embeddings, summary_rows, row_indexes = _load_embedding_indexes(paper_id)
@@ -198,6 +242,29 @@ def _process_paper(paper_id: str) -> dict:
             order=None,
             retrieval_score: float = 0.0,
         ) -> None:
+            """Add a unique candidate sentence to the current equation pool.
+
+            Parameters
+            ----------
+            text
+                Candidate text span from a sentence or chunk.
+            source
+                Retrieval source label used later for source bonuses.
+            sentence_id
+                Optional sentence identifier for provenance.
+            chunk_id
+                Optional chunk identifier for embedding lookup.
+            order
+                Optional document-order position for proximity scoring.
+            retrieval_score
+                BM25 retrieval score when the candidate came from BM25.
+
+            Returns
+            -------
+            None
+                The normalized candidate is appended in place when it is
+                non-empty and not already present.
+            """
             text = re.sub(r"\s+", " ", (text or "").strip())
             key = text.casefold()
             if not text or key in seen:
@@ -336,6 +403,19 @@ def _process_paper(paper_id: str) -> dict:
 
 
 def run() -> dict:
+    """Run Stage 6 over all extracted-equation files.
+
+    Returns
+    -------
+    dict
+        Summary counts for processed papers and extracted or empty
+        equation meanings.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no Stage 4 equation files are available.
+    """
     MEANINGS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

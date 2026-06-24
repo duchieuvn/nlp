@@ -27,6 +27,21 @@ def _meaningful_words(text: str) -> list[str]:
 
 
 def _valid_span(span: str, equation_latex: str) -> bool:
+    """Check whether a candidate definition span is usable.
+
+    Parameters
+    ----------
+    span
+        Text span extracted by a definition pattern.
+    equation_latex
+        LaTeX of the equation containing the symbol.
+
+    Returns
+    -------
+    bool
+        True when the span has enough natural-language content and does
+        not look like copied equation LaTeX or a math-only fragment.
+    """
     span = span.strip()
     if not span:
         return False
@@ -46,6 +61,19 @@ def _valid_span(span: str, equation_latex: str) -> bool:
 
 
 def _alias_patterns(symbol: dict) -> list[str]:
+    """Build regex-safe aliases for matching a symbol in prose.
+
+    Parameters
+    ----------
+    symbol
+        Stage 7 symbol record with canonical, Unicode, base, and LaTeX
+        surface forms.
+
+    Returns
+    -------
+    list[str]
+        Deduplicated regular-expression fragments for the symbol aliases.
+    """
     aliases = [symbol.get("canonical", ""), symbol.get("unicode", ""), symbol.get("base", "")]
     aliases.extend(symbol.get("latex_forms", []))
     patterns = []
@@ -116,6 +144,25 @@ def _try_reverse_np(text: str, sym_pat: re.Pattern, equation_latex: str) -> str 
 
 
 def _try_respectively(text: str, sym_pat: re.Pattern, all_pats: list[re.Pattern], equation_latex: str) -> str | None:
+    """Extract a definition from a ``respectively`` construction.
+
+    Parameters
+    ----------
+    text
+        Candidate sentence text.
+    sym_pat
+        Regex pattern for the current symbol.
+    all_pats
+        Regex patterns for all symbols in the same equation.
+    equation_latex
+        LaTeX of the equation containing the current symbol.
+
+    Returns
+    -------
+    str | None
+        Matching definition span when the symbol position can be aligned
+        with the corresponding item before ``respectively``.
+    """
     if "respectively" not in text.lower():
         return None
     m = sym_pat.search(text)
@@ -153,6 +200,25 @@ def _load_sentence_chunk_index(paper_id: str, chunks: dict) -> tuple[np.ndarray,
 
 
 def _retrieved_candidates(query: str, matrix: np.ndarray, rows: list[dict], chunk_lookup: dict[str, dict]) -> list[dict]:
+    """Retrieve top sentence candidates for a symbol-definition query.
+
+    Parameters
+    ----------
+    query
+        Query text built from symbol aliases and definition phrases.
+    matrix
+        Normalized sentence-chunk embedding matrix.
+    rows
+        Metadata rows aligned with ``matrix``.
+    chunk_lookup
+        Mapping from chunk ID to Stage 3 chunk metadata.
+
+    Returns
+    -------
+    list[dict]
+        Top-K candidate sentence records with text, sentence ID, and
+        retrieval rank.
+    """
     if matrix.size == 0:
         return []
     query_vec = _emb.embed_query(query).astype(np.float32)
@@ -180,6 +246,26 @@ def _query_for_symbol(symbol: dict) -> str:
 
 
 def _find_definition(symbol: dict, candidates: list[dict], all_pats: list[re.Pattern], equation_latex: str) -> dict | None:
+    """Find the first rule-supported definition for one symbol.
+
+    Parameters
+    ----------
+    symbol
+        Stage 7 symbol record.
+    candidates
+        Retrieved sentence candidates ordered by semantic rank.
+    all_pats
+        Regex patterns for every symbol in the equation, used for
+        ``respectively`` alignment.
+    equation_latex
+        LaTeX of the equation containing the symbol.
+
+    Returns
+    -------
+    dict | None
+        Definition metadata with the source sentence, pattern,
+        confidence, and retrieval rank, or ``None`` if no rule matches.
+    """
     sym_pat = _build_sym_regex(symbol)
     if sym_pat is None:
         return None
@@ -205,6 +291,20 @@ def _find_definition(symbol: dict, candidates: list[dict], all_pats: list[re.Pat
 
 
 def _process_paper(paper_id: str) -> dict:
+    """Extract symbol definitions for one paper.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv identifier whose Stage 5, Stage 7, and chunk artifacts are
+        used for symbol-definition retrieval.
+
+    Returns
+    -------
+    dict
+        Stage 8 payload containing definition mappings for each selected
+        equation.
+    """
     sym_data = json.loads((SYMBOLS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
     chunk_data = json.loads((CHUNKS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
     eq_data = json.loads((EQUATIONS_DIR / f"{paper_id}.json").read_text(encoding="utf-8"))
@@ -227,6 +327,19 @@ def _process_paper(paper_id: str) -> dict:
 
 
 def run() -> dict:
+    """Run Stage 8 over all symbol files.
+
+    Returns
+    -------
+    dict
+        Summary counts for processed papers and extracted symbol
+        definitions.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no Stage 7 symbol files are available.
+    """
     SYMBOL_MEANINGS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

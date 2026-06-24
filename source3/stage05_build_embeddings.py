@@ -109,10 +109,22 @@ def _build_summary_text(
     before_texts: list[str],
     after_texts: list[str],
 ) -> tuple[str, bool, bool]:
-    """
-    before: <sentences>
-    equation: <latex>
-    after: <sentences>
+    """Build a summary embedding input for an equation.
+
+    Parameters
+    ----------
+    latex
+        Equation LaTeX source.
+    before_texts
+        Sentences before the equation.
+    after_texts
+        Sentences after the equation.
+
+    Returns
+    -------
+    tuple[str, bool, bool]
+        Input text, whether the equation was truncated, and whether
+        surrounding context was truncated.
     """
     special = 2  # [CLS] + [SEP]
     total_budget = MAX_TOKENS - special
@@ -169,11 +181,24 @@ def _build_sentence_text(
     position: str,
     distance: int,
 ) -> tuple[str, bool, bool]:
-    """
-    equation: <latex>
-    context: <sentence>
-    position: before|after
-    distance: <n>
+    """Build a sentence-conditioned equation embedding input.
+
+    Parameters
+    ----------
+    latex
+        Equation LaTeX source.
+    sentence_text
+        Context sentence paired with the equation.
+    position
+        Context position, usually ``before`` or ``after``.
+    distance
+        Sentence distance from the equation.
+
+    Returns
+    -------
+    tuple[str, bool, bool]
+        Input text, whether the equation was truncated, and whether the
+        sentence context was truncated.
     """
     special = 2
     total_budget = MAX_TOKENS - special
@@ -217,6 +242,18 @@ def _build_sentence_text(
 # ---------------------------------------------------------------------------
 
 def _embed_texts(texts: list[str]) -> np.ndarray:
+    """Embed and L2-normalize a list of texts with MathBERT.
+
+    Parameters
+    ----------
+    texts
+        Input strings to embed.
+
+    Returns
+    -------
+    np.ndarray
+        Matrix of normalized embeddings with shape ``(len(texts), 768)``.
+    """
     _load_model()
     if not texts:
         return np.zeros((0, EMBEDDING_DIM), dtype=np.float32)
@@ -249,6 +286,19 @@ def _embed_texts(texts: list[str]) -> np.ndarray:
 # ---------------------------------------------------------------------------
 
 def _vectors_for_equation(eq: dict) -> list[dict]:
+    """Build all equation-centric vector metadata rows.
+
+    Parameters
+    ----------
+    eq
+        Stage 4 equation record containing LaTeX and local context.
+
+    Returns
+    -------
+    list[dict]
+        Metadata rows for equation, summary, before-sentence, and
+        after-sentence vectors.
+    """
     paper_id = eq["paper_id"]
     equation_id = eq["equation_id"]
     latex = eq["latex"]
@@ -342,7 +392,21 @@ _CHUNK_EMBED_TYPES = frozenset({"sentence", "raw_equation_neighborhood"})
 
 
 def _vectors_for_chunk_file(paper_id: str, chunk_file: Path) -> list[dict]:
-    """Build one sentence_chunk row per sentence / neighborhood chunk (family B)."""
+    """Build full-paper chunk vector metadata rows.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv paper identifier.
+    chunk_file
+        Path to the Stage 3 chunk JSON file.
+
+    Returns
+    -------
+    list[dict]
+        Metadata rows for embeddable sentence and equation-neighborhood
+        chunks.
+    """
     if not chunk_file.exists():
         return []
     data = json.loads(chunk_file.read_text(encoding="utf-8"))
@@ -381,6 +445,22 @@ def _build_paper_space(
     equations: list[dict],
     chunk_file: Path | None = None,
 ) -> tuple[np.ndarray, list[dict]]:
+    """Build the complete embedding space for one paper.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv paper identifier.
+    equations
+        Resolved Stage 4 equation records.
+    chunk_file
+        Optional Stage 3 chunk file used for full-paper retrieval rows.
+
+    Returns
+    -------
+    tuple[np.ndarray, list[dict]]
+        Embedding matrix and row metadata.
+    """
     all_rows: list[dict] = []
 
     # Family A: equation-centric vectors
@@ -406,6 +486,24 @@ def _write_paper_space(
     rows: list[dict],
     output_dir: Path,
 ) -> None:
+    """Write embedding arrays and metadata for one paper.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv paper identifier.
+    embeddings
+        Normalized embedding matrix.
+    rows
+        Row metadata aligned with ``embeddings``.
+    output_dir
+        Directory where ``.npz`` and ``.json`` outputs are written.
+
+    Returns
+    -------
+    None
+        Files are written atomically to disk.
+    """
     output_dir.mkdir(parents=True, exist_ok=True)
 
     npz_path = output_dir / f"{paper_id}.npz"
@@ -453,6 +551,28 @@ def search_paper(
     exclude_equation_ids: list[str] | None = None,
     group_by_equation: bool = False,
 ) -> list[dict[str, Any]]:
+    """Search a paper embedding space by cosine similarity.
+
+    Parameters
+    ----------
+    paper_id
+        arXiv paper identifier.
+    query_text
+        Natural-language or math-aware retrieval query.
+    top_k
+        Maximum number of rows to return.
+    vector_kinds
+        Optional vector kinds to include.
+    exclude_equation_ids
+        Optional equation identifiers to exclude.
+    group_by_equation
+        If true, return only the best row for each equation.
+
+    Returns
+    -------
+    list[dict[str, Any]]
+        Ranked metadata rows with an added ``score`` field.
+    """
     embeddings, rows = load_paper_space(paper_id)
     query_vec = embed_query(query_text).astype(np.float32)
 
@@ -497,6 +617,14 @@ def search_paper(
 # ---------------------------------------------------------------------------
 
 def run() -> dict:
+    """Build embeddings for all Stage 4 equation files.
+
+    Returns
+    -------
+    dict
+        Build report containing model, device, vector counts, and
+        per-paper statistics.
+    """
     EMBEDDINGS_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
