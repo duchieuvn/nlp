@@ -20,7 +20,7 @@
   framesep=3mm
 }
 
-\singlespacing
+\singlespacing{}
 
 % ------------------------------------------------------------------
 % AI tool declaration
@@ -29,8 +29,7 @@
 % decisions, and code were produced by the authors.
 % ------------------------------------------------------------------
 
-\title{\textbf{Source3: A Rule-Based Pipeline for Equation Annotation\\
-in Scientific Papers}}
+\title{\textbf{An Embedding-Based Retrieval Pipeline for Equation Formulas in Scientific Papers}}
 \author{}
 \date{}
 
@@ -42,61 +41,24 @@ in Scientific Papers}}
 \section{Overview}
 % ==================================================================
 
-\subsection{Problem Analysis}
+The task is to extract numbered equations from quantum physics arXiv
+papers and produce, for each equation, a meaning sentence, symbol
+definitions, inter-equation relations, and an audit trail.
+Because the required dataset must be traceable to the paper, generated
+explanations are avoided.
 
-The task is to build a generally applicable system for quantum physics
-papers from arXiv.
-For every paper in the assigned list, the system must identify the
-important numbered equations, extract their meaning, explain the symbols
-and abbreviations used in them, and describe relations between equation
-pairs in a graph-ready JSON format.
-Each output entry also needs an audit trail so that the extracted
-information can be traced back to the source document.
-
-Several approaches are possible.
-A purely rule-based system is transparent and easy to audit, but brittle
-when papers use different notation or wording.
-A retrieval-based system using BM25 or dense scientific embeddings can
-find relevant explanatory sentences more flexibly, but still needs
-filters to avoid weak matches.
-Generative language models could summarise equations, but they are less
-suitable here because the dataset requires traceable evidence from the
-paper.
-Source3 therefore combines deterministic document parsing, lexical and
-semantic retrieval, and hand-written extraction patterns to keep the
-prototype both general enough for arbitrary papers and auditable enough
-for the required dataset.
-
-\subsection{Approach Overview}
-
-Source3 is a deterministic, non-generative pipeline built around a shared
-embedding space.
-After downloading and parsing the arXiv HTML, the system extracts
-numbered equations, nearby sentences, cross-references, sections, and
-MathML symbol structure.
-Equations and text chunks are then embedded with MathBERT~\cite{peng2021mathbert}
-(\texttt{witiko/mathberta}), so that mathematical expressions and their
-surrounding explanations can be compared by cosine similarity.
-
-The same embedding representation is used for the three main extraction
-tasks.
-\begin{itemize}
-  \item \textbf{Equation meaning:} the equation and its context are
-        matched against candidate explanatory sentences from the paper.
-  \item \textbf{Symbol meaning:} each symbol is used as a query to
-        retrieve likely definition sentences, which are then checked with
-        simple linguistic patterns such as ``where $x$ is'' or
-        ``$x$ denotes''.
-  \item \textbf{Relations:} pairs of equations are compared through their
-        embedded contexts, shared symbols, section distance, and explicit
-        cue phrases such as references to earlier equations or derivation
-        statements.
-\end{itemize}
-
-This design keeps the system general enough for different quantum
-physics papers while remaining auditable.
-Embeddings provide flexible retrieval, and deterministic rules select
-only source-backed spans and record the evidence used in the final JSON.
+The approach is a hybrid retrieval system inspired by RAG\@.
+Instead of dynamic user queries, the project has three fixed query types:
+equation meaning, symbol meaning, and equation relation.
+The pipeline parses arXiv HTML into equations, text chunks, context
+sentences, and MathML symbols, then embeds equations and chunks with
+\textbf{MathBERT}~\cite{peng2021mathbert} (\texttt{witiko/mathberta}).
+\textbf{MathBERT} is used because it is trained for mathematical and scientific
+language, so it can compare equations with explanatory text better than
+a general text embedding model.
+BM25 and \textbf{MathBERT} provide model-based retrieval, while deterministic
+rules choose only source-backed spans.
+This keeps the method simple, general across papers, and auditable.
 
 \clearpage
 \subsection{Pipeline Diagram}
@@ -155,98 +117,41 @@ The diagram below shows the data flow through the ten stages.
 \endgroup
 \clearpage
 
-\section{System Architecture}
+\section{Building Embedding Space}
 
-This section briefly describes how the pipeline prepares the paper data
-for extraction.
-The examples use paper \texttt{2401.00059}.
+This section explains how the pipeline prepares the shared retrieval
+space used by the later extraction stages.
+Stages~2--4 convert each arXiv HTML paper into structured inputs for
+embedding:
 
-\subsection{Stage 2: Document Parsing}
+\begin{itemize}
+  \item \textbf{Stage 2: document parsing}
+        reads the cached HTML and stores sections, paragraphs,
+        sentences, raw equation blocks, labels, MathML, cross-references,
+        and local before/after context in
+        \path{data/pipeline/documents/<paper_id>.json}.
+  \item \textbf{Stage 3: chunk construction}
+        turns the structured document into searchable units, including
+        sentence chunks, paragraph chunks, equation-neighbourhood chunks,
+        and cross-reference chunks in
+        \path{data/pipeline/chunks/<paper_id>.json}.
+  \item \textbf{Stage 4: equation extraction}
+        selects the numbered display equations for the dataset and
+        stores their equation ID, \LaTeX{}, HTML anchor, section,
+        document order, and resolved context sentences in
+        \path{data/pipeline/equations/<paper_id>.json}.
+\end{itemize}
 
-\noindent\textbf{Responsible file:}
-\path{source3/stage02_build_documents.py}\\
-\textbf{Output:}
-\path{data/pipeline/documents/<paper_id>.json}.
-
-The parser reads the cached arXiv HTML and stores a structured document:
-sections, paragraphs, sentences, equation blocks, MathML, equation
-labels, cross-references, and before/after equation context.
-
-\begin{CodeSnippet}
-{
-  "paper_id": "2401.00059",
-  "sentences": {
-    "sec:section:2:p2:s6": {"text": "We write down ..."}
-  },
-  "raw_equations": [{
-    "raw_equation_id": "raw:0001",
-    "anchor_id": "S2.E1",
-    "visible_labels": ["1"],
-    "latex": "\\ddot{u}_{n}=-\\beta(u_{n}-u_{n-1})-..."
-  }]
-}
-\end{CodeSnippet}
-
-\subsection{Stage 3: Chunk Construction}
+Stage~5 is the key step that turns these structured objects into an
+embedding space.
 
 \noindent\textbf{Responsible file:}
-\path{source3/stage03_build_chunks.py}\\
-\textbf{Output:}
-\path{data/pipeline/chunks/<paper_id>.json}.
-
-
-The chunk builder reads the Stage~2 document and creates searchable
-units: sentence, paragraph, section context, raw equation,
-equation-neighbourhood, and cross-reference chunks.
-Each chunk keeps its source IDs and document position.
-
-\begin{CodeSnippet}
-{
-  "chunk_id": "2401.00059:raw_equation_neighborhood:raw:0001",
-  "chunk_type": "raw_equation_neighborhood",
-  "raw_equation_anchor": "S2.E1",
-  "source_ids": {
-    "raw_equation_id": "raw:0001",
-    "before_sentence_ids": ["sec:section:2:p2:s6"],
-    "after_sentence_ids": ["sec:section:2:p3:s1"]
-  }
-}
-\end{CodeSnippet}
-
-\subsection{Stage 4: Equation Extraction}
-
-\noindent\textbf{Responsible file:}
-\path{source3/stage04_extract_equations.py}\\
-\textbf{Output:}
-\path{data/pipeline/equations/<paper_id>.json}.
-
-This stage selects the numbered display equations for the dataset.
-For each equation it stores the final equation ID, normalized \LaTeX{},
-raw equation ID, HTML anchor, section, document order, and resolved
-before/after context sentences.
-
-\begin{CodeSnippet}
-{
-  "paper_id": "2401.00059",
-  "equations": [{
-    "equation_id": "1",
-    "latex": "\\ddot{u}_{n}=-\\beta(u_{n}-u_{n-1})-...",
-    "raw_equation_id": "raw:0001",
-    "anchor_id": "S2.E1",
-    "before_sentences": [{"sentence_id": "sec:section:2:p2:s6"}]
-  }]
-}
-\end{CodeSnippet}
-
-\subsection{Stage 5: Embedding Construction}
-
-\noindent\textbf{Responsible file:}
-\path{source3/stage05_build_embeddings.py}\\
+\path{Our approach/stage05_build_embeddings.py}\\
 \textbf{Output:}
 \path{data/pipeline/embeddings/<paper_id>.json}\\
 and \path{data/pipeline/embeddings/<paper_id>.npz}.
 
-This stage embeds equations and text chunks with MathBERT.
+This stage embeds equations and text chunks with \textbf{MathBERT}.
 For each equation it builds equation-only, summary-context, and
 sentence-context vectors.
 For the paper text it embeds the retrieval chunks from Stage~3.
@@ -254,283 +159,122 @@ The vectors are saved in \texttt{.npz}; the JSON file records row
 metadata and source text for auditing.
 
 \begin{CodeSnippet}
-{
-  "paper_id": "2401.00059",
-  "model": "witiko/mathberta",
-  "normalized": true,
-  "dimension": 768,
-  "rows": [{
-    "vector_id": "2401.00059:equation:1:summary",
-    "vector_kind": "summary",
-    "source_text": "before: ... equation: ... after: ...",
-    "row": 1
-  }]
-}
-\end{CodeSnippet}
-
-\section{Annotation and Export}
-
-After Stage~5, the pipeline has structured equations, retrieval chunks,
-and embedding vectors.
-Stages~6--10 use these artifacts to create the required dataset fields:
-equation meaning, symbols, symbol definitions, equation relations, and
-the final audit-ready JSON.
-
-\subsection{Stage 6: Equation Meaning Extraction}
-
-\noindent\textbf{Responsible file:}
-\path{source3/stage06_extract_meanings.py}\\
-\textbf{Output:}
-\path{data/pipeline/meanings/<paper_id>.json}.
-
-This stage finds one source-backed meaning sentence for each selected
-equation.
-It first builds a candidate pool from cross-reference chunks, cue
-phrases around the equation, BM25 retrieval over sentence and
-equation-neighbourhood chunks, and finally a proximity fallback.
-
-\textbf{BM25 role.}
-BM25 is used as the lexical retrieval component.
-For each equation, the query is built from the equation \LaTeX{}, the
-equation label, and the two nearest preceding context sentences.
-The system tokenizes this query and every candidate chunk, then scores
-chunks by term overlap using BM25 with length normalization. For example, for paper \texttt{2401.00059}, equation~(1), the BM25
-query is:
-
-\begin{CodeSnippet}
-\ddot{u}_{n}=-\beta(u_{n}-u_{n-1})-\beta(u_{n}-u_{n+1})
-Equation 1
-We denote the displacement of the atom on the left side as u^{L}_{n}
-and on the right side as u^{R}_{n}.
-For all the atoms but those on the interface (u^{L}_{0} and u^{R}_{0})
-we write down the motion equation in the form
+paper_id: 2401.00059
+model: witiko/mathberta
+normalized: true
+dimension: 768
+rows:
+  vector_id: 2401.00059:equation:1:summary
+  vector_kind: summary
+  source_text: before text, equation text, after text
+  row: 1
 \end{CodeSnippet}
 
 
-This favors sentences that share rare and informative words or symbols
-with the equation context, while avoiding a bias toward very long
-paragraphs.
-The top BM25 chunks are added as possible meaning candidates.
+\section{Retrieval and Extraction}
 
-
-\textbf{MathBERT role.}
-MathBERT is used for semantic comparison.
-Stage~5 already stores a \emph{summary vector} for each equation,
-created from the equation plus its surrounding context, and vectors for
-sentence or neighbourhood chunks.
-In Stage~6, the cosine similarity between the equation summary vector
-and each candidate chunk vector estimates whether the candidate is
-semantically close to the equation, even when it does not repeat the same
-words.
-For the same example, the MathBERT summary input is:
-
-\begin{CodeSnippet}
-before: We denote the displacement of the atom on the left side as u^{L}_{n}
-and on the right side as u^{R}_{n}. For all the atoms but those on the
-interface ... we write down the motion equation in the form
-equation: \ddot{u}_{n}=-\beta(u_{n}-u_{n-1})-\beta(u_{n}-u_{n+1})
-after: where we omitted the side index L or R, since the equation is the
-same for both indexes.
-\end{CodeSnippet}
-
-\textbf{Final ranking.}
-The final score combines four signals:
-MathBERT cosine similarity, BM25 score, source reliability
-(cross-references are trusted more than proximity fallback), and distance
-from the equation.
-Candidates that look procedural, math-heavy, incomplete, or more like a
-symbol definition receive a penalty.
-The highest-scoring remaining candidate is written as the equation
-meaning, together with an audit record describing how it was selected.
-
-\subsection{Stage 7: Symbol Extraction}
-
-\noindent\textbf{Responsible file:}
-\path{source3/stage07_extract_symbols.py}\\
-\textbf{Output:}
-\path{data/pipeline/symbols/<paper_id>.json}.
-
-This stage extracts the mathematical symbols that occur in each
-equation.
-The main source is the MathML tree, because MathML preserves structure
-such as subscripts, superscripts, and decorated symbols.
-If MathML is missing or incomplete, the system falls back to parsing the
-\LaTeX{} string.
-The output keeps canonical symbol names together with their possible
-\LaTeX{} forms, so later stages can search for definitions using
-several aliases.
-
-\subsection{Stage 8: Symbol Definition Lookup}
-
-\noindent\textbf{Responsible file:}
-\path{source3/stage08_extract_symbol_meanings.py}\\
-\textbf{Output:}
-\path{data/pipeline/symbol_meanings/<paper_id>.json}.
-
-This stage searches for the meaning of each extracted symbol.
-For every symbol, the system first builds a set of aliases from its
-canonical name, base symbol, Unicode form, and \LaTeX{} forms.
-For example, one symbol may be searchable as \texttt{beta},
-\texttt{\textbackslash{}beta}, and $\beta$.
-The query is then phrased around common definition language, such as
-\texttt{where beta is} and \texttt{beta denotes}, and embedded with
-MathBERT.
-For example, for the extracted symbol \texttt{beta} from
-paper \texttt{2401.00059}, the query is:
-
-\begin{CodeSnippet}
-where beta is beta denotes beta beta_unicode \beta
-\end{CodeSnippet}
-
-The embedded query is compared against the sentence-chunk vectors from
-Stage~5.
-This comparison uses cosine similarity: the query vector and the stored
-sentence vectors are normalized, so their dot product gives the cosine
-score.
-The top 30 most similar sentences are kept as candidates.
-This semantic pre-filter is important because a symbol definition may be
-several sentences away from the equation and may not occur in the
-immediate local context.
-
-After retrieval, deterministic patterns extract the actual definition
-span.
-The system checks patterns in priority order:
+\paragraph{Equation meanings.}
+After Stage~5, the pipeline uses the same embedding space for all final
+annotations.  Equation meanings are selected from candidate sentences
+collected by cross-references, cue phrases, BM25 retrieval, and local
+proximity.  Candidates are ranked by
+\[
+\operatorname{score}(c)=0.5\cos(e,c)+0.2\operatorname{BM25}(e,c)
++0.2\operatorname{source}(c)+0.1\operatorname{prox}(e,c)-\operatorname{penalty}(c).
+\]
+The terms are:
 \begin{itemize}
-  \item \textbf{where-is:} ``where $x$ is ...'';
-  \item \textbf{denotes:} ``$x$ denotes ...'';
-  \item \textbf{let-be:} ``let $x$ be ...'';
-  \item \textbf{reverse noun phrase:} ``the coupling constant $x$'';
-  \item \textbf{respectively:} matches symbol lists to definition lists.
+  \item $\cos(e,c)$: \textbf{MathBERT} similarity between equation
+        context and candidate sentence;
+  \item $\operatorname{BM25}(e,c)$: lexical overlap with the equation
+        query;
+  \item $\operatorname{source}(c)$: bonus for reliable evidence such as
+        cross-references or cue phrases;
+  \item $\operatorname{prox}(e,c)$: preference for text near the
+        equation;
+  \item $\operatorname{penalty}(c)$: penalty for procedural,
+        incomplete, math-heavy, or symbol-definition-like sentences.
 \end{itemize}
-Candidate definitions are rejected if they are too long, too short,
-math-dominated, or copied directly from the equation.
-The important design choice is conservative extraction: if no reliable
-source-backed definition span is found, the symbol is left undefined
-rather than filled with a guessed meaning.
 
-\subsection{Stage 9: Relation Detection}
 
-\noindent\textbf{Responsible file:}
-\path{source3/stage09_build_relations.py}\\
-\textbf{Output:}
-\path{data/pipeline/relations/<paper_id>.json}.
+Stage~6b then applies a rule-based postprocessing step in
+\path{stage06_postprocess_meanings.py}.
+The rules shorten the top candidate sentence into an extractive
+meaningful phrase.
 
-This stage builds graph-ready directed relations between equation pairs
-within the same paper.
-For every ordered pair of selected equations $(A,B)$, the system checks
-whether the context around equation $A$ mentions equation $B$.
-It first searches the before/after sentences for equation-number
-references and cue phrases.
-Derivation cues include words such as ``from'', ``using'',
-``substituting'', and ``derived from''.
-Equivalence cues include ``equivalent to'', ``reduces to'', and
-``recovers''.
-Special-case cues include ``special case'', ``setting'', and ``limit''.
-If such a cue is found, the relation is marked as \textit{strong}.
+\begin{CodeSnippet}
+Before postprocessing:
+The covariance matrix of the TMSV state can be obtained by setting
+n_{\\text{th}}=0 in Eq. (1).
 
-If no explicit cue is found, the system uses weaker signals.
-It computes symbol overlap with the Jaccard score between the two
-canonical symbol sets.
-It also checks whether the equations are in the same or neighbouring
-sections, and compares their MathBERT summary vectors from Stage~5.
-These signals are useful because related equations often share notation
-or appear in the same derivation block even when the paper does not
-explicitly say ``Equation (A) follows from Equation (B)''.
+After postprocessing:
+covariance matrix of the TMST state
+\end{CodeSnippet}
 
-The output relation grade reflects the evidence strength.
-Explicit citations or cue phrases produce \textit{strong} relations.
-Shared symbols, same-section context, or high semantic similarity produce
-\textit{potential} relations.
-If none of the signals fires, the relation is marked \textit{none}.
+\paragraph{Symbol definitions.}
+Symbols are extracted mainly from MathML because it preserves subscripts,
+superscripts, and decorated notation; a \LaTeX{} fallback is used when
+MathML is incomplete.  For each symbol, the system builds aliases from
+its canonical form, base symbol, Unicode form, and \LaTeX{} spelling.
+These aliases are combined with definition phrases such as ``where $x$
+is'' or ``$x$ denotes'' and embedded as a query.  The top retrieved
+sentences are checked with deterministic patterns, including where-is,
+denotes, let-be, reverse noun phrase, and respectively-list patterns.
+This two-step design keeps retrieval flexible while making the final
+definition conservative.  If no reliable source span is found, the
+definition is left empty rather than guessed.
 
-\subsection{Stage 10: Final Export}
+\paragraph{Relations.}
+Relations are built for every ordered equation pair in the same paper.
+The direction matters: relation $(A,B)$ asks whether the context around
+equation $A$ refers to or depends on equation $B$.  A relation is marked
+\textit{strong} when the paper gives direct evidence, such as a citation
+with derivation, equivalence, or special-case cues, a plain explicit
+citation, or membership in the same detected equation block.  It is
+marked \textit{potential} when weaker evidence exists, such as shared
+symbols, high \textbf{MathBERT} similarity between equation summaries, or
+section proximity.  If no signal fires, the relation is \textit{none}.
+Thus strong edges are evidence-backed claims, while potential edges are
+graph candidates that may need manual interpretation.
 
-\noindent\textbf{Responsible file:}
-\path{source3/stage10_export_final.py}\\
-\textbf{Output:}
-\path{data/final_data.json}.
+\paragraph{Export.}
+Stage~10 finally joins meanings, symbols, definitions, relations, and
+audit fields into the required JSON\@.
 
-The final stage joins all per-paper artifacts into the required JSON
-schema.
-For each equation it writes the equation \LaTeX{}, extracted meaning,
-symbol-definition dictionary, relation dictionary, and audit trail.
-Papers without selected numbered equations are still included with an
-empty dictionary.
-The export stage also validates that required fields are present and
-that relations cover the other selected equations in the same paper.
-
-\section{Generalization}
-
-The approach generalizes because it uses common arXiv and LaTeXML
-structure: numbered equations, MathML or \LaTeX{} equation source,
-section and paragraph layout, and references such as ``Eq.~(1)''.
-The embedding step improves robustness because it compares equation
-contexts and candidate explanations semantically, not only by exact
-word overlap.
-
-The final dataset provides evidence for this.
-It contains keys for all 100 papers in the assigned list.
-Among them, 54 papers contain extracted equations and 46 papers are
-preserved with empty equation dictionaries.
-The final dataset contains 353 equations, satisfying the requirement to
-collect at least 350 equations while finishing the last processed paper.
-Every non-empty equation entry contains the required fields and an audit
-trail.
-
-The main limits are papers with unusual HTML conversion, missing visible
-equation labels, implicit symbol definitions, or notation introduced by
-convention rather than by explicit prose.
-
-\section{Quality Discussion}
-
-\subsection{Strengths}
-
-The pipeline creates a complete, traceable dataset.
-It extracts 353 equation entries; all 353 have non-empty meanings and
-all 353 include audit trails.
-It also produces 2048 relation entries with \textit{strong},
-\textit{potential}, and \textit{none} grades, which makes the output
-usable in a graph-ready format.
-
-\subsection{Weaknesses and Limits}
-
-Symbol definition extraction is the weakest part.
-The analysis report found 1897 extracted symbols, but only 202 received
-definitions.
-That leaves 1695 undefined symbols, or 89.35\% empty symbol
-definitions.
-The main reason is that many papers do not contain a reliable extractive
-definition pattern such as ``where $x$ is'' or ``$x$ denotes''.
-
-Equation meanings are more complete but still need critical review.
-All 353 meanings are non-empty, but 126 were flagged by postprocessing.
-Typical problems are incomplete context, symbol-definition sentences
-selected as equation meanings, math-heavy spans, or phrases that are too
-short or too long.
-
-\subsection{Overall Assessment}
-
-The approach is strong for auditable dataset construction because it
-prefers source-backed evidence over generated explanations.
-Its main weakness is completeness of symbol definitions, which is
-limited by how explicitly the source papers define their notation.
 
 \section{Conclusion}
 
-Source3 builds the required dataset by combining structured arXiv
+\noindent\textbf{Strengths.}
+
+Our approach builds the required dataset by combining structured arXiv
 parsing, embedding-based retrieval, deterministic patterns, and audit
-validation.
-The embedding space makes the method flexible across different quantum
-physics writing styles, while the rule-based checks keep outputs
-traceable.
-The remaining limitations mainly come from ambiguity in the source
-papers and from the extractive-only requirement.
+validation.  Its main strengths are traceability, graph-ready coverage,
+and flexibility across quantum physics writing styles.
+The hybrid design also avoids hallucination: \textbf{MathBERT} finds
+relevant evidence, but rule-based checks decide what can enter the final
+JSON\@.
+
+\noindent\textbf{Weaknesses.}
+
+Symbol definitions remain incomplete when papers introduce notation
+implicitly, and potential relation edges can be broad when they rely only
+on weak contextual signals.  These limits are difficult to remove without
+generating unsupported explanations, which would violate the
+extractive-only requirement.
+
+\noindent\textbf{Possible improvements.}
+
+Future work could fine-tune \textbf{MathBERT} on equation-context pairs
+from quantum physics papers, calibrate semantic thresholds for relation
+detection, and add more notation-specific definition patterns.  A small
+manually checked validation set would also help tune the balance between
+coverage and precision.
 
 \begin{thebibliography}{9}
 \bibitem{peng2021mathbert}
 S.~Peng, K.~Yuan, L.~Gao, and Z.~Tang,
-``MathBERT: A Pre-trained Model for Mathematical Formula Understanding,''
-\textit{arXiv preprint arXiv:2105.00377}, 2021.
+\textit{MathBERT\@: A Pre-trained Model for Mathematical Formula Understanding},
+arXiv preprint arXiv:2105.00377, 2021.
 \end{thebibliography}
 
 \end{document}
