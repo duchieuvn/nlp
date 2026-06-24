@@ -31,7 +31,7 @@ _SPECIAL_CASE_CUES = re.compile(
     re.IGNORECASE,
 )
 _EQ_LABEL_REF = re.compile(
-    r"(?:eq(?:uation|n)?s?\.?\s*)?\(([0-9]+(?:\.[0-9]+)?)\)", re.IGNORECASE
+    r"(?:eq(?:uation|n)?s?\.?\s*)?\(\s*([0-9]+(?:\.[0-9]+)?)\s*\)", re.IGNORECASE
 )
 
 
@@ -144,7 +144,7 @@ def _process_paper(paper_id: str) -> dict:
             if eid_a == eid_b:
                 continue
 
-            label_b = _label_from_anchor(eq_b.get("anchor_id"))
+            label_b = _label_from_anchor(eq_b.get("anchor_id")) or eid_b
 
             # --- Feature 1: explicit cue in A's neighborhood texts ---
             nbhd_texts_a = neighborhood_texts.get(eid_a, [])
