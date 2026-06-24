@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
 \usepackage{setspace}
 \usepackage{parskip}
 \usepackage{microtype}
@@ -12,6 +12,13 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{verbatim}
+\usepackage{fancyvrb}
+
+\DefineVerbatimEnvironment{CodeSnippet}{Verbatim}{
+  fontsize=\footnotesize,
+  frame=single,
+  framesep=3mm
+}
 
 \singlespacing
 
@@ -37,119 +44,67 @@ in Scientific Papers}}
 
 \subsection{Problem Analysis}
 
-The goal of Source3 is to produce structured annotations for a curated
-set of mathematical equations drawn from 46~arXiv papers in the domain
-of quantum computing and quantum information.
-For each reviewed equation the system must extract three types of
-information:
-\begin{enumerate}
-  \item a \emph{meaning} --- a natural-language sentence that describes
-        what the equation expresses;
-  \item \emph{symbol definitions} --- a mapping from every mathematical
-        symbol in the equation to its natural-language definition; and
-  \item \emph{inter-equation relations} --- a classification of how the
-        equation relates to every other reviewed equation in the same
-        paper (e.g.\ derived from, equivalent, or unrelated).
-\end{enumerate}
-A central constraint is that all output strings must be verbatim spans
-from the source paper; no text may be generated or paraphrased.
-This requirement makes the outputs fully traceable and avoids
-hallucination, but it forces every extraction step to locate the
-correct span within the document rather than synthesising an answer.
+The task is to build a generally applicable system for quantum physics
+papers from arXiv.
+For every paper in the assigned list, the system must identify the
+important numbered equations, extract their meaning, explain the symbols
+and abbreviations used in them, and describe relations between equation
+pairs in a graph-ready JSON format.
+Each output entry also needs an audit trail so that the extracted
+information can be traced back to the source document.
 
-Three technical challenges characterise the problem.
-First, \emph{equation alignment}: the human-curated equation list
-identifies each equation by its LaTeX source and, where available, by a
-visible label or a DOM anchor extracted during a prior annotation pass.
-The HTML rendered by arXiv uses a different identifier scheme and may
-contain minor formatting differences, so a multi-strategy matching
-procedure is required to link each reviewed equation to its unique DOM
-node unambiguously.
-Second, \emph{meaning localisation}: the sentence that best describes an
-equation is not always the one immediately preceding it.
-It may occur in a cross-reference later in the paper, in an equation
-caption, or may be signalled by a cue phrase such as ``is defined as''
-or ``Eq.~(N) gives''.
-Naïve proximity heuristics are insufficient; ranking is needed.
-Third, \emph{symbol disambiguation}: the same symbol (e.g.\ $\psi$) may
-appear in many equations with distinct roles across a paper.
-The correct definition must be retrieved for each specific occurrence
-without confusion from other uses.
+Several approaches are possible.
+A purely rule-based system is transparent and easy to audit, but brittle
+when papers use different notation or wording.
+A retrieval-based system using BM25 or dense scientific embeddings can
+find relevant explanatory sentences more flexibly, but still needs
+filters to avoid weak matches.
+Generative language models could summarise equations, but they are less
+suitable here because the dataset requires traceable evidence from the
+paper.
+Source3 therefore combines deterministic document parsing, lexical and
+semantic retrieval, and hand-written extraction patterns to keep the
+prototype both general enough for arbitrary papers and auditable enough
+for the required dataset.
 
 \subsection{Approach Overview}
 
-Source3 is a fully deterministic, non-generative pipeline consisting of
-ten sequential stages.
-It uses a semantic embedding model (MathBERT~\cite{peng2021mathbert},
-specifically the \texttt{witiko/mathberta} checkpoint) for dense
-retrieval, BM25 for lexical matching, and hand-crafted linguistic
-patterns for high-precision span extraction.
-No large language model is invoked for generation.
+Source3 is a deterministic, non-generative pipeline built around a shared
+embedding space.
+After downloading and parsing the arXiv HTML, the system extracts
+numbered equations, nearby sentences, cross-references, sections, and
+MathML symbol structure.
+Equations and text chunks are then embedded with MathBERT~\cite{peng2021mathbert}
+(\texttt{witiko/mathberta}), so that mathematical expressions and their
+surrounding explanations can be compared by cosine similarity.
 
-The pipeline is divided into four logical phases.
+The same embedding representation is used for the three main extraction
+tasks.
+\begin{itemize}
+  \item \textbf{Equation meaning:} the equation and its context are
+        matched against candidate explanatory sentences from the paper.
+  \item \textbf{Symbol meaning:} each symbol is used as a query to
+        retrieve likely definition sentences, which are then checked with
+        simple linguistic patterns such as ``where $x$ is'' or
+        ``$x$ denotes''.
+  \item \textbf{Relations:} pairs of equations are compared through their
+        embedded contexts, shared symbols, section distance, and explicit
+        cue phrases such as references to earlier equations or derivation
+        statements.
+\end{itemize}
 
-\paragraph{Ingestion phase (Stages 1--4).}
-Raw HTML is downloaded from arXiv and cached locally (Stage~1).
-Each HTML document is then parsed into a hierarchical model comprising
-sections, paragraphs, sentences with stable identifiers, and display
-equation blocks with their associated MathML and original \LaTeX{} source
-(Stage~2).
-The document is subsequently segmented into typed retrieval chunks ---
-individual sentences, paragraphs, raw equation neighbourhoods (up to five
-sentences on each side of an equation), and cross-reference spans
-(Stage~3).
-Finally, every display equation is extracted from the parsed DOM: each
-record captures its LaTeX source, anchor identifier, section, document
-order, and the nearest prose sentences on each side (Stage~4).
+This design keeps the system general enough for different quantum
+physics papers while remaining auditable.
+Embeddings provide flexible retrieval, and deterministic rules select
+only source-backed spans and record the evidence used in the final JSON.
 
-\paragraph{Embedding phase (Stage 5).}
-A single MathBERT instance is loaded once per paper.
-Two families of vectors are computed and stored in a per-paper \texttt{.npz}
-file.
-Family~A is equation-centric: for each reviewed equation, up to twelve
-vectors are produced encoding the equation alone, a summary context
-(equation with five surrounding sentences), and individual
-sentence-conditioned views (equation paired with each neighbouring
-sentence).
-Family~B is sentence-centric: every sentence and neighbourhood chunk in
-the document is embedded to support symbol definition retrieval later.
-All vectors are mean-pooled over the final hidden state, L2-normalised,
-and stored as \texttt{float32[768]}.
-
-\paragraph{Extraction phase (Stages 6--9).}
-Equation meanings are retrieved by first collecting candidate sentences
-from three sources in priority order --- cross-references, cue-pattern
-matches, and proximity fallback --- then reranking survivors with a
-weighted score combining cosine similarity to the equation's summary
-vector, BM25, source-type bonus, and proximity (Stage~6).
-A postprocessing pass refines or discards low-quality candidates
-(Stage~6b).
-Symbols are extracted from the MathML tree of each equation, with
-composite identifiers (subscripted, superscripted, decorated) resolved
-before flat leaf collection, and a LaTeX-tokeniser fallback applied when
-MathML is absent (Stage~7).
-Symbol definitions are located in two steps: an embedding pre-filter
-computes cosine similarity between a query formed from the symbol's
-aliases and all sentence-chunk vectors, retaining the top 30 candidates;
-ordered linguistic patterns (``where \textit{sym} is'', ``\textit{sym}
-denotes'', ``let \textit{sym} be'', etc.) are then applied to those
-candidates only (Stage~8).
-Inter-equation relations are scored using explicit citation cues,
-derivation and equivalence cue phrases, Jaccard overlap of canonical
-symbol sets, section proximity, and cosine similarity between summary
-vectors; relations are graded as \textit{strong}, \textit{potential}, or
-\textit{none} (Stage~9).
-
-\paragraph{Export phase (Stage~10).}
-The four intermediate artefacts (equations, meanings, symbol definitions,
-relations) are joined on equation identifier, validated against a
-checklist of schema invariants, and written atomically to
-\texttt{data/final\_data.json} via a temporary file and rename.
-
+\clearpage
 \subsection{Pipeline Diagram}
 
 The diagram below shows the data flow through the ten stages.
 
+\begingroup
+\footnotesize
 \begin{verbatim}
   [arXiv]
      |
@@ -158,21 +113,22 @@ The diagram below shows the data flow through the ten stages.
      |  data/html/<paper_id>.html
      v
  Stage 2: Parse Documents
-     |  documents/<paper_id>.json
+     |  data/pipeline/documents/<paper_id>.json
      |  (sections, paragraphs, sentences, MathML)
      v
  Stage 3: Build Chunks
-     |  chunks/<paper_id>.json
+     |  data/pipeline/chunks/<paper_id>.json
      |  (sentence | paragraph | neighborhood | cross_reference)
      v
  Stage 4: Extract Equations
-     |  equations/<paper_id>.json
-     |  (LaTeX, anchor_id, section, before/after sentences)
+     |  data/pipeline/equations/<paper_id>.json
+     |  (reviewed LaTeX, raw equation id, anchor_id,
+     |   section, before/after sentences, audit context)
      v
  Stage 5: Build MathBERT Embeddings
-     |  embeddings/<paper_id>.{npz,json}
+     |  data/pipeline/embeddings/<paper_id>.{npz,json}
      |  Family A: equation / summary / before_sentence / after_sentence
-     |  Family B: sentence_chunk (whole document)
+     |  Family B: sentence_chunk (whole paper)
      |
      +------------------+------------------+------------------+
      |                  |                  |                  |
@@ -180,21 +136,358 @@ The diagram below shows the data flow through the ten stages.
  Stage 6:           Stage 7:           Stage 8:           Stage 9:
  Equation           Symbol             Symbol             Relations
  Meanings           Extraction         Definitions        Detection
- (cosine+BM25       (MathML tree       (embed pre-        (cue phrases,
-  + cue patterns)    traversal)         filter + patterns)  symbol overlap,
-     |                  |                  |                semantic sim.)
+ (cue/xref/BM25     (MathML tree       (embed pre-        (cue phrases,
+  + cosine rank)     traversal)        filter + patterns)   semantic sim.)
+     |                  |                  |                  |
      v                  v                  v                  v
- meanings/          symbols/           symbol_meanings/   relations/
+ data/meanings/          data/symbols/           data/symbol_meanings/   data/relations/
  <paper_id>.json    <paper_id>.json    <paper_id>.json    <paper_id>.json
      |                  |                  |                  |
      +------------------+------------------+------------------+
                         |
                         v
                    Stage 10: Export
+                        |  join fields and add audit-trail
                         |
                         v
                data/final_data.json
 \end{verbatim}
+\endgroup
+\clearpage
+
+\section{System Architecture}
+
+This section describes the internal architecture from document parsing to
+embedding construction (Stages~2--5).
+These stages are important because the later extraction tasks cannot
+work directly on raw HTML.
+ArXiv HTML mixes readable text, MathML equation trees, visible equation
+numbers, section anchors, navigation links, and bibliography entries
+into a single DOM tree.
+Stages~2--5 transform that noisy structure into increasingly task-ready
+representations: a clean structured document, typed retrieval chunks,
+selected equation records, and finally a shared embedding space.
+The examples below use paper \texttt{2401.00059}.
+
+\subsection{Stage 2: Document Parsing}
+
+\noindent\textbf{Responsible file:}
+\path{source3/stage02_build_documents.py}\\
+\textbf{Output:}
+\path{data/pipeline/documents/<paper_id>.json}.
+
+\textbf{How it works:}
+The parser uses BeautifulSoup to traverse the DOM and performs five
+sub-tasks:
+
+\begin{enumerate}
+
+\item \textbf{Section tree.}
+Every \texttt{div} whose CSS class belongs to the set
+\{ltx\_section, ltx\_subsection, ltx\_subsubsection, ltx\_paragraph,
+ltx\_appendix\} is turned into a \texttt{SectionRecord}.
+A stack tracks nesting so each section knows its parent.
+A synthetic \emph{preamble} section captures text that appears before
+the first heading.
+Sections whose class is \texttt{ltx\_bibliography} are excluded.
+
+\item \textbf{Paragraphs and sentences.}
+Each \texttt{<p class=\,``ltx\_p''>} that is not inside a figure, table,
+navigation block, or bibliography is cleaned: inline \texttt{<math>}
+tags are replaced by their \texttt{alttext} attribute (the \LaTeX{}
+fallback), then the paragraph is split into sentences.
+Sentence splitting uses spaCy's \texttt{sentencizer} when it is
+installed and a hand-written regex as a fallback.
+The regex handles common physics abbreviations such as
+\texttt{Eq.}, \texttt{Ref.}, and \texttt{cf.}\ to avoid incorrect
+sentence breaks.
+
+\item \textbf{Equation extraction.}
+All \texttt{<table class=\,``ltx\_equation''>} elements are collected in
+DOM order.
+For each table the parser reads the \LaTeX{} source from the
+\texttt{<annotation encoding=\,``application/x-tex''>} child, the HTML
+anchor from the table's \texttt{id} attribute, and the visible equation
+number from the \texttt{ltx\_eqn\_eqno} element.
+The full MathML subtree is also serialized and stored for symbol
+extraction in Stage~7.
+
+\item \textbf{Neighbourhood linking.}
+For each equation table the parser uses a binary search on a
+position-sorted paragraph list to find the up to five prose sentences
+immediately before and after the equation in reading order.
+These sentence IDs are stored in the equation record and later used to
+build context windows for retrieval.
+
+\item \textbf{Cross-reference extraction.}
+A regular expression scans every sentence for phrases of the form
+\emph{Eq.~(3)} or \emph{Equations~(5)--(8)}.
+Each match is stored as a \texttt{CrossReferenceRecord} carrying the
+source sentence, character offsets, and the list of target equation
+labels.
+Range patterns such as $(5)\text{--}(8)$ are expanded into the full
+list $[5, 6, 7, 8]$.
+
+\end{enumerate}
+
+All five sub-results are merged into a single document JSON.
+Each entity (section, paragraph, sentence, equation, cross-reference)
+gets a stable hierarchical identifier such as
+\texttt{sec:section:2:p3:s1} so that later stages can cite exact
+provenance.
+
+\begin{CodeSnippet}
+{
+  "paper_id": "2401.00059",
+  "sentences": {
+    "sec:section:2:p2:s6": {
+      "text": "We write down the motion equation in the form",
+      "paragraph_id": "sec:section:2:p2",
+      "cross_reference_ids": []
+    }
+  },
+  "raw_equations": [{
+    "raw_equation_id": "raw:0001",
+    "anchor_id": "S2.E1",
+    "visible_labels": ["1"],
+    "latex": "\\ddot{u}_{n}=-\\beta(u_{n}-u_{n-1})-...",
+    "before_sentence_ids": ["sec:section:2:p2:s6"],
+    "after_sentence_ids": ["sec:section:2:p3:s1"]
+  }]
+}
+\end{CodeSnippet}
+
+\subsection{Stage 3: Chunk Construction}
+
+\noindent\textbf{Responsible file:}
+\path{source3/stage03_build_chunks.py}\\
+\textbf{Output:}
+\path{data/pipeline/chunks/<paper_id>.json}.
+
+
+\textbf{How it works:}
+The chunk builder reads the document from Stage~2 and produces six
+chunk types.
+
+\begin{itemize}
+
+\item \textbf{sentence} --- one chunk per sentence.
+Used for precise, word-level evidence in symbol definition lookup.
+
+\item \textbf{paragraph} --- one chunk per paragraph.
+Used when a meaning requires broader local context.
+
+\item \textbf{section\_context} --- all paragraphs in a section
+concatenated.
+Used to retrieve section-level explanations and background.
+
+\item \textbf{raw\_equation} --- the \LaTeX{} string of the equation
+alone.
+Used to search for equations that share notation.
+
+\item \textbf{raw\_equation\_neighborhood} --- the up-to-five sentences
+before and after the equation sandwiched around the \LaTeX{} string,
+formatted as
+\texttt{[EQUATION: \textbackslash{}...]} in the middle.
+This is the primary retrieval unit for equation meaning because it
+captures the immediate textual context in which the equation appears.
+
+\item \textbf{cross\_reference} --- the sentence that explicitly mentions
+an equation by number.
+Used in relation detection to find cue phrases such as
+``substituting Eq.~(3) into Eq.~(5)''.
+
+\end{itemize}
+
+Every chunk records a stable \texttt{chunk\_id}, the source sentence or
+paragraph IDs it was built from, the section title, and the document
+order of its anchor paragraph.
+This metadata allows later stages to score evidence not only by
+semantic similarity but also by proximity to the target equation.
+
+\begin{CodeSnippet}
+{
+  "chunk_id": "2401.00059:raw_equation_neighborhood:raw:0001",
+  "chunk_type": "raw_equation_neighborhood",
+  "raw_equation_anchor": "S2.E1",
+  "document_order": 412,
+  "section_title": "Model",
+  "source_ids": {
+    "raw_equation_id": "raw:0001",
+    "before_sentence_ids": ["sec:section:2:p2:s6"],
+    "after_sentence_ids": ["sec:section:2:p3:s1"]
+  },
+  "text": "We write down the motion equation in the form
+  [EQUATION: \\ddot{u}_{n}=...] where we omitted ..."
+}
+\end{CodeSnippet}
+
+\subsection{Stage 4: Equation Extraction}
+
+\noindent\textbf{Responsible file:}
+\path{source3/stage04_extract_equations.py}\\
+\textbf{Output:}
+\path{data/pipeline/equations/<paper_id>.json}.
+
+\textbf{Why this stage is necessary.}
+Stage~2 stores \emph{every} display equation found in the HTML,
+including unnumbered derivation steps, auxiliary relations, and
+table-formatted equations that are not independently meaningful.
+The task specification asks only for the important \emph{numbered}
+equations up to a configured cap per paper.
+Stage~4 therefore selects the canonical dataset equations and builds
+the clean records that Stages~6--9 will annotate.
+
+\textbf{How it works:}
+The script iterates over papers in the order given by the paper list.
+A global counter stops processing once the total equation budget across
+all papers is reached; this ensures the dataset stays within the
+assignment's target size.
+Within each paper, it takes at most \texttt{MAX\_EQUATIONS\_PER\_PAPER}
+raw equations from the front of the document-order list.
+
+For each selected raw equation it builds an \textbf{equation record}
+that carries:
+\begin{itemize}
+  \item \texttt{equation\_id} --- the sequential number used as the key
+        in the final dataset JSON (``1'', ``2'', \ldots);
+  \item \texttt{latex} --- the normalized \LaTeX{} string (whitespace
+        collapsed, \texttt{\textbackslash{}displaystyle} stripped);
+  \item \texttt{raw\_equation\_id} --- a link back to the Stage~2
+        raw equation record;
+  \item \texttt{anchor\_id} --- the HTML element \texttt{id} that
+        uniquely identifies this equation in the source document;
+  \item \texttt{before\_sentences} / \texttt{after\_sentences} ---
+        the context window sentences copied from Stage~2, with their
+        full text resolved so later stages do not need to re-load the
+        document.
+\end{itemize}
+
+\begin{CodeSnippet}
+{
+  "paper_id": "2401.00059",
+  "equations": [{
+    "equation_id": "1",
+    "latex": "\\ddot{u}_{n}=-\\beta(u_{n}-u_{n-1})-...",
+    "raw_equation_id": "raw:0001",
+    "anchor_id": "S2.E1",
+    "section_id": "sec:section:2",
+    "document_order": 412,
+    "before_sentences": [{
+      "sentence_id": "sec:section:2:p2:s6",
+      "text": "We write down the motion equation in the form"
+    }],
+    "after_sentences": [{
+      "sentence_id": "sec:section:2:p3:s1",
+      "text": "where we omitted higher-order terms."
+    }]
+  }]
+}
+\end{CodeSnippet}
+
+\subsection{Stage 5: Embedding Construction}
+
+\noindent\textbf{Responsible file:}
+\path{source3/stage05_build_embeddings.py}\\
+\textbf{Output:}
+\path{data/pipeline/embeddings/<paper_id>.json}\\
+and \path{data/pipeline/embeddings/<paper_id>.npz}.
+
+\textbf{Why this stage is necessary.}
+Equation meaning, symbol definitions, and relations are all retrieval
+problems that cannot be solved by exact keyword matching.
+Authors may describe the same equation with different vocabulary, and a
+symbol's definition may appear several sentences away from its first
+use.
+By projecting both equations and text into the same 768-dimensional
+vector space using MathBERT (\path{witiko/mathberta}), the pipeline can
+compare them by cosine similarity and retrieve the most relevant
+explanation even when no word overlaps.
+
+\textbf{Model and pooling.}
+MathBERT is a BERT-based model pre-trained on a corpus that includes
+mathematical notation.
+The script loads the model and tokenizer from HuggingFace, moves them
+to GPU if available, and processes inputs in batches of 32 to keep
+memory bounded.
+Given a batch of input strings, the model returns a
+\texttt{last\_hidden\_state} tensor of shape $(B, L, 768)$, where $B$
+is the batch size and $L$ is the sequence length.
+The script pools the hidden states using \textbf{attention-mask mean
+pooling}: it multiplies each token's hidden state by its attention mask
+value (0 for padding, 1 for real tokens), sums across the sequence
+dimension, and divides by the number of real tokens.
+This avoids letting padding tokens influence the sentence vector.
+Each resulting 768-dimensional vector is then $\ell_2$-normalized so
+that dot-product search equals cosine similarity.
+
+\textbf{Two embedding families are built.}
+
+\textbf{Family~A -- equation-centric vectors.}
+For each equation selected in Stage~4, the script builds several vectors
+that capture the equation from different angles:
+\begin{itemize}
+  \item \textbf{equation} --- the \LaTeX{} string alone, prefixed with
+        the token \texttt{equation:}.
+        Captures the mathematical content without any textual bias.
+  \item \textbf{summary} --- the equation flanked by its surrounding
+        sentences, formatted as
+        \texttt{before: \ldots $\backslash$n equation: \ldots $\backslash$n after: \ldots}.
+        This is the primary query vector for meaning retrieval because
+        it blends the math with its immediate prose context.
+  \item \textbf{before\_sentence} / \textbf{after\_sentence} ---
+        one vector per neighbouring sentence, formatted as
+        \texttt{equation: \ldots $\backslash$n context: \ldots $\backslash$n
+        position: before|after $\backslash$n distance: N}.
+        Distance is 1 for the immediately adjacent sentence, 2 for the
+        next, and so on.
+        These allow Stage~6 to score individual nearby sentences against
+        the equation.
+\end{itemize}
+All Family~A input strings are token-budget-managed: if the \LaTeX{}
+alone exceeds the model's 512-token limit, the equation is truncated
+symmetrically from both ends with a \texttt{[\ldots]} marker, and any
+remaining budget is given to context.
+
+\textbf{Family~B -- sentence-chunk vectors.}
+For every \textbf{sentence} chunk and every
+\textbf{raw\-\_equation\-\_neighborhood} chunk from Stage~3, the script
+builds one vector using head truncation (first $N$ tokens).
+These vectors represent the full paper's text and are used as the
+candidate pool that later stages search against.
+
+The actual float32 matrix of shape $(N_{\text{rows}}, 768)$ is saved
+as a compressed \texttt{.npz} file.
+A JSON sidecar records every row's \texttt{vector\_id},
+\texttt{vector\_kind}, \texttt{source\_text}, row index, token count,
+and truncation flags so that any result can be traced back to the exact
+input text and equation it came from.
+
+\begin{CodeSnippet}
+{
+  "paper_id": "2401.00059",
+  "model": "witiko/mathberta",
+  "pooling": "attention_mask_mean",
+  "normalized": true,
+  "dimension": 768,
+  "rows": [
+    {
+      "vector_id": "2401.00059:equation:1:equation",
+      "equation_id": "1",
+      "vector_kind": "equation",
+      "source_text": "equation: \\ddot{u}_{n}=-\\beta(u_{n}-u_{n-1})-...",
+      "row": 0
+    },
+    {
+      "vector_id": "2401.00059:equation:1:summary",
+      "equation_id": "1",
+      "vector_kind": "summary",
+      "source_text": "before: We write down ...\nequation: ...\nafter: ...",
+      "row": 1
+    }
+  ]
+}
+\end{CodeSnippet}
 
 \begin{thebibliography}{9}
 \bibitem{peng2021mathbert}
