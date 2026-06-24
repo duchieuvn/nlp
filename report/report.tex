@@ -256,11 +256,13 @@ JSON\@.
 
 \noindent\textbf{Weaknesses.}
 
-Symbol definitions remain incomplete when papers introduce notation
-implicitly, and potential relation edges can be broad when they rely only
-on weak contextual signals.  These limits are difficult to remove without
-generating unsupported explanations, which would violate the
-extractive-only requirement.
+Some symbol definitions are missing because papers often use notation
+without explaining it clearly in words.
+Some equation relations are also uncertain: two equations may look
+related because they are close together or share symbols, but the paper
+may not directly say how they are connected.
+The system leaves these cases uncertain instead of inventing an
+explanation, because the output must come from the paper.
 
 \noindent\textbf{Possible improvements.}
 
